@@ -187,6 +187,11 @@ class Navbars extends Component {
                 <li>
                   <a href={'# '}>Create CV</a>
                 </li>
+                <li>
+                  <a>
+                    <p style={{ color: 'green', fontWeight: 'bold' }}>HELLO USER</p>
+                  </a>
+                </li>
               </ul>
               <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                 <li>
