@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+
+import './Navbars.css';
 
 class Navbars extends Component {
   render() {
@@ -6,29 +8,16 @@ class Navbars extends Component {
       <>
         <nav className="navbar navbar-default navbar-fixed navbar-light white bootsnav">
           <div className="container">
-            <button
-              type="button"
-              className="navbar-toggle"
-              data-toggle="collapse"
-              data-target="#navbar-menu"
-            >
+            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
               <i className="fa fa-bars"></i>
             </button>
             <div className="navbar-header">
               <a className="navbar-brand" href="/">
-                <img
-                  src={"../../assets/img/Job-Listing.png"}
-                  className="logo logo-scrolled"
-                  alt=""
-                />
+                <img src={'../../assets/img/Job-Listing.png'} className="logo logo-scrolled" alt="" />
               </a>
             </div>
             <div className="collapse navbar-collapse" id="navbar-menu">
-              <ul
-                className="nav navbar-nav navbar-left"
-                data-in="fadeInDown"
-                data-out="fadeOutUp"
-              >
+              <ul className="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
                 {/* <li>
                   <input
                     type="text"
@@ -37,11 +26,7 @@ class Navbars extends Component {
                   />
                 </li> */}
                 <li className="dropdown megamenu-fw">
-                  <a
-                    href={"# "}
-                    className="dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
+                  <a href={'# '} className="dropdown-toggle" data-toggle="dropdown">
                     Brows
                   </a>
                   <ul className="dropdown-menu megamenu-content" role="menu">
@@ -53,22 +38,22 @@ class Navbars extends Component {
                           <div className="content">
                             <ul className="menu-col">
                               <li>
-                                <a href={"/"}>Home Page</a>
+                                <a href={'/'}>Home Page</a>
                               </li>
                               <li>
-                                <a href={"# "}>Freelancing</a>
+                                <a href={'# '}>Freelancing</a>
                               </li>
                               <li>
-                                <a href={"# "}>Sign In / Sign Up</a>
+                                <a href={'# '}>Sign In / Sign Up</a>
                               </li>
                               <li>
-                                <a href={"# "}>Search Job</a>
+                                <a href={'# '}>Search Job</a>
                               </li>
                               <li>
-                                <a href={"# "}>Accordion</a>
+                                <a href={'# '}>Accordion</a>
                               </li>
                               <li>
-                                <a href={"# "}>Tab Style</a>
+                                <a href={'# '}>Tab Style</a>
                               </li>
                             </ul>
                           </div>
@@ -79,34 +64,34 @@ class Navbars extends Component {
                           <div className="content">
                             <ul className="menu-col">
                               <li>
-                                <a href={"# "}>Browse Jobs</a>
+                                <a href={'# '}>Browse Jobs</a>
                               </li>
                               <li>
-                                <a href={"# "}>Browse Companies</a>
+                                <a href={'# '}>Browse Companies</a>
                               </li>
                               <li>
-                                <a href={"# "}>Create Resume</a>
+                                <a href={'# '}>Create Resume</a>
                               </li>
                               <li>
-                                <a href={"# "}>Resume Detail</a>
+                                <a href={'# '}>Resume Detail</a>
                               </li>
                               <li>
-                                <a href={"# "}>Manage Jobs</a>
+                                <a href={'# '}>Manage Jobs</a>
                               </li>
                               <li>
-                                <a href={"# "}>Job Detail</a>
+                                <a href={'# '}>Job Detail</a>
                               </li>
                               <li>
-                                <a href={"# "}>Job In Grid</a>
+                                <a href={'# '}>Job In Grid</a>
                               </li>
                               <li>
-                                <a href={"# "}>Candidate Profile</a>
+                                <a href={'# '}>Candidate Profile</a>
                               </li>
                               <li>
-                                <a href={"# "}>Manage Resume 2</a>
+                                <a href={'# '}>Manage Resume 2</a>
                               </li>
                               <li>
-                                <a href={"# "}>Company Detail</a>
+                                <a href={'# '}>Company Detail</a>
                               </li>
                             </ul>
                           </div>
@@ -117,34 +102,34 @@ class Navbars extends Component {
                           <div className="content">
                             <ul className="menu-col">
                               <li>
-                                <a href={"# "}>Create Job</a>
+                                <a href={'# '}>Create Job</a>
                               </li>
                               <li>
-                                <a href={"# "}>Create Company</a>
+                                <a href={'# '}>Create Company</a>
                               </li>
                               <li>
-                                <a href={"# "}>Manage Company</a>
+                                <a href={'# '}>Manage Company</a>
                               </li>
                               <li>
-                                <a href={"# "}>Manage Candidate</a>
+                                <a href={'# '}>Manage Candidate</a>
                               </li>
                               <li>
-                                <a href={"# "}>Manage Employee</a>
+                                <a href={'# '}>Manage Employee</a>
                               </li>
                               <li>
-                                <a href={"# "}>Browse Resume</a>
+                                <a href={'# '}>Browse Resume</a>
                               </li>
                               <li>
-                                <a href={"# "}>New Search Job</a>
+                                <a href={'# '}>New Search Job</a>
                               </li>
                               <li>
-                                <a href={"# "}>Employer Profile</a>
+                                <a href={'# '}>Employer Profile</a>
                               </li>
                               <li>
-                                <a href={"# "}>Manage Resume</a>
+                                <a href={'# '}>Manage Resume</a>
                               </li>
                               <li>
-                                <a href={"# "}>New Job Detail</a>
+                                <a href={'# '}>New Job Detail</a>
                               </li>
                             </ul>
                           </div>
@@ -157,34 +142,34 @@ class Navbars extends Component {
                           <div className="content">
                             <ul className="menu-col">
                               <li>
-                                <a href={"# "}>Freelancer detail</a>
+                                <a href={'# '}>Freelancer detail</a>
                               </li>
                               <li>
-                                <a href={"# "}>New Apply Job</a>
+                                <a href={'# '}>New Apply Job</a>
                               </li>
                               <li>
-                                <a href={"# "}>Payment Methode</a>
+                                <a href={'# '}>Payment Methode</a>
                               </li>
                               <li>
-                                <a href={"# "}>New LogIn / SignUp</a>
+                                <a href={'# '}>New LogIn / SignUp</a>
                               </li>
                               <li>
-                                <a href={"# "}>Freelancing Jobs</a>
+                                <a href={'# '}>Freelancing Jobs</a>
                               </li>
                               <li>
-                                <a href={"# "}>Freelancers</a>
+                                <a href={'# '}>Freelancers</a>
                               </li>
                               <li>
-                                <a href={"# "}>Freelancers 2</a>
+                                <a href={'# '}>Freelancers 2</a>
                               </li>
                               <li>
-                                <a href={"# "}>Premium Candidate</a>
+                                <a href={'# '}>Premium Candidate</a>
                               </li>
                               <li>
-                                <a href={"# "}>Premium Candidate Detail</a>
+                                <a href={'# '}>Premium Candidate Detail</a>
                               </li>
                               <li>
-                                <a href={"# "}>Blog detail</a>
+                                <a href={'# '}>Blog detail</a>
                               </li>
                             </ul>
                           </div>
@@ -194,41 +179,67 @@ class Navbars extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a href={"/job-list"}>Find Job</a>
+                  <a href={'/job-list'}>Find Job</a>
                 </li>
                 <li>
-                  <a href={"# "}>Blog</a>
+                  <a href={'# '}>Blog</a>
                 </li>
                 <li>
-                  <a href={"# "}>Create CV</a>
+                  <a href={'# '}>Create CV</a>
                 </li>
               </ul>
-              <ul
-                className="nav navbar-nav navbar-right"
-                data-in="fadeInDown"
-                data-out="fadeOutUp"
-              >
+              <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                 <li>
-                  <a href={"/register"}>
-                    <i className="fa fa-pencil" aria-hidden="true"></i>SignUp
-                  </a>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle btn-employee"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      style={{ height: 'auto', width: 'auto', paddingTop: '0px', paddingTop: '3%' }}
+                    >
+                      For Employee
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="/login">
+                        Login
+                      </a>
+                      <a class="dropdown-item" href="/register-employee">
+                        Register
+                      </a>
+                    </div>
+                  </div>
                 </li>
-                {/* <li>
-                  <a href={"# "}>
-                    <i className="fa fa-sign-in" aria-hidden="true"></i>
-                    Pricing
-                  </a>
-                </li> */}
                 <li className="left-br">
-                  {/* <a
-                    href={"# "}
-                    data-toggle="modal"
-                    data-target="#signup"
-                    className="signin"
-                  > */}
-                  <a href={"/login"} data-target="#signup" className="signin">
-                    Sign In Now
-                  </a>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-secondary dropdown-toggle btn-employers"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      style={{ height: 'auto', width: 'auto', paddingTop: '0px', paddingTop: '3%' }}
+                    >
+                      For Employers
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="/login">
+                        Login
+                      </a>
+                      <a class="dropdown-item" href="register-employers">
+                        Register
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        Post Recruitment
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        Find Employee
+                      </a>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>

@@ -1,0 +1,145 @@
+[
+  {
+    "nameCom": "Google",
+    "imgCom": "https://www.mediafire.com/convkey/bc22/2ejyaz5up96eywa6g.jpg",
+    "position": "Compensation Analyst",
+    "salary": {
+      "from": 750,
+      "to": 800
+    },
+    "workingTime": "Full Time",
+    "location": {
+      "street": "27 Dinh Bo Linh",
+      "district": "Binh Thanh",
+      "city": "Ho Chi Minh"
+    }
+  },
+
+  {
+    "imgCom": "https://www.mediafire.com/convkey/5ad8/204hvep515ppox36g.jpg",
+    "location": {
+      "street": "08 Nguyen Van Trang",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Lecturer - Marketing Department",
+    "salary": {
+      "from": "800",
+      "to": "1000"
+    },
+    "workingTime": "Part Time",
+    "nameCom": "HSU"
+  },
+
+  {
+    "salary": {
+      "from": "600",
+      "to": "850"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/c50e/xzzvbbirmb4fhez6g.jpg",
+    "location": {
+      "street": " 80B Nguyen Van Cu",
+      "district": "Long Bien",
+      "city": "Ha Noi"
+    },
+    "nameCom": "HonDa",
+    "position": "Investment Banker",
+    "workingTime": "Part Time"
+  },
+
+  {
+    "imgCom": "https://www.mediafire.com/convkey/4c0c/ugv0j02uc0nwtuh6g.jpg",
+    "nameCom": "Microsoft",
+    "location": {
+      "street": "3 Nguyen Luong Bang",
+      "district": "07",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Service Representative",
+    "salary": {
+      "from": "835",
+      "to": "1000"
+    },
+    "workingTime": "Freelancer"
+  },
+
+  {
+    "salary": {
+      "from": 800,
+      "to": 910
+    },
+    "imgCom": "https://www.mediafire.com/convkey/d530/2vwzvr13y1fnelm6g.jpg",
+    "position": "Sales Manager",
+    "nameCom": "TH TrueMart",
+    "workingTime": "Full Time",
+    "location": {
+      "street": "219 Nguyen Dinh Chieu",
+      "district": "03",
+      "city": "Ho Chi Minh"
+    }
+  },
+
+  {
+    "imgCom": "https://www.mediafire.com/convkey/99aa/9445kni996pdo6f6g.jpg",
+    "location": {
+      "street": "150 Quang Trung",
+      "district": "12",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Virtue",
+    "position": "Administrative Manager",
+    "salary": {
+      "from": "700",
+      "to": "800"
+    },
+    "workingTime": "Part Time"
+  },
+
+  {
+    "imgCom": "https://www.mediafire.com/convkey/c6c8/cifotkk7nn5jx626g.jpg",
+    "location": {
+      "street": "81 Tran Nao",
+      "district": "02",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "AutoDesk",
+    "position": "Digital Marketing Manager",
+    "salary": {
+      "from": "750",
+      "to": "800"
+    },
+    "workingTime": "Full Time"
+  },
+
+  {
+    "imgCom": "https://www.mediafire.com/convkey/a1f9/qe4ie51r4c3e6ri6g.jpg",
+    "location": {
+      "street": "189 Nguyen Thi Minh Khai",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "The English Center",
+    "position": "English Teacher",
+    "workingTime": "Internship",
+    "salary": {
+      "from": "510",
+      "to": "800"
+    }
+  },
+
+  {
+    "imgCom": "https://www.mediafire.com/convkey/86ec/z7zqoipy2vg37zp6g.jpg",
+    "location": {
+      "street": "248A No Trang Long",
+      "district": "Binh Thanh",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Pharmacity",
+    "position": "Internal Communication Supervisor",
+    "salary": {
+      "from": "550",
+      "to": "1000"
+    },
+    "workingTime": "Full Time"
+  }
+]

@@ -1,13 +1,15 @@
-import "./App.css";
-import React, { useState, useEffect } from "react";
+import './App.css';
+import React, { useState, useEffect } from 'react';
 // import Jobs from "./pages/Jobs";
-import Home from "./pages/Home";
+import Home from './pages/Home';
 // import Jobs from "./pages/Jobs";
-import Error from "./pages/Error";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Error from './pages/Error';
+import Login from './pages/Login';
+import RegisterEmployers from './pages/ReEmployers';
+
+import RegisterEmployee from './pages/ReEmployee';
 // import Jobs from "./pages/Jobs";
-import JobList from "./features/JobList";
+import JobList from './features/JobList';
 
 // import FormJob from "../src/features/FormJob";
 
@@ -16,14 +18,14 @@ import JobList from "./features/JobList";
 // import FormRegister from "./components/FormRegister";
 // import Footers from "./components/Footers";
 
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 
 // import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
 // import memories from "./assets/img/memories.png";
 
-import { getJobs } from "./actions/job-actions.jsx";
+import { getJobs } from './actions/job-actions.jsx';
 
 // import Jobs from "./components/Jobs/Jobs";
 // import Form from "./components/Form/Form";
@@ -45,7 +47,9 @@ const App = () => {
 
         <Route path="/job-list" component={JobList} exact />
 
-        <Route path="/register" component={Register} exact />
+        <Route path="/register-employers" component={RegisterEmployers} exact />
+
+        <Route path="/register-employee" component={RegisterEmployee} exact />
 
         <Route path="/login" component={Login} exact />
 

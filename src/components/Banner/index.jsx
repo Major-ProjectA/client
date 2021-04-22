@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Banner extends Component {
   render() {
@@ -7,7 +7,7 @@ class Banner extends Component {
         <div
           className="simple-banner"
           style={{
-            backgroundImage: `url("https://www.mediafire.com/convkey/5fe3/6526w0entfizrt46g.jpg")`,
+            backgroundImage: `url("https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80")`,
           }}
         >
           <div className="container">

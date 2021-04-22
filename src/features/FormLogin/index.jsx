@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function FormLogin() {
   return (
@@ -12,11 +12,7 @@ function FormLogin() {
                   <h3 className="panel-title">Login With Account</h3>
                 </div>
                 <div className="panel-body">
-                  <img
-                    src={"/assets/img/Job-Listing.png"}
-                    className="img-responsive"
-                    alt=""
-                  />
+                  <img src={'/assets/img/Job-Listing.png'} className="img-responsive" alt="" />
                   <form role="form">
                     <fieldset>
                       <div className="form-group">
@@ -37,12 +33,12 @@ function FormLogin() {
                           // value=""
                         />
                       </div>
-                      <div className="checkbox" style={{ marginLeft: "5%" }}>
+                      <div className="checkbox" style={{ marginLeft: '5%' }}>
                         <label>
                           <input
                             name="remember"
                             type="checkbox"
-                            style={{ marginLeft: "-7%", width: "5%" }}
+                            style={{ marginLeft: '-7%', width: '5%' }}
                             value="Remember Me"
                           />
                           Remember Me

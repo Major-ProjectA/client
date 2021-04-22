@@ -2111,7 +2111,7 @@ form.form-horizontal {
 
 .simple-banner h3 {
 	font-family: Raleway, sans-serif;
-	font-weight: 500
+	font-weight: 400
 }
 
 .home-plane-banner h1,
@@ -5644,7 +5644,7 @@ button.btn.btn-login {
 }
 
 .login-plane-sec {
-	margin-top: 5%
+	margin-top: 3%
 }
 
 .login-panel {
@@ -8006,7 +8006,7 @@ ul.social-share li>a.be-share {
 	.simple-banner {
 		height: 100vh;
 		min-height: 550px;
-		padding-top: 14%
+		padding-top: 5%
 	}
 	.home-three-banner {
 		height: 100vh;

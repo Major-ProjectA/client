@@ -11,7 +11,7 @@ const JobList = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       const params = {
-        _limit: 10,
+        _limit: 8,
       };
       const companylist = await companyApi.getAllCompany(params);
       console.log(companylist);
