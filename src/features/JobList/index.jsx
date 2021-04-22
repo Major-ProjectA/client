@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
-import Navbars from "../../components/Navbars";
-import Footer from "../../components/Footers";
-import FormSearch from "../../features/FormSearch";
+import Navbars from '../../components/Navbars';
+import Footer from '../../components/Footers';
+// import FormSearch from "../FormSearch";
+import companyApi from '../../api/companyApi';
 
-const ListJob = () => {
+const JobList = () => {
+  const [fetchCompanies, setFetchCompanies] = useState([]);
+
+  useEffect(() => {
+    const fetchCompanies = async () => {
+      const params = {
+        _limit: 10,
+      };
+      const companylist = await companyApi.getAllCompany(params);
+      console.log(companylist);
+      setFetchCompanies(companylist);
+    };
+    fetchCompanies();
+  }, [companyApi]);
+
   return (
     <>
       <Navbars />
       <br /> <br />
-      <section class="inner-header-title">
+      <section
+        class="inner-header-title"
+        style={{
+          backgroundImage: `URL("https://www.mediafire.com/convkey/3256/oy9yrpyhvvwgu8b6g.jpg")`,
+        }}
+      >
         <div class="container">
           <h1>Browse Jobs</h1>
         </div>
@@ -30,19 +50,15 @@ const ListJob = () => {
                 </div> */}
 
                 <div className="col-md-3 col-sm-6">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Skills, Designations, Keyword"
-                  />
+                  <input type="text" className="form-control" placeholder="Skills, Designations, Keyword" />
                 </div>
 
                 <div className="col-md-3 col-sm-6">
                   <select id="choose-city" className="form-control">
                     <option>All City</option>
-                    <option value="HCM">Hồ Chí Minh</option>
-                    <option value="HN">Hà Nội</option>
-                    <option value="AG">An Giang</option>
+                    <option value="HCM">Ho Chi Minh</option>
+                    <option value="HN">Ha Noi</option>
+                    {/* <option value="AG">An Giang</option>
                     <option value="BRVT">Bà Rịa - Vũng Tàu</option>
                     <option value="BC">Bắc Cạn</option>
                     <option value="BG">Bắc Giang</option>
@@ -103,7 +119,7 @@ const ListJob = () => {
                     <option value="DN">Đắk Nông</option>
                     <option value="DB">Điện Biên</option>
                     <option value="DN">Đồng Nai</option>
-                    <option value="DT">Đồng Tháp</option>
+                    <option value="DT">Đồng Tháp</option> */}
                   </select>
                 </div>
 
@@ -122,9 +138,7 @@ const ListJob = () => {
                     <option value="wholesale-retail">Wholesale - Retail</option>
                     <option value="lifeinsurance">Life insurance</option>
                     <option value="translators">Translators</option>
-                    <option value="Post-telecommunication">
-                      Post - Telecommunication
-                    </option>
+                    <option value="Post-telecommunication">Post - Telecommunication</option>
                     <option value="breed-veterinary">Breed - Veterinary</option>
                     <option value="stock">Stock</option>
                     <option value="biotechnology">Biotechnology</option>
@@ -148,11 +162,7 @@ const ListJob = () => {
                 </div>
 
                 <div className="col-md-3 col-sm-6">
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    style={{ float: "right" }}
-                  >
+                  <button type="submit" className="btn btn-primary" style={{ float: 'right' }}>
                     Search Job
                   </button>
                 </div>
@@ -160,35 +170,22 @@ const ListJob = () => {
                 <div class="col-md-9 col-sm-12">
                   <div class="job-types">
                     <label>
-                      <input
-                        type="checkbox"
-                        class="full-time check-option checkbox"
-                        CHECKED
-                      />
+                      <input type="checkbox" class="full-time check-option checkbox" CHECKED />
                       &nbsp;Full Time
                     </label>
 
                     <label>
-                      <input
-                        type="checkbox"
-                        class="part-time check-option checkbox"
-                      />
+                      <input type="checkbox" class="part-time check-option checkbox" />
                       &nbsp;Part Time
                     </label>
 
                     <label>
-                      <input
-                        type="checkbox"
-                        class="freelancer check-option checkbox"
-                      />
+                      <input type="checkbox" class="freelancer check-option checkbox" />
                       &nbsp;Freelancer
                     </label>
 
                     <label>
-                      <input
-                        type="checkbox"
-                        class="internship check-option checkbox"
-                      />
+                      <input type="checkbox" class="internship check-option checkbox" />
                       &nbsp; Internship
                     </label>
                   </div>
@@ -198,55 +195,59 @@ const ListJob = () => {
           </div>
 
           <div class="item-click">
-            <article>
-              <div class="brows-job-list">
-                <div class="col-md-1 col-sm-2 small-padding">
-                  <div class="brows-job-company-img">
-                    <a href="job-detail.html">
-                      <img
-                        src="assets/img/com-1.jpg"
-                        class="img-responsive"
-                        alt=""
-                      />
-                    </a>
+            {fetchCompanies.map((c) => (
+              <article key={c._id}>
+                <div class="brows-job-list">
+                  <div class="col-md-1 col-sm-2 small-padding">
+                    <div class="brows-job-company-img">
+                      <a href="job-detail.html">
+                        <img src={c.imgCom} class="img-responsive" alt="" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-sm-5">
+                    <div class="brows-job-position">
+                      <a href="job-detail.html">
+                        <h3> {c.position}</h3>
+                      </a>
+                      <p>
+                        <span>{c.nameCom}</span>
+                        <span class="brows-job-sallery">
+                          <i class="fa fa-money"></i>${c.salary.from} -{c.salary.to}
+                        </span>
+                        <span class="job-type cl-success bg-trans-success">{c.workingTime}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-3">
+                    <div class="brows-job-location">
+                      <p>
+                        <i class="fa fa-map-marker"></i>
+                        {c.location.street}
+                      </p>
+                      <p>
+                        {c.location.district}, {c.location.city}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-2">
+                    <div class="brows-job-link">
+                      <a href="job-detail.html" class="btn btn-default">
+                        Apply Now
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-5">
-                  <div class="brows-job-position">
-                    <a href="job-detail.html">
-                      <h3>Senior front-end Developer</h3>
-                    </a>
-                    <p>
-                      <span>Autodesk</span>
-                      <span class="brows-job-sallery">
-                        <i class="fa fa-money"></i>$750 - 800
-                      </span>
-                      <span class="job-type cl-success bg-trans-success">
-                        Full Time
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                  <div class="brows-job-location">
-                    <p>
-                      <i class="fa fa-map-marker"></i>QBL Park, C40
-                    </p>
-                  </div>
-                </div>
-                <div class="col-md-2 col-sm-2">
-                  <div class="brows-job-link">
-                    <a href="job-detail.html" class="btn btn-default">
-                      Apply Now
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <span class="tg-themetag tg-featuretag">Premium</span>
-            </article>
+                <span class="tg-themetag tg-featuretag">Premium</span>
+              </article>
+            ))}
           </div>
 
-          <div class="item-click">
+          <div>
+            <div></div>
+          </div>
+
+          {/* <div class="item-click">
             <article>
               <div class="brows-job-list">
                 <div class="col-md-1 col-sm-2 small-padding">
@@ -292,9 +293,9 @@ const ListJob = () => {
                 </div>
               </div>
             </article>
-          </div>
+          </div> */}
 
-          <div class="item-click">
+          {/* <div class="item-click">
             <article>
               <div class="brows-job-list">
                 <div class="col-md-1 col-sm-2 small-padding">
@@ -341,9 +342,9 @@ const ListJob = () => {
               </div>
               <span class="tg-themetag tg-featuretag">Premium</span>
             </article>
-          </div>
+          </div> */}
 
-          <div class="item-click">
+          {/* <div class="item-click">
             <article>
               <div class="brows-job-list">
                 <div class="col-md-1 col-sm-2 small-padding">
@@ -389,9 +390,9 @@ const ListJob = () => {
                 </div>
               </div>
             </article>
-          </div>
+          </div> */}
 
-          <div class="item-click">
+          {/* <div class="item-click">
             <article>
               <div class="brows-job-list">
                 <div class="col-md-1 col-sm-2 small-padding">
@@ -437,9 +438,9 @@ const ListJob = () => {
                 </div>
               </div>
             </article>
-          </div>
+          </div> */}
 
-          <div class="item-click">
+          {/* <div class="item-click">
             <article>
               <div class="brows-job-list">
                 <div class="col-md-1 col-sm-2 small-padding">
@@ -486,9 +487,9 @@ const ListJob = () => {
               </div>
               <span class="tg-themetag tg-featuretag">Premium</span>
             </article>
-          </div>
+          </div> */}
 
-          <div class="item-click">
+          {/* <div class="item-click">
             <article>
               <div class="brows-job-list">
                 <div class="col-md-1 col-sm-2 small-padding">
@@ -534,7 +535,7 @@ const ListJob = () => {
                 </div>
               </div>
             </article>
-          </div>
+          </div> */}
 
           <div class="row">
             <ul class="pagination">
@@ -570,4 +571,4 @@ const ListJob = () => {
   );
 };
 
-export default ListJob;
+export default JobList;

@@ -6,10 +6,10 @@ import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Jobs from "./pages/Jobs";
-import ListJob from "./features/ListJob";
+// import Jobs from "./pages/Jobs";
+import JobList from "./features/JobList";
 
-import FormJob from "../src/features/FormJob";
+// import FormJob from "../src/features/FormJob";
 
 // import Navbars from "./components/Navbars";
 // import FormLogin from "./components/FormLogin";
@@ -20,18 +20,19 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
 
-import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+// import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
 // import memories from "./assets/img/memories.png";
 
 import { getJobs } from "./actions/job-actions.jsx";
+
 // import Jobs from "./components/Jobs/Jobs";
-import Form from "./components/Form/Form";
-import useStyles from "./styles";
+// import Form from "./components/Form/Form";
+// import useStyles from "./styles";
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(0);
+  const [currentId] = useState(0);
   const dispatch = useDispatch();
-  const classes = useStyles();
+  // const classes = useStyles();
 
   useEffect(() => {
     dispatch(getJobs());
@@ -42,7 +43,7 @@ const App = () => {
       <Switch>
         <Route path="/" component={Home} exact />
 
-        <Route path="/list-job" component={ListJob} exact />
+        <Route path="/job-list" component={JobList} exact />
 
         <Route path="/register" component={Register} exact />
 

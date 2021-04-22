@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
 const Category = () => {
   const jobs = useSelector((state) => state.jobs);
-
   console.log(jobs);
 
   return !jobs.length ? (
@@ -25,7 +24,7 @@ const Category = () => {
         </div>
         {jobs.map((job) => (
           <div key={job._id}>
-            <div className="col-md-3 col-sm-6" style={{ float: "left" }}>
+            <div className="col-md-3 col-sm-6 category-cus" style={{ float: 'left' }}>
               <div className="category-box" data-aos="fade-up">
                 <div className="category-desc">
                   <div className="category-icon">
@@ -38,7 +37,7 @@ const Category = () => {
                   </div>
                   <div className="category-detail category-desc-text">
                     <h4>
-                      <a href={"# "}>{job.career.careerName}</a>
+                      <a href={'# '}>{job.career.careerName}</a>
                     </h4>
 
                     <p>122 Jobs</p>

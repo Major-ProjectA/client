@@ -1,6 +1,6 @@
 import {
-  FETCH_ALL,
-  CREATE,
+  FETCH_ALL_JOB,
+  // CREATE,
   // UPDATE,
   // DELETE,
   // LIKE,
@@ -8,27 +8,27 @@ import {
 
 import * as api from "../api";
 
-//ACTION GET
+//ACTION GETJOB
 export const getJobs = () => async (dispatch) => {
   try {
     const { data } = await api.fetchJobs();
 
-    dispatch({ type: FETCH_ALL, payload: data });
+    dispatch({ type: FETCH_ALL_JOB, payload: data });
   } catch (error) {
     console.log(error.message);
   }
 };
 
-//ACTION CREATE
-export const createJob = (job) => async (dispatch) => {
-  try {
-    const { data } = await api.createJob(job);
+// //ACTION CREATE
+// export const createJob = (job) => async (dispatch) => {
+//   try {
+//     const { data } = await api.createJob(job);
 
-    dispatch({ type: CREATE, payload: data });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+//     dispatch({ type: CREATE, payload: data });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
 
 // export const updatePost = (id, post) => async (dispatch) => {
 //   try {

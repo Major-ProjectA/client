@@ -194,10 +194,13 @@ class Navbars extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a href={"/list-job"}>Find Job</a>
+                  <a href={"/job-list"}>Find Job</a>
                 </li>
                 <li>
                   <a href={"# "}>Blog</a>
+                </li>
+                <li>
+                  <a href={"# "}>Create CV</a>
                 </li>
               </ul>
               <ul

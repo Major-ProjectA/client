@@ -18,7 +18,7 @@ class Testimonial extends Component {
             <div id="client-testimonial-slider" className="owl-carousel">
               <div className="client-testimonial">
                 <div className="pic">
-                  <img src={"../src/assets/img/client-1.jpg"} alt="" />
+                  {/* <img src={"../src/assets/img/client-1.jpg"} alt="" /> */}
                 </div>
                 <p className="client-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -34,7 +34,7 @@ class Testimonial extends Component {
               </div>
               <div className="client-testimonial">
                 <div className="pic">
-                  <img src="../src/assets/img/client-4.jpg" alt="" />
+                  {/* <img src="../src/assets/img/client-4.jpg" alt="" /> */}
                 </div>
                 <p className="client-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -50,7 +50,7 @@ class Testimonial extends Component {
               </div>
               <div className="client-testimonial">
                 <div className="pic">
-                  <img src="../src/assets/img/client-2.jpg" alt="" />
+                  {/* <img src="../src/assets/img/client-2.jpg" alt="" /> */}
                 </div>
                 <p className="client-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -66,7 +66,7 @@ class Testimonial extends Component {
               </div>
               <div className="client-testimonial">
                 <div className="pic">
-                  <img src="../src/assets/img/client-3.jpg" alt="" />
+                  {/* <img src="../src/assets/img/client-3.jpg" alt="" /> */}
                 </div>
                 <p className="client-description">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

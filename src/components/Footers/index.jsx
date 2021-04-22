@@ -7,11 +7,13 @@ function Footers() {
         <div className="row lg-menu">
           <div className="container">
             <div className="col-md-4 col-sm-4">
-              <img
-                src={"/assets/img/Job-Listing.png"}
-                className="img-responsive"
-                alt=""
-              />
+              <a href={"/"}>
+                <img
+                  src={"/assets/img/Job-Listing.png"}
+                  className="img-responsive"
+                  alt=""
+                />
+              </a>
             </div>
             <div className="col-md-8 co-sm-8 pull-right">
               <ul>

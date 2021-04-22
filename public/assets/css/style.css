@@ -8763,3 +8763,13 @@ a.cl-box.pink {
 	border-radius: 0;
 	box-shadow: none;
 }
+
+.category-cus{
+	transition: .4s;
+}
+
+.category-cus:hover{
+	transform: translateY(-5px);
+	-webkit-transform: translateY(-5px);
+	cursor: pointer
+}
