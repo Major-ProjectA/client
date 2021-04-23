@@ -1,0 +1,306 @@
+[
+  {
+    "_id": {
+      "$oid": "60826644349115d37f2c3ede"
+    },
+    "career": {
+      "careerName": "Information Technology",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/laptop-2015590-1702637.png"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "608267ad349115d37f2c3ee0"
+    },
+    "career": {
+      "careerName": "Real estate",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/real-estate-2264518-1926665.png"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "608268a7349115d37f2c3ee1}"
+    },
+    "career": {
+      "careerName": "Journalism",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/journalism-2177699-1823026.png"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "607bc445b0c625053d7d5196"
+    },
+    "career": {
+      "careerName": "Bank",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/bank-2076419-1756270.png"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "60826933349115d37f2c3ee2"
+    },
+    "career": {
+      "careerName": "Delivery",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/delivery-2447956-2044992.png"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "607bc996b0c625053d7d5198"
+    },
+    "career": {
+      "careerName": "Spa",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/spa-1404864-1185820.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bd5a4b0c625053d7d5199"
+    },
+    "career": {
+      "careerName": "Guard - Security",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/guard-3190190-2658612.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bd6e6b0c625053d7d519a"
+    },
+    "career": {
+      "careerName": "Labor safety",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/labor-vest-3421050-2859388.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bd7cbb0c625053d7d519b"
+    },
+    "career": {
+      "careerName": "Sales - Business",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/business-3572030-2986600.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bd9e1b0c625053d7d519c"
+    },
+    "career": {
+      "careerName": "Wholesale - Retail",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/retail-shop-2072280-1751591.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bdce4b0c625053d7d519d"
+    },
+    "career": {
+      "careerName": "Life insurance",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/life-insurance-2809063-2331523.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bdd71b0c625053d7d519e"
+    },
+    "career": {
+      "careerName": "Translators",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/localization-and-translation-3228160-2697196.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bdde2b0c625053d7d519f"
+    },
+    "career": {
+      "careerName": "Post - Telecommunication",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/telecommunication-3286626-2752792.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bde9eb0c625053d7d51a0"
+    },
+    "career": {
+      "careerName": "Breed - Veterinary",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/bulldog-12-877126.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bdf7fb0c625053d7d51a1"
+    },
+    "career": {
+      "careerName": "Stock",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/stock-41-498914.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be1a1b0c625053d7d51a2"
+    },
+    "career": {
+      "careerName": "Biotechnology",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/microscope-442-766140.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be293b0c625053d7d51a3"
+    },
+    "career": {
+      "careerName": "Nutrition",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/nutrition-1401376-1187894.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be35bb0c625053d7d51a4"
+    },
+    "career": {
+      "careerName": "Mechanical",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/mechanical-3369041-2813795.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be3d3b0c625053d7d51a5"
+    },
+    "career": {
+      "careerName": "Oil and gas",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/advanced-oil-and-gas-exploration-and-recovery-1726543-1467442.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be48cb0c625053d7d51a6"
+    },
+    "career": {
+      "careerName": "Textile",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/textile-3272604-2752360.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be51fb0c625053d7d51a7"
+    },
+    "career": {
+      "careerName": "Tourism",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/tourism-2140320-1800884.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be59cb0c625053d7d51a8"
+    },
+    "career": {
+      "careerName": "pharmaceutical",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/pill-2909255-2411848.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be619b0c625053d7d51a9"
+    },
+    "career": {
+      "careerName": "Electronic",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/electronic-2549702-2132852.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be6abb0c625053d7d51ab"
+    },
+    "career": {
+      "careerName": "Carpenter",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/wood-3118117-2602060.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be726b0c625053d7d51ac"
+    },
+    "career": {
+      "careerName": "Entertaiment",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/entertainment-1914112-1622155.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be7c6b0c625053d7d51ad"
+    },
+    "career": {
+      "careerName": "Education",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/education-1953889-1651467.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be870b0c625053d7d51ae"
+    },
+    "career": {
+      "careerName": "Nautical",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/nautical-1621587-1373718.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be93ab0c625053d7d51af"
+    },
+    "career": {
+      "careerName": "Aviation",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/aeroplane-83-673266.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607be9afb0c625053d7d51b0"
+    },
+    "career": {
+      "careerName": "Accountant",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/accountant-1984618-1680448.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bea9cb0c625053d7d51b1"
+    },
+    "career": {
+      "careerName": "Architecture",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/architecture-1714935-1454641.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607bec26b0c625053d7d51b2"
+    },
+    "career": {
+      "careerName": "Law",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/law-2145356-1803222.png"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "607bec96b0c625053d7d51b3"
+    },
+    "career": {
+      "careerName": "Restaurant Hotel",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/restaurant-2493716-2085887.png"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "60826bc2349115d37f2c3ee3"
+    },
+    "career": {
+      "careerName": "Others",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/others-2366937-1976430.png"
+    }
+  }
+]

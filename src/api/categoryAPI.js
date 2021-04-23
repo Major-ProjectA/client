@@ -1,9 +1,9 @@
-import axiosClient from './axiosClient';
+import axiosCategory from './axiosCategory';
 
-const companyApi = {
-  getAllCompany(params) {
-    const urlCompany = '/';
-    return axiosClient.get(urlCompany, { params });
+const categoryApi = {
+  getAllCategory(params) {
+    const urlCategory = '/';
+    return axiosCategory.get(urlCategory, { params });
   },
 
   // getCompany(id) {
@@ -27,4 +27,4 @@ const companyApi = {
   // },
 };
 
-export default companyApi;
+export default categoryApi;

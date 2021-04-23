@@ -4,9 +4,9 @@ import {
   // UPDATE,
   // DELETE,
   // LIKE,
-} from "../constants/actionTypes";
+} from '../constants/actionTypes';
 
-import * as api from "../api";
+import * as api from '../api';
 
 //ACTION GETJOB
 export const getJobs = () => async (dispatch) => {
@@ -19,10 +19,10 @@ export const getJobs = () => async (dispatch) => {
   }
 };
 
-// //ACTION CREATE
-// export const createJob = (job) => async (dispatch) => {
+// //ACTION CREATE JOB
+// export const createJob = (company) => async (dispatch) => {
 //   try {
-//     const { data } = await api.createJob(job);
+//     const { data } = await api.createJob(company);
 
 //     dispatch({ type: CREATE, payload: data });
 //   } catch (error) {
