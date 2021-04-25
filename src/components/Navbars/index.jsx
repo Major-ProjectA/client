@@ -179,7 +179,7 @@ class Navbars extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a href={'/job-list'}>Find Job</a>
+                  <a href={'/company-list'}>Find Company</a>
                 </li>
                 <li>
                   <a href={'# '}>Blog</a>

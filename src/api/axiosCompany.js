@@ -1,14 +1,14 @@
-import axios from "axios";
+import axios from 'axios';
 
-const axiosClient = axios.create({
-  baseURL: "http://localhost:5000/api/companies",
+const axiosCompany = axios.create({
+  baseURL: 'http://localhost:5000/api/companies',
   headers: {
-    "Content-type": "application/json",
+    'Content-type': 'application/json',
   },
 });
 
 // Add a request interceptor
-axiosClient.interceptors.request.use(
+axiosCompany.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     return config;
@@ -20,7 +20,7 @@ axiosClient.interceptors.request.use(
 );
 
 // Add a response interceptor
-axiosClient.interceptors.response.use(
+axiosCompany.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
@@ -32,4 +32,4 @@ axiosClient.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-export default axiosClient;
+export default axiosCompany;

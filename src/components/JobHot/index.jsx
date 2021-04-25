@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class JobHot extends Component {
   render() {
@@ -38,13 +38,10 @@ class JobHot extends Component {
                       <li>Html</li>
                       <li className="more-skill bg-primary">+3</li>
                     </ul>
-                    <p>
-                      At vero eos et accusamus et iusto odio dignissimos ducimus
-                      qui.
-                    </p>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui.</p>
                   </div>
                 </div>
-                <a href={"# "} className="btn btn-popular-jobs bt-1">
+                <a href={'# '} className="btn btn-popular-jobs bt-1">
                   View Detail
                 </a>
               </div>
@@ -52,9 +49,7 @@ class JobHot extends Component {
             <div className="col-md-4 col-sm-4">
               <div className="popular-jobs-container">
                 <div className="popular-jobs-box">
-                  <span className="popular-jobs-status bg-warning">
-                    Monthly
-                  </span>
+                  <span className="popular-jobs-status bg-warning">Monthly</span>
                   <h4 className="flc-rate">$570/Mo</h4>
 
                   <div className="popular-jobs-box">
@@ -70,13 +65,10 @@ class JobHot extends Component {
                       <li>Html</li>
                       <li className="more-skill bg-primary">+3</li>
                     </ul>
-                    <p>
-                      At vero eos et accusamus et iusto odio dignissimos ducimus
-                      qui.
-                    </p>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui.</p>
                   </div>
                 </div>
-                <a href={"# "} className="btn btn-popular-jobs bt-1">
+                <a href={'# '} className="btn btn-popular-jobs bt-1">
                   View Detail
                 </a>
               </div>
@@ -100,13 +92,10 @@ class JobHot extends Component {
                       <li>Html</li>
                       <li className="more-skill bg-primary">+3</li>
                     </ul>
-                    <p>
-                      At vero eos et accusamus et iusto odio dignissimos ducimus
-                      qui.
-                    </p>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui.</p>
                   </div>
                 </div>
-                <a href={"# "} className="btn btn-popular-jobs bt-1">
+                <a href={'# '} className="btn btn-popular-jobs bt-1">
                   View Detail
                 </a>
               </div>
