@@ -9,9 +9,7 @@ const Category = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       const categorylist = await categoryApi.getAllCategory();
-
       // console.log(categorylist);
-
       setFetchCategories(categorylist);
     };
     fetchCategories();
@@ -19,7 +17,7 @@ const Category = () => {
 
   var categories = fetchCategories.slice(0, visible).map((listcategories) => {
     return (
-      <p key={listcategories._id}>
+      <div key={listcategories._id}>
         <div className="col-md-3 col-sm-6 category-cus" style={{ float: 'left' }}>
           <div className="category-box" data-aos="fade-up">
             <div className="category-desc">
@@ -30,17 +28,16 @@ const Category = () => {
                 <h4>
                   <a href={'# '}>{listcategories.career.careerName}</a>
                 </h4>
-
                 <p>122 Jobs</p>
               </div>
             </div>
           </div>
         </div>
-      </p>
+      </div>
     );
   });
 
-  const handleSubmit = () => {
+  const handleLoadMore = () => {
     setVisible(visible + 4);
   };
 
@@ -60,7 +57,7 @@ const Category = () => {
               <div>{categories}</div>
               <div>
                 {visible < fetchCategories.length && (
-                  <a className="btn btn-primary" onClick={handleSubmit}>
+                  <a className="btn btn-primary" onClick={handleLoadMore}>
                     Load More
                   </a>
                 )}
