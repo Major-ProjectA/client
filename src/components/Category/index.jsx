@@ -9,6 +9,7 @@ const Category = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       const categorylist = await categoryApi.getAllCategory();
+
       // console.log(categorylist);
 
       setFetchCategories(categorylist);
