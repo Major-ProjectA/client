@@ -1,6 +1,25 @@
-import React from 'react';
+import axios from "axios";
+import React, { useState } from "react";
 
 function FormLogin() {
+  const [email, setEmail] = useState("");
+  const [passwordHash, setPasswordHash] = useState("");
+
+  async function login(e) {
+    e.preventDefault();
+
+    try {
+      const loginData = {
+        email,
+        passwordHash
+      };
+
+      await axios.post("http://localhost:5000/api/users/login", loginData);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   return (
     <>
       <section className="login-plane-sec">
@@ -13,12 +32,15 @@ function FormLogin() {
                 </div>
                 <div className="panel-body">
                   <img src={'/assets/img/Job-Listing.png'} className="img-responsive" alt="" />
-                  <form role="form">
+                  <form role="form" onSubmit={login}>
                     <fieldset>
                       <div className="form-group">
                         <input
                           className="form-control"
-                          placeholder="E-mail"
+                          type="email"
+                          placeholder="Email"
+                          onChange={(e) => setEmail(e.target.value)}
+                          value={email}
                           // name="email"
                           // type="email"
                           // autofocus
@@ -27,7 +49,10 @@ function FormLogin() {
                       <div className="form-group">
                         <input
                           className="form-control"
+                          type="password"
                           placeholder="Password"
+                          onChange={(e) => setPasswordHash(e.target.value)}
+                          value={passwordHash}
                           // name="password"
                           // type="password"
                           // value=""
@@ -44,9 +69,9 @@ function FormLogin() {
                           Remember Me
                         </label>
                       </div>
-                      <a href="# " className="btn btn-login">
-                        Sign Up
-                      </a>
+                      <button type="submit" className="btn btn-login">
+                        Sign In
+                      </button>
                     </fieldset>
                   </form>
                   <ul className="social-login">
