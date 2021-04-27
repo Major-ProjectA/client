@@ -6,10 +6,10 @@ const jobApi = {
     return axiosJob.get(urlJob, { params });
   },
 
-  // getCompany(id) {
-  //   const urlCompany = `/${id}`;
-  //   return axiosCompany.get(urlCompany);
-  // },
+  getJob(id) {
+    const urlJob = `/${id}`;
+    return axiosJob.get(urlJob);
+  },
 
   // addCompany(data) {
   //   const urlCompany = '/addnew';
