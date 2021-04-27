@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
-import FormLogin from '../../features/Auth/FormLogin';
+import FormLogin from '../../features/Form/FormLogin';
 
 function Login() {
   return (

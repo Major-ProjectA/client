@@ -193,58 +193,22 @@ class Navbars extends Component {
                   </a>
                 </li> */}
               </ul>
-              <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+
+              <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                 <li>
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle btn-employee"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      style={{ height: 'auto', width: 'auto', paddingTop: '0px', paddingTop: '3%' }}
-                    >
-                      For Employee
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="/login">
-                        Login
-                      </a>
-                      <a class="dropdown-item" href="/register-employee">
-                        Register
-                      </a>
-                    </div>
-                  </div>
+                  <a href="/register">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>Register
+                  </a>
                 </li>
-                <li className="left-br">
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-secondary dropdown-toggle btn-employers"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      style={{ height: 'auto', width: 'auto', paddingTop: '0px', paddingTop: '3%' }}
-                    >
-                      For Employers
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="/login">
-                        Login
-                      </a>
-                      <a class="dropdown-item" href="register-employers">
-                        Register
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        Post Recruitment
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        Find Employee
-                      </a>
-                    </div>
-                  </div>
+                <li>
+                  <a href="# ">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>Log out
+                  </a>
+                </li>
+                <li class="left-br">
+                  <a href="/login " class="signin">
+                    Log In Now
+                  </a>
                 </li>
               </ul>
             </div>

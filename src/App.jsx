@@ -4,9 +4,8 @@ import Home from './pages/Home';
 
 import Error from './pages/Error';
 import Login from './pages/Login';
-import RegisterEmployers from './pages/ReEmployers';
 
-import RegisterEmployee from './pages/ReEmployee';
+import Register from './pages/Register';
 import Jobs from './pages/Jobs';
 import JobList from './features/Job/JobList';
 
@@ -27,9 +26,7 @@ const App = () => {
 
         <Route path="/job-list" component={JobList} exact />
 
-        <Route path="/register-employers" component={RegisterEmployers} exact />
-
-        <Route path="/register-employee" component={RegisterEmployee} exact />
+        <Route path="/register" component={Register} exact />
 
         <Route path="/login" component={Login} exact />
 

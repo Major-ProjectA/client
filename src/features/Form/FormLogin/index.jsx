@@ -1,9 +1,9 @@
-import axios from "axios";
-import React, { useState } from "react";
+import axios from 'axios';
+import React, { useState } from 'react';
 
 function FormLogin() {
-  const [email, setEmail] = useState("");
-  const [passwordHash, setPasswordHash] = useState("");
+  const [email, setEmail] = useState('');
+  const [passwordHash, setPasswordHash] = useState('');
 
   async function login(e) {
     e.preventDefault();
@@ -11,10 +11,10 @@ function FormLogin() {
     try {
       const loginData = {
         email,
-        passwordHash
+        passwordHash,
       };
 
-      await axios.post("http://localhost:5000/api/users/login", loginData);
+      await axios.post('http://localhost:5000/api/users/login', loginData);
     } catch (err) {
       console.error(err);
     }
@@ -28,7 +28,9 @@ function FormLogin() {
             <div className="col-md-6 col-md-offset-3">
               <div className="login-panel panel panel-default">
                 <div className="panel-heading">
-                  <h3 className="panel-title">Login With Account</h3>
+                  <h3 className="panel-title" style={{ fontWeight: 'bold', color: 'green' }}>
+                    Login With Account
+                  </h3>
                 </div>
                 <div className="panel-body">
                   <img src={'/assets/img/Job-Listing.png'} className="img-responsive" alt="" />
@@ -69,11 +71,22 @@ function FormLogin() {
                           Remember Me
                         </label>
                       </div>
-                      <button type="submit" className="btn btn-login">
+                      <button type="submit" className="btn btn-login" style={{ height: '1%' }}>
                         Sign In
                       </button>
                     </fieldset>
                   </form>
+                  <div style={{ textAlign: 'center', marginTop: '-4%' }}>
+                    <a href="/register">
+                      <label style={{ cursor: 'pointer' }}>You don't have account ?</label>
+                      <label> &nbsp; || &nbsp;</label>
+                    </a>
+
+                    <a>
+                      <label style={{ cursor: 'pointer' }}>Forgot your password 🙂</label>
+                    </a>
+                  </div>
+
                   <ul className="social-login">
                     <li className="facebook-login">
                       <a href="# ">

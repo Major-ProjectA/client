@@ -1,13 +1,13 @@
 import React from 'react';
 import Footers from '../../components/Footers';
 import Navbars from '../../components/Navbars';
-import FormRegisterEmployee from '../../features/Auth/FormRegisterEmployee';
+import Register from '../../features/Form/FormRegister';
 
 function FRmployee() {
   return (
     <>
       <Navbars />
-      <FormRegisterEmployee />
+      <Register />
       <Footers />
     </>
   );
