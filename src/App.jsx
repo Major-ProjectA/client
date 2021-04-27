@@ -8,7 +8,7 @@ import RegisterEmployers from './pages/ReEmployers';
 
 import RegisterEmployee from './pages/ReEmployee';
 import Jobs from './pages/Jobs';
-import JobList from './features/JobList';
+import CompanyList from './features/CompanyList';
 
 // import FormJob from "../src/features/FormJob";
 
@@ -25,7 +25,7 @@ const App = () => {
       <Switch>
         <Route path="/" component={Home} exact />
 
-        <Route path="/job-list" component={JobList} exact />
+        <Route path="/company-list" component={CompanyList} exact />
 
         <Route path="/register-employers" component={RegisterEmployers} exact />
 

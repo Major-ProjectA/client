@@ -1,29 +1,29 @@
-import axiosClient from './axiosClient';
+import axiosCompany from './axiosCompany';
 
 const companyApi = {
   getAllCompany(params) {
     const urlCompany = '/';
-    return axiosClient.get(urlCompany, { params });
+    return axiosCompany.get(urlCompany, { params });
   },
 
   // getCompany(id) {
   //   const urlCompany = `/${id}`;
-  //   return axiosClient.get(urlCompany);
+  //   return axiosCompany.get(urlCompany);
   // },
 
   // addCompany(data) {
   //   const urlCompany = '/addnew';
-  //   return axiosClient.post(urlCompany, data);
+  //   return axiosCompany.post(urlCompany, data);
   // },
 
   // updateCompany(data) {
   //   const urlCompany = `//${data.id}`;
-  //   return axiosClient.patch(urlCompany, data);
+  //   return axiosCompany.patch(urlCompany, data);
   // },
 
   // removeCompany(id) {
   //   const urlCompany = `/${id}`;
-  //   return axiosClient.delete(urlCompany);
+  //   return axiosCompany.delete(urlCompany);
   // },
 };
 

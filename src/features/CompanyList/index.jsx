@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import Navbars from '../../components/Navbars';
 import Footer from '../../components/Footers';
-// import FormSearch from "../FormSearch";
 import companyApi from '../../api/companyApi';
 
 const JobList = () => {
@@ -10,11 +9,9 @@ const JobList = () => {
 
   useEffect(() => {
     const fetchCompanies = async () => {
-      const params = {
-        _limit: 8,
-      };
-      const companylist = await companyApi.getAllCompany(params);
-      console.log(companylist);
+      const companylist = await companyApi.getAllCompany();
+      // console.log(companylist);
+
       setFetchCompanies(companylist);
     };
     fetchCompanies();
@@ -31,24 +28,15 @@ const JobList = () => {
         }}
       >
         <div class="container">
-          <h1>Browse Jobs</h1>
+          <h1>Browse Companies</h1>
         </div>
       </section>
       {/* <div class="clearfix"></div> */}
-      {/* <FormSearch /> */}
       <section class="brows-job-category">
         <div class="container">
           <div class="row extra-mrg">
             <div class="wrap-search-filter">
               <form>
-                {/* <div class="col-md-3 col-sm-6">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Location: City, State, Zip"
-                  />
-                </div> */}
-
                 <div className="col-md-3 col-sm-6">
                   <input type="text" className="form-control" placeholder="Skills, Designations, Keyword" />
                 </div>
