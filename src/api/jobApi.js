@@ -1,9 +1,9 @@
-import axiosCompany from './axiosCompany';
+import axiosJob from './axiosJob';
 
-const companyApi = {
-  getAllCompany(params) {
-    const urlCompany = '/';
-    return axiosCompany.get(urlCompany, { params });
+const jobApi = {
+  getAllJob(params) {
+    const urlJob = '/';
+    return axiosJob.get(urlJob, { params });
   },
 
   // getCompany(id) {
@@ -27,4 +27,4 @@ const companyApi = {
   // },
 };
 
-export default companyApi;
+export default jobApi;
