@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Navbars from '../../../components/Navbars';
 import Footer from '../../../components/Footers';
-import jobApi from '../../../api/jobAPI';
+import jobApi from '../../../api/jobApi';
 
 const JobList = () => {
   const [fetchJobs, setFetchJobs] = useState([]);
@@ -12,6 +12,7 @@ const JobList = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       const joblist = await jobApi.getAllJob();
+
       // console.log(joblist);
 
       setFetchJobs(joblist);
