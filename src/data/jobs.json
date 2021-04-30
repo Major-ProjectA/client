@@ -1,0 +1,418 @@
+[
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b0"
+    },
+    "nameCom": "Google",
+    "imgCom": "https://www.mediafire.com/convkey/bc22/2ejyaz5up96eywa6g.jpg",
+    "position": "Compensation Analyst",
+    "salary": {
+      "from": 750,
+      "to": 800
+    },
+    "workingTime": "Full Time",
+    "location": {
+      "street": "27 Dinh Bo Linh",
+      "district": "Binh Thanh",
+      "city": "Ho Chi Minh"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "608b96d068245155ac353fa8"
+    },
+    "imgCom": "https://logoart.vn/blog/wp-content/uploads/2013/07/thiet-ke-logo-dep-mat-sao-kim-Logoart4-1.jpg",
+    "location": {
+      "street": "11 Mai Chi Tho",
+      "district": "02",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Store Manager",
+    "salary": {
+      "from": "721.31",
+      "to": "1002.22"
+    },
+    "workingTime": "Part Time",
+    "nameCom": "Starbucks VietNam"
+  },
+
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b7"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/a1f9/qe4ie51r4c3e6ri6g.jpg",
+    "location": {
+      "street": "189 Nguyen Thi Minh Khai",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "The English Center",
+    "position": "English Teacher",
+    "workingTime": "Internship",
+    "salary": {
+      "from": "510",
+      "to": "800"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b4"
+    },
+    "salary": {
+      "from": 800,
+      "to": 910
+    },
+    "imgCom": "https://www.mediafire.com/convkey/d530/2vwzvr13y1fnelm6g.jpg",
+    "position": "Sales Manager",
+    "nameCom": "TH True Milk",
+    "workingTime": "Full Time",
+    "location": {
+      "street": "219 Nguyen Dinh Chieu",
+      "district": "03",
+      "city": "Ho Chi Minh"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "6087dc40ba05d01e464d32a7"
+    },
+    "nameCom": "The Coffee House",
+    "imgCom": "http://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/the-coffee-house-logo-2.jpg",
+    "position": "Dispensing Beverages",
+    "salary": {
+      "from": 540,
+      "to": 950
+    },
+    "workingTime": "Full Time",
+    "location": {
+      "street": "35 Dien Bien Phu",
+      "district": "Binh Thanh",
+      "city": "Ho Chi Minh"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b1"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/5ad8/204hvep515ppox36g.jpg",
+    "location": {
+      "street": "08 Nguyen Van Trang",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Lecturer Marketing Department",
+    "salary": {
+      "from": "800",
+      "to": "1000"
+    },
+    "workingTime": "Part Time",
+    "nameCom": "HSU"
+  },
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b5"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/99aa/9445kni996pdo6f6g.jpg",
+    "location": {
+      "street": "150 Quang Trung",
+      "district": "12",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Virtue",
+    "position": "Administrative Manager",
+    "salary": {
+      "from": "700",
+      "to": "800"
+    },
+    "workingTime": "Part Time"
+  },
+
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b6"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/c6c8/cifotkk7nn5jx626g.jpg",
+    "location": {
+      "street": "81 Tran Nao",
+      "district": "02",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "AutoDesk",
+    "position": "Digital Marketing Manager",
+    "salary": {
+      "from": "750",
+      "to": "800"
+    },
+    "workingTime": "Full Time"
+  },
+
+  {
+    "_id": {
+      "$oid": "608995028591462558bb89b9"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/3815/8wxis8efja9isos6g.jpg",
+    "location": {
+      "street": "05 Tran Hung Dao",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Phuc Long",
+    "position": "Store Accountant",
+    "salary": {
+      "from": "563.33",
+      "to": "932.11"
+    },
+    "workingTime": "Full Time"
+  },
+
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b8"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/86ec/z7zqoipy2vg37zp6g.jpg",
+    "location": {
+      "street": "248A No Trang Long",
+      "district": "Binh Thanh",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Pharmacity",
+    "position": "Internal Communication Supervisor",
+    "salary": {
+      "from": "550",
+      "to": "1000"
+    },
+    "workingTime": "Full Time"
+  },
+
+  {
+    "_id": {
+      "$oid": "608b94d568245155ac353fa4"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/ced3/rphtvpf9wtvd4s56g.jpg",
+    "location": {
+      "street": "72 Le Quang Dinh",
+      "district": "Binh Thanh",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Skype",
+    "position": "Chief Executive Officer",
+    "salary": {
+      "from": "510",
+      "to": "700.21"
+    },
+    "workingTime": "Full Time"
+  },
+
+  {
+    "_id": {
+      "$oid": "608b8bd768245155ac353f9e"
+    },
+    "imgCom": "data:image/png;base64,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",
+    "location": {
+      "street": "Khu Cong Nghe Cao",
+      "district": "09",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Logistics Manager",
+    "salary": {
+      "from": "873.2",
+      "to": "2000"
+    },
+    "workingTime": "Full Time",
+    "nameCom": "SamSung"
+  },
+
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b2"
+    },
+    "salary": {
+      "from": "600",
+      "to": "850"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/c50e/xzzvbbirmb4fhez6g.jpg",
+    "location": {
+      "street": " 80B Nguyen Van Cu",
+      "district": "Long Bien",
+      "city": "Ha Noi"
+    },
+    "nameCom": "HonDa",
+    "position": "Investment Banker",
+    "workingTime": "Part Time"
+  },
+
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b9"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/3815/8wxis8efja9isos6g.jpg",
+    "location": {
+      "street": "643 Ta Quang Buu",
+      "district": "08",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Phuc Long",
+    "position": "Sales Staff",
+    "salary": {
+      "from": "400",
+      "to": "600"
+    },
+    "workingTime": "Full Time"
+  },
+
+  {
+    "_id": {
+      "$oid": "6087e112ba05d01e464d32a8"
+    },
+    "nameCom": "CGV",
+    "imgCom": "https://static.mservice.io/placebrand/s/momo-upload-api-190709165424-636982880641515855.jpg",
+    "position": "Media Sales",
+    "salary": {
+      "from": 460,
+      "to": 820
+    },
+    "workingTime": "Full Time",
+    "location": {
+      "street": "28 Thanh Thai",
+      "district": "10",
+      "city": "Ho Chi Minh"
+    }
+  },
+
+  {
+    "_id": {
+      "$oid": "608245028591462558bb89b3"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/4c0c/ugv0j02uc0nwtuh6g.jpg",
+    "nameCom": "Microsoft",
+    "location": {
+      "street": "312 Nguyen Luong Bang",
+      "district": "07",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Service Representative",
+    "salary": {
+      "from": "835",
+      "to": "1000"
+    },
+    "workingTime": "Freelancer"
+  },
+
+  {
+    "_id": {
+      "$oid": "6088c8018b5461b7968a7d2b"
+    },
+    "imgCom": "https://images.careerbuilder.vn/employer_folders/lot7/79117/148x148/171124tảixuống.jpg",
+    "location": {
+      "street": "421 Ky Con",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "TH True Milk",
+    "position": "Food Center Monitoring",
+    "salary": {
+      "from": "742.22",
+      "to": "899.12"
+    },
+    "workingTime": "Part Time"
+  },
+
+  {
+    "_id": {
+      "$oid": "608b8ae568245155ac353f9d"
+    },
+    "imgCom": "https://images.careerbuilder.vn/employers/14983/148x148/145312logojb_nendo-1.png",
+    "location": {
+      "street": "55 Hoang Dieu",
+      "district": "Ba Dinh",
+      "city": "Ha Noi"
+    },
+    "position": "Trade Marketing Specialist",
+    "salary": {
+      "from": "736.2",
+      "to": "912.2"
+    },
+    "workingTime": "Part Time",
+    "nameCom": "Jollibee"
+  },
+
+  {
+    "_id": {
+      "$oid": "608b8cec68245155ac353fa0"
+    },
+    "imgCom": "https://images.careerbuilder.vn/employers/55985/148x148/92258logoredbull.png",
+    "location": {
+      "street": "Khu Cong Nghe Cao",
+      "district": "09",
+      "city": "Ho Chi Minh"
+    },
+    "position": "HR & GA Staff",
+    "salary": {
+      "from": "642.3",
+      "to": "983.2"
+    },
+    "workingTime": "Full Time",
+    "nameCom": "Red Bull"
+  },
+
+  {
+    "_id": {
+      "$oid": "608b963268245155ac353fa5"
+    },
+    "imgCom": "https://www.mediafire.com/convkey/c50e/xzzvbbirmb4fhez6g.jpg",
+    "location": {
+      "street": "Khu Cong Nghe Cao",
+      "district": "09",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Financial Analyst",
+    "salary": {
+      "from": "662.3",
+      "to": "942.22"
+    },
+    "workingTime": "Full Time",
+    "nameCom": "Honda"
+  },
+
+  {
+    "_id": {
+      "$oid": "608b96d068245155ac353fa6"
+    },
+    "imgCom": "https://images.careerbuilder.vn/employer_folders/lot9/221789/148x148/103316momopink-logo.png",
+    "location": {
+      "street": "62 Hai Ba Trung",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Partnership Manager",
+    "salary": {
+      "from": "822.3",
+      "to": "924.22"
+    },
+    "workingTime": "Full Time",
+    "nameCom": "MoMo"
+  },
+
+  {
+    "_id": {
+      "$oid": "608b96d068245155ac353fa7"
+    },
+    "imgCom": "https://images.careerbuilder.vn/employer_folders/lot2/231212/148x148/150219logo.png",
+    "location": {
+      "street": "37 Ton Duc Thang",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "position": "Marketing Executive",
+    "salary": {
+      "from": "278.31",
+      "to": "872.22"
+    },
+    "workingTime": "Part Time",
+    "nameCom": "ROHTO"
+  }
+]

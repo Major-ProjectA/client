@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosJob = axios.create({
-  baseURL: 'http://localhost:5000/api/jobs',
+  baseURL: 'http://localhost:5000/api',
   headers: {
     'Content-type': 'application/json',
   },

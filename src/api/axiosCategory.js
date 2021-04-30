@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosCategory = axios.create({
-  baseURL: 'http://localhost:5000/api/categories',
+  baseURL: 'http://localhost:5000/api/',
   headers: {
     'Content-type': 'application/json',
   },
