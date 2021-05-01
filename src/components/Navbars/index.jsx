@@ -185,7 +185,7 @@ class Navbars extends Component {
                   <a href={'# '}>Blog</a>
                 </li>
                 <li>
-                  <a href={'# '}>Create CV</a>
+                  <a href={'/create-cv'}>Create CV</a>
                 </li>
                 {/* <li>
                   <a>

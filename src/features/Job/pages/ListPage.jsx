@@ -45,7 +45,7 @@ function ListPage({ match }) {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        const res = await fetch('api/jobs?page=${page}');
+        const res = await fetch(`api/jobs?page=${page}`);
         const { data, pages: totalPages } = await res.json();
 
         setPages(totalPages);
