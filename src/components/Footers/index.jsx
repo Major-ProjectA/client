@@ -185,7 +185,7 @@ function Footers() {
                     <input type="text" className="form-control" placeholder="Email" />
                     <textarea className="form-control" placeholder="Message" />
                     <button type="submit" className="btn btn-primary">
-                      Login
+                      Submit
                     </button>
                   </form>
                 </div>
@@ -253,7 +253,7 @@ function Footers() {
 
                             <div className="center">
                               <button type="submit" id="login-btn" className="submit-btn">
-                                Login
+                                Submit
                               </button>
                             </div>
                           </div>
@@ -311,90 +311,6 @@ function Footers() {
           </div>
         </div>
       </div>
-      {/* <button
-            className="w3-button w3-teal w3-xlarge w3-right"
-            // onclick={openRightMenu()}
-          >
-            <i className="spin fa fa-cog" aria-hidden="true"></i>
-          </button> */}
-      {/* <div
-            className="w3-sidebar w3-bar-block w3-card-2 w3-animate-right"
-            style={{ display: "none;right:0" }}
-            id="rightMenu"
-          >
-            <button
-              // onclick={closeRightMenu()}
-              className="w3-bar-item w3-button w3-large"
-            >
-              Close &times;
-            </button>
-            <ul id="styleOptions" title="switch styling">
-              <li>
-                <a
-                  href={"# "}
-                  className="cl-box blue"
-                  data-theme="colors/blue-style"
-                  dangerouslySetInnerHTML={{ __html: "foo" }}
-                />
-              </li>
-              <li>
-                <a
-                  href={"# "}
-                  dangerouslySetInnerHTML={{ __html: "foo" }}
-                  className="cl-box red"
-                  data-theme="colors/red-style"
-                />
-              </li>
-              <li>
-                <a
-                  href={"# "}
-                  dangerouslySetInnerHTML={{ __html: "foo" }}
-                  className="cl-box purple"
-                  data-theme="colors/purple-style"
-                />
-              </li>
-              <li>
-                <a
-                  href={"# "}
-                  dangerouslySetInnerHTML={{ __html: "foo" }}
-                  className="cl-box green"
-                  data-theme="colors/green-style"
-                />
-              </li>
-              <li>
-                <a
-                  href={"# "}
-                  dangerouslySetInnerHTML={{ __html: "foo" }}
-                  className="cl-box dark-red"
-                  data-theme="colors/dark-red-style"
-                />
-              </li>
-              <li>
-                <a
-                  href={"# "}
-                  dangerouslySetInnerHTML={{ __html: "foo" }}
-                  className="cl-box orange"
-                  data-theme="colors/orange-style"
-                />
-              </li>
-              <li>
-                <a
-                  href={"# "}
-                  dangerouslySetInnerHTML={{ __html: "foo" }}
-                  className="cl-box sea-blue"
-                  data-theme="colors/sea-blue-style "
-                />
-              </li>
-              <li>
-                <a
-                  href={"# "}
-                  dangerouslySetInnerHTML={{ __html: "foo" }}
-                  className="cl-box pink"
-                  data-theme="colors/pink-style"
-                />
-              </li>
-            </ul>
-          </div> */}
     </>
   );
 }
