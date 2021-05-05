@@ -6,7 +6,7 @@ function JobAPI() {
   // const [callback, setCallBack] = useState(false);
 
   const [location, setLocation] = useState('');
-  // const [categories, setCategories] = useState('');
+  const [category, setCategory] = useState('');
   // const [sort, setSort] = useState('');
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
@@ -15,18 +15,18 @@ function JobAPI() {
 
   useEffect(() => {
     const getJobs = async () => {
-      const res = await axios.get(`/api/jobs?limit=${page * 6}&position[regex]=${search}`);
+      const res = await axios.get(`/api/jobs?limit=${page * 6}&${category}&position[regex]=${search}`);
       setJobs(res.data.jobs);
       // setJobs(res.data.result);
       // console.log(res.data.jobs);
     };
     getJobs();
-  }, [search, page, location]);
+  }, [page, category, search, location]);
 
   return {
     jobs: [jobs, setJobs],
     // callback: [callback, setCallBack],
-    // categories: [categories, setCategories],
+    category: [category, setCategory],
     // sort: [sort, setSort],
     search: [search, setSearch],
     page: [page, setPage],

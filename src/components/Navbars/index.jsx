@@ -18,13 +18,6 @@ class Navbars extends Component {
             </div>
             <div className="collapse navbar-collapse" id="navbar-menu">
               <ul className="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-                {/* <li>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Find Freelancer "
-                  />
-                </li> */}
                 <li className="dropdown megamenu-fw">
                   <a href={'# '} className="dropdown-toggle" data-toggle="dropdown">
                     Brows
@@ -38,33 +31,36 @@ class Navbars extends Component {
                           <div className="content">
                             <ul className="menu-col">
                               <li>
-                                <a href={'/'}>Home Page</a>
+                                <a href={'/'}>Home</a>
                               </li>
                               <li>
-                                <a href={'# '}>Freelancing</a>
+                                <a href={'/'}>About</a>
                               </li>
                               <li>
-                                <a href={'# '}>Sign In / Sign Up</a>
+                                <a href={'# '}>Blog</a>
                               </li>
                               <li>
-                                <a href={'# '}>Search Job</a>
+                                <a href={'# '}>Interview</a>
                               </li>
                               <li>
-                                <a href={'# '}>Accordion</a>
+                                <a href={'# '}>Wage</a>
                               </li>
                               <li>
-                                <a href={'# '}>Tab Style</a>
+                                <a href={'/login'}>Login</a>
+                              </li>
+                              <li>
+                                <a href={'/register'}>Register</a>
                               </li>
                             </ul>
                           </div>
                         </div>
                         <div className="col-menu col-md-3">
-                          <h6 className="title">For Candidate</h6>
+                          <h6 className="title">For Employee</h6>
 
                           <div className="content">
                             <ul className="menu-col">
                               <li>
-                                <a href={'# '}>Browse Jobs</a>
+                                <a href={'/jobs'}>Browse Jobs</a>
                               </li>
                               <li>
                                 <a href={'# '}>Browse Companies</a>
@@ -97,7 +93,7 @@ class Navbars extends Component {
                           </div>
                         </div>
                         <div className="col-menu col-md-3">
-                          <h6 className="title">For Employer</h6>
+                          <h6 className="title">For Employers</h6>
 
                           <div className="content">
                             <ul className="menu-col">
@@ -135,9 +131,7 @@ class Navbars extends Component {
                           </div>
                         </div>
                         <div className="col-menu col-md-3">
-                          <h6 className="title">
-                            Extra Pages <span className="new-offer">New</span>
-                          </h6>
+                          <h6 className="title">{/* Extra Pages <span className="new-offer">New</span> */}For Admin</h6>
 
                           <div className="content">
                             <ul className="menu-col">

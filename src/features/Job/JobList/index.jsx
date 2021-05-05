@@ -38,7 +38,6 @@ function JobList({ job }) {
           </div>
           <div class="col-md-2 col-sm-2">
             <div class="brows-job-link">
-              {/* <a href="job-detail.html" class="btn btn-default"></a> */}
               <Link className="btn_view" to={`detail/${job._id}`}>
                 View Detail
               </Link>

@@ -193,13 +193,15 @@ function Footers() {
             </div>
           </div>
         </div>
-        <div className="row copyright">
+        {/* <div className="row copyright">
           <div className="container">
-            <p>{/* <a href={"# "}>Design By Nguyễn Luân</a> */}Certified by</p>
+            <p>
+              <a href={'# '}>Design By Nguyễn Luân</a>Certified by
+            </p>
             &nbsp;
             <img src={'/assets/img/gov-registed.png'} width="100" alt="gov-registed" />
           </div>
-        </div>
+        </div> */}
       </footer>
 
       <div className="clearfix"></div>

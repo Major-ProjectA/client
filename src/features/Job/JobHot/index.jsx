@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 class JobHot extends Component {
   render() {
     return (
-      // <section className="wp-process">
-      //   </section>
       <>
         <div className="container">
           <div className="row">
@@ -101,7 +99,7 @@ class JobHot extends Component {
               </div>
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div className="col-md-12 col-sm-12">
               <div className="text-center">
                 <a href="# " className="btn btn-primary">
@@ -109,7 +107,7 @@ class JobHot extends Component {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="clearfix"></div>
         <br />
