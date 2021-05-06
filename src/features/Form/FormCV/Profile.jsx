@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
-import { TextField, Button, Container } from '@material-ui/core';
-import { Card, CardHeader, CardContent } from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import EmailIcon from '@material-ui/icons/Email';
-import PhoneIcon from '@material-ui/icons/Phone';
-import LanguageIcon from '@material-ui/icons/Language';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import { Row, Col } from 'react-bootstrap';
-import { Paper, withStyles, Grid } from '@material-ui/core';
 
 class Profile extends Component {
   continue = (e) => {
