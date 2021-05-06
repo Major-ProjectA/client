@@ -44,7 +44,9 @@ function Filters() {
               <select className="form-control" name={category} value={category} onChange={handleCategory}>
                 <option value="">All Categories</option>
                 {categories.map((category) => (
-                  <option value={'category=' + category._id}>{category.career.careerName}</option>
+                  <option value={'category=' + category._id} key={category._id}>
+                    {category.career.careerName}
+                  </option>
                 ))}
               </select>
             </div>

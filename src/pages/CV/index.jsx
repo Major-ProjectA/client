@@ -1,18 +1,18 @@
 import React from 'react';
 import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
-import FormCV from '../../features/Form/FormCV';
+import Resume from '../../features/Form/FormCV/Resume';
 
-function Login() {
+function CV() {
   return (
     <>
       <Navbars />
-      <br /> <br /> <br /> <br />
-      <FormCV />
-      <br /> <br /> <br />
+
+      <Resume />
+
       <Footers />
     </>
   );
 }
 
-export default Login;
+export default CV;
