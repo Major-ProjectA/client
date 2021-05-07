@@ -3,15 +3,21 @@ import { GlobalState } from '../../../GlobalState';
 
 function Filters() {
   const state = useContext(GlobalState);
-  const [categories] = state.categoriesABI.categories;
+  const [categories] = state.categoriesAPI.categories;
 
   const [category, setCategory] = state.jobAPI.category;
-  const [location, setLocation] = state.jobAPI.location;
   const [search, setSearch] = state.jobAPI.search;
 
   const handleCategory = (e) => {
-    // setCategory(e.target.value);
+    setCategory(e.target.value);
     // setSearch('');
+    console.log(e.target.value);
+  };
+
+  const handleLocation = (e) => {
+    setCategory(e.target.value);
+    // setSearch('');
+    console.log(e.target.value);
   };
 
   return (
@@ -30,21 +36,19 @@ function Filters() {
             </div>
 
             <div className="col-md-3 col-sm-6">
-              <select className="form-control" value={location} name={location}>
+              <select className="form-control" name="location" onChange={handleLocation}>
                 <option value="">All City</option>
-                {/* {jobs.map((job) => (
-                  <option value={'Ho Chi Minh' + job._id} key={job._id}>
-                    {job.nameCom}
-                  </option>
-                ))} */}
+
+                <option value={'location.city=Ho Chi Minh'}>Ho Chi Minh</option>
+                <option value={'location.city=Ha Noi'}>Ha Noi</option>
               </select>
             </div>
 
             <div className="col-md-3 col-sm-6">
-              <select className="form-control" name={category} value={category} onChange={handleCategory}>
+              <select className="form-control" name="category" value={category} onChange={handleCategory}>
                 <option value="">All Categories</option>
                 {categories.map((category) => (
-                  <option value={'category=' + category._id} key={category._id}>
+                  <option value={'category=' + category.career.careerName} key={category._id}>
                     {category.career.careerName}
                   </option>
                 ))}
@@ -52,10 +56,9 @@ function Filters() {
             </div>
 
             <div className="col-md-3 col-sm-6">
-              {/* <label>&nbsp;City:</label> */}
               <select id="choose-filter" className="form-control">
-                <option value="HCM">Ascending</option>
-                <option value="HN">Descending</option>
+                <option value="">Ascending</option>
+                <option value="">Descending</option>
               </select>
             </div>
           </form>

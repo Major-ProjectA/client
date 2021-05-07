@@ -3,35 +3,46 @@ import axios from 'axios';
 
 function JobAPI() {
   const [jobs, setJobs] = useState([]);
-  // const [callback, setCallBack] = useState(false);
-
-  const [location, setLocation] = useState('');
+  const [jobhot, setJobHot] = useState([]);
+  const [callback, setCallBack] = useState(false);
   const [category, setCategory] = useState('');
-  // const [sort, setSort] = useState('');
+  const [sort, setSort] = useState('');
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
-
-  // const [result, setResult] = useState(0);
+  const [location, setLocation] = useState('');
+  const [result, setResult] = useState(0);
 
   useEffect(() => {
     const getJobs = async () => {
-      const res = await axios.get(`/api/jobs?limit=${page * 6}&${category}&position[regex]=${search}`);
+      const res = await axios.get(`/api/jobs?limit=${page * 6}&${category}&${sort}&position[regex]=${search}`);
       setJobs(res.data.jobs);
-      // setJobs(res.data.result);
+      setResult(res.data.result);
       // console.log(res.data.jobs);
+      // console.log(res);
     };
     getJobs();
-  }, [page, category, search, location]);
+  }, [category, location, search, page]);
+
+  useEffect(() => {
+    const getJobHot = async () => {
+      const res = await axios.get(`/api/jobs/jobhot?limit=${page * 3}&salary.to[regex]=1000`);
+      setJobHot(res.data.jobhot);
+      // setResult(res.data.result);;
+      // console.log(res);
+    };
+    getJobHot();
+  }, [page]);
 
   return {
     jobs: [jobs, setJobs],
-    // callback: [callback, setCallBack],
+    jobhot: [jobhot, setJobHot],
+    callback: [callback, setCallBack],
     category: [category, setCategory],
-    // sort: [sort, setSort],
+    sort: [sort, setSort],
     search: [search, setSearch],
     page: [page, setPage],
     location: [location, setLocation],
-    // result: [result, setResult],
+    result: [result, setResult],
   };
 }
 

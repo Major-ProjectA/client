@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+
 function CategoriesAPI() {
   const [categories, setCategories] = useState([]);
-  //   const [callback, setCallback] = useState(false);
+  // const [callback, setCallback] = useState(false);
 
   useEffect(() => {
     const getCategories = async () => {

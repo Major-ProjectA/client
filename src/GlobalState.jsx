@@ -7,7 +7,7 @@ export const GlobalState = createContext();
 export const DataProvider = ({ children }) => {
   const state = {
     jobAPI: JobAPI(),
-    categoriesABI: CategoriesAPI(),
+    categoriesAPI: CategoriesAPI(),
   };
 
   return <GlobalState.Provider value={state}>{children}</GlobalState.Provider>;

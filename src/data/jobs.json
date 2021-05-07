@@ -431,7 +431,7 @@
     },
     "certification": "Degree: Intermediate",
     "salary": {
-      "from": "835",
+      "from": "850",
       "to": "1000"
     },
     "requirement": "Probationary period: 02 month, Age: 23 - 35",
@@ -444,7 +444,7 @@
       "city": "Ho Chi Minh"
     },
     "nameCom": "Microsoft",
-    "siteCom": "#",
+    "siteCom": "microsoft.com",
     "thumbnail": "http://tech.nomudas.com/wp/wp-content/upload/2018/04/Google-Wharton-University-of-Pensilvania.jpg",
     "category": "Information Technology",
     "createdAt": {
