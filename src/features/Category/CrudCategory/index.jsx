@@ -33,7 +33,7 @@ function CrudCategory() {
       setCateIcon('');
       setCateTotal(0);
 
-      // setOnEdit(false);
+      setOnEdit(false);
       setCallBack(!callback);
 
       // console.log(res);
