@@ -1,22 +1,55 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../../context/authcontext';
+import { useHttpClient } from "../../../hooks/http-hook";
+import {
+  VALIDATOR_EMAIL,
+  VALIDATOR_MINLENGTH,
+  VALIDATOR_REQUIRE,
+} from "../../../util/Validator";
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
-function FormLogin() {
+const FormLogin = () => {
+  const auth = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [passwordHash, setPasswordHash] = useState('');
+  const { sendRequest } = useHttpClient();
+  const [error, setError] = useState("");
 
   async function login(e) {
     e.preventDefault();
 
     try {
-      const loginData = {
-        email,
-        passwordHash,
-      };
-
-      await axios.post('http://localhost:5000/api/users/login', loginData);
+      const responseData = await sendRequest(
+        "http://localhost:5000/api/users/login",
+        "POST",
+        JSON.stringify({
+          email,
+          passwordHash,
+        }),
+        {
+          "Content-Type": "application/json",
+        }
+      );
+      console.log(responseData);
+      //alert("Login successfully.");
+      Swal.fire('Awesome!', "You're successfully logged in!", 'success').then(
+        (result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            
+          }
+        }
+      );
+      auth.login(responseData.user.id);
+      auth.authorization(responseData.user.userName);
+      auth.authorization(responseData.user.role);
     } catch (err) {
       console.error(err);
+      setError("Your email or password is not correct.");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
     }
   }
 
@@ -43,6 +76,7 @@ function FormLogin() {
                           placeholder="Email"
                           onChange={(e) => setEmail(e.target.value)}
                           value={email}
+                          required
                           // name="email"
                           // type="email"
                           // autofocus
@@ -55,6 +89,8 @@ function FormLogin() {
                           placeholder="Password"
                           onChange={(e) => setPasswordHash(e.target.value)}
                           value={passwordHash}
+                          validators={[VALIDATOR_EMAIL()]}
+                          required
                           // name="password"
                           // type="password"
                           // value=""
@@ -71,36 +107,20 @@ function FormLogin() {
                           Remember Me
                         </label>
                       </div>
+                      <div>
+                        {error && <span className="error-message">{error}</span>}
+                      </div>
                       <button type="submit" className="btn btn-login" style={{ height: '1%' }}>
                         Sign In
                       </button>
                     </fieldset>
                   </form>
                   <div style={{ textAlign: 'center', marginTop: '-4%' }}>
-                    <a href="/register">
-                      <label style={{ cursor: 'pointer' }}>You don't have account ?</label>
-                      <label> &nbsp; || &nbsp;</label>
-                    </a>
-
                     <a>
-                      <label style={{ cursor: 'pointer' }}>Forgot your password 🙂</label>
+                      <p>Do not have an account? <Link to="/register"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></p>
                     </a>
                   </div>
-
-                  <ul className="social-login">
-                    <li className="facebook-login">
-                      <a href="# ">
-                        <i className="fa fa-facebook"></i>Facebook
-                      </a>
-                    </li>
-                    <span>OR</span>
-                    <li className="google-plus-login">
-                      <a href="# ">
-                        <i className="fa fa-google-plus"></i>Google
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+               </div>
               </div>
             </div>
           </div>

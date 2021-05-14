@@ -3,7 +3,7 @@ import { TextField, Button } from '@material-ui/core';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 
-class Education extends Component {
+class Project extends Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -20,7 +20,7 @@ class Education extends Component {
       <>
         <section class="inner-header-title blank">
           <div class="container">
-            <h1>Education Details</h1>
+            <h1>Project Developed</h1>
           </div>
         </section>
   
@@ -45,9 +45,9 @@ class Education extends Component {
                       <input 
                         type="text" 
                         class="form-control" 
-                        placeholder="College"
-                        defaultValue={values.college}
-                        onChange={handleChange('college')}
+                        placeholder="Title"
+                        defaultValue={values.title}
+                        onChange={handleChange('title')}
                       />
                     </div>
                   </div>
@@ -57,45 +57,21 @@ class Education extends Component {
                       <input 
                         type="text" 
                         class="form-control" 
-                        placeholder="Qualification"
-                        defaultValue={values.qualification}
-                        onChange={handleChange('qualification')}
+                        placeholder="Link Project"
+                        defaultValue={values.linkProject}
+                        onChange={handleChange('linkProject')}
                       />
                     </div>
                   </div>
 
-                  <div class="col-md-6 col-sm-6">
-                    <div class="input-group">
-                      <input 
-                        type="date" 
-                        class="form-control" 
-                        placeholder="From Year"
-                        defaultValue={values.fromyear}
-                        onChange={handleChange('fromyear')}
-                      />
-                    </div>
-                  </div>
-  
-                  <div class="col-md-6 col-sm-6">
-                    <div class="input-group">
-                      <input 
-                        type="date" 
-                        class="form-control" 
-                        placeholder="To Year" 
-                        defaultValue={values.toyear}
-                        onChange={handleChange('toyear')}
-                      />
-                    </div>
-                  </div>
-  
                   <div class="col-md-12 col-sm-12">
                     <div class="input-group">
                       <input 
                         type="text" 
                         class="form-control" 
-                        placeholder="Description"
-                        defaultValue={values.description}
-                        onChange={handleChange('description')}
+                        placeholder="Project Description"
+                        defaultValue={values.projectDescription}
+                        onChange={handleChange('projectDescription')}
                       />
                     </div>
                   </div>
@@ -129,7 +105,7 @@ class Education extends Component {
                 </div>
               </div>
             </div>
-            <p className="text-center text-muted">Step 2 / 6</p>
+            <p className="text-center text-muted">Step 3 / 6</p>
           </div>
         </div>
       </>
@@ -137,4 +113,4 @@ class Education extends Component {
   }
 };
 
-export default Education;
+export default Project;

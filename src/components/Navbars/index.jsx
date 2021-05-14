@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../features/context/authcontext';
 
 import './Navbars.css';
 
-class Navbars extends Component {
-  render() {
+const Navbars = () => {
+  const auth = useContext(AuthContext);
+  console.log(auth);
     return (
       <>
         <nav className="navbar navbar-default navbar-fixed navbar-light white bootsnav">
@@ -12,9 +15,9 @@ class Navbars extends Component {
               <i className="fa fa-bars"></i>
             </button>
             <div className="navbar-header">
-              <a className="navbar-brand" href="/">
+              <NavLink className="navbar-brand" to="/">
                 <img src={'../../assets/img/Job-Listing.png'} className="logo logo-scrolled" alt="" />
-              </a>
+              </NavLink>
             </div>
             <div className="collapse navbar-collapse" id="navbar-menu">
               <ul className="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
@@ -173,37 +176,51 @@ class Navbars extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a href={'/jobs'}>Find Job</a>
+                  <NavLink to='/jobs'>Find Job</NavLink>
                 </li>
                 <li>
                   <a href={'# '}>Blog</a>
                 </li>
-                <li>
-                  <a href={'/create-cv'}>Create CV</a>
+                {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
+                  <li>
+                    <NavLink to='/create-cv'>Create CV</NavLink>
                 </li>
-                {/* <li>
-                  <a>
-                    <p style={{ color: 'green', fontWeight: 'bold' }}>HELLO USER</p>
-                  </a>
-                </li> */}
+                )}        
+                {/* {auth.isLoggedIn && auth.isEmployer (
+                  <li>
+                    <NavLink to='/'>Create Job</NavLink>
+                </li>
+                )}  */}
+                {/* {auth.isLoggedIn && auth.isAdmin (
+                  <li>
+                    <NavLink to='/'>Manage</NavLink>
+                </li>
+                )}       */}
+                {/* {auth.isLoggedIn && (
+                    <li>
+                      <a>
+                        <p style={{ color: 'green', fontWeight: 'bold' }}>HELLO {auth.userName}</p>
+                      </a>
+                  </li>
+                )} */}
+                
               </ul>
 
               <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                <li>
-                  <a href="/register">
-                    <i class="fa fa-pencil" aria-hidden="true"></i>Register
-                  </a>
-                </li>
-                <li>
-                  <a href="# ">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>Log out
-                  </a>
-                </li>
-                <li class="left-br">
-                  <a href="/login " class="signin">
-                    Log In Now
-                  </a>
-                </li>
+                {auth.isLoggedIn && (
+                  <li class="left-br">
+                    <button class="signin" type="button" onClick={auth.logout}>
+                      <i class="fa fa-sign-in" aria-hidden="true"></i>Log out
+                    </button>
+                  </li>
+                )}
+                {!auth.isLoggedIn && (
+                  <li class="left-br">
+                    <NavLink to="/login" class="signin">
+                      Log In Now
+                    </NavLink>
+                  </li>
+                )}      
               </ul>
             </div>
           </div>
@@ -211,7 +228,6 @@ class Navbars extends Component {
         <div className="clearfix"></div>
       </>
     );
-  }
 }
 
 export default Navbars;
