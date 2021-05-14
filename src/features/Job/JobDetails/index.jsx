@@ -10,6 +10,7 @@ function DetailPage() {
   const params = useParams();
   const state = useContext(GlobalState);
   const [jobs] = state.jobAPI.jobs;
+  const [jobhot] = state.jobAPI.jobhot;
   const [detailJob, setDetailJob] = useState([]);
   console.log(params);
 
@@ -18,8 +19,12 @@ function DetailPage() {
       jobs.forEach((job) => {
         if (job._id === params.id) setDetailJob(job);
       });
+
+      jobhot.forEach((job) => {
+        if (job._id === params.id) setDetailJob(job);
+      });
     }
-  }, [jobs, params]);
+  }, [jobs, jobhot, params]);
 
   console.log(detailJob);
 
@@ -39,14 +44,21 @@ function DetailPage() {
         </div>
       </section>
       <section class="detail-desc">
-        <div class="container white-shadow">
+        <div class="container white-shadow" style={{ backgroundColor: '#ECECEC' }}>
           <div class="row">
             <div class="detail-pic">
               <img src={detailJob.imgCom} class="img" alt="" />
             </div>
 
             <div class="detail-status">
-              <span>2 Days Ago</span>
+              <span style={{ float: 'right', width: '100%', backgroundColor: '#FF7F24', color: '#F0FFFF' }}>
+                Start: {detailJob.startDay.split('T')[0]}
+              </span>{' '}
+              <br />
+              <br />
+              <span style={{ float: 'right', width: '100%', backgroundColor: '#FF3030', color: '#F0FFFF' }}>
+                End: {detailJob.endDay.split('T')[0]}
+              </span>
             </div>
           </div>
 
@@ -54,18 +66,20 @@ function DetailPage() {
             <div class="col-md-8 col-sm-8">
               <div class="detail-desc-caption">
                 <h4 style={{ color: '#33CC33', fontWeight: 'bold' }}>{detailJob.nameCom}</h4>
-                <span class="designation">{detailJob.position}</span>
+                <span class="designation">
+                  <u>{detailJob.position}</u>
+                </span>
                 <p style={{ textAlign: 'justify' }}>{detailJob.detail}</p>
                 <ul>
                   <li>
                     <i class="fa fa-briefcase"></i>
                     <span>{detailJob.workingTime}</span>
                   </li>
-                  {/* <li>
+                  <li>
                     <i class="fa fa-flask"></i>
-                    <span>3 Year Experience</span>
-                  </li> */}
-                  <li style={{ float: 'left' }}>
+                    <span>{detailJob.exp}</span>
+                  </li>
+                  <li>
                     <i class="fa fa-money"></i>
                     <span>
                       {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(
@@ -76,6 +90,10 @@ function DetailPage() {
                         detailJob.salary.to
                       )}
                     </span>
+                  </li>
+                  <li>
+                    <i class="far fa-smile-beam"></i>
+                    <span>{detailJob.numofRecruit} People</span>
                   </li>
                 </ul>
               </div>
@@ -88,24 +106,34 @@ function DetailPage() {
                   <li>
                     <i class="fa fa-map-marker"></i>
                     <span>
-                      {detailJob.location.street}, {detailJob.location.district}, {detailJob.location.city}
+                      <i>
+                        {detailJob.location.street}, {detailJob.location.district}, {detailJob.location.city}
+                      </i>
                     </span>
                   </li>
                   <li>
                     <i class="fa fa-globe"></i>
-                    <span>{detailJob.siteCom}</span>
+                    <span>
+                      <i>{detailJob.siteCom}</i>
+                    </span>
                   </li>
                   <li>
                     <i class="fa fa-envelope"></i>
-                    <span>{detailJob.contact.contactEmail}</span>
+                    <span>
+                      <i>{detailJob.contact.contactEmail}</i>
+                    </span>
                   </li>
                   <li>
                     <i class="fa fa-phone"></i>
-                    <span>{detailJob.contact.contactPhone}</span>
+                    <span>
+                      <i>{detailJob.contact.contactPhone}</i>
+                    </span>
                   </li>
                   <li>
                     <i class="fa fa-user"></i>
-                    <span>{detailJob.contact.contactName}</span>
+                    <span>
+                      <i>{detailJob.contact.contactName}</i>
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -162,39 +190,27 @@ function DetailPage() {
       <section class="full-detail-description full-detail">
         <div class="container">
           <div class="row row-bottom">
-            <h2 class="detail-title" style={{ fontWeight: 'bold' }}>
+            <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
               About a Job
             </h2>
-            {/* <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-            </p> */}
             <ul class="detail-list">
               <li>{detailJob.requirement}</li>
             </ul>
           </div>
 
           <div class="row row-bottom">
-            <h2 class="detail-title" style={{ fontWeight: 'bold' }}>
+            <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
               Benefit
             </h2>
-            {/* <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-            </p> */}
             <ul class="detail-list">
               <li>{detailJob.benefit}</li>
             </ul>
           </div>
 
           <div class="row row-bottom">
-            <h2 class="detail-title" style={{ fontWeight: 'bold' }}>
+            <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
               Other Information
             </h2>
-            {/* <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-            </p> */}
             <ul class="detail-list">
               <li>{detailJob.certification}</li>
             </ul>
@@ -205,13 +221,6 @@ function DetailPage() {
             </a>
           </div>
         </div>
-
-        {/* <h2>Related Jobs</h2> */}
-        {/* <div>
-          {jobs.map((job) => {
-            return job.category === detailJob.category ? <JobList key={job._id} job={job} /> : null;
-          })}
-        </div> */}
       </section>
       <div class="clearfix"></div>
       <Footer />

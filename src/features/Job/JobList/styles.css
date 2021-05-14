@@ -13,3 +13,10 @@ a[disabled] {
 .btn_view:hover {
   background-color: #5bbd2b;
 }
+
+.job-position {
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

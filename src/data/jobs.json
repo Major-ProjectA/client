@@ -1,82 +1,6 @@
 [
   {
     "_id": {
-      "$oid": "60918740222e982cecbc2e84"
-    },
-    "detail": "You will be responsible for the day-to-day management and smooth operation of various digital projects, including site launches, online tools, web applications, mobile apps and CRM application and support data collection, tagging, reporting and analysis of digital channels.    For this position, we expect you to be a tech-savvy professional with an in-depth understanding of how technology can help us achieve our business goals.",
-    "benefit": "Demonstrate understanding of digital content workflows, post-production applications, and media technology, finding ways to apply industry best practices to the company. Willingness to learn business tools and technology to better understand needs, requirements, workflows and processes.",
-    "contact": {
-      "contactName": "Nguyen Thanh Loc",
-      "contactEmail": "nguyenthanhloc0813@gmail.com",
-      "contactAddress": "Da Nang",
-      "contactPhone": "077 4784 101"
-    },
-    "certification": "Degree: Bachelor",
-    "salary": {
-      "from": "662.3",
-      "to": "942.22"
-    },
-    "requirement": "Probationary period: 02 month, Age: 23 - 35",
-    "imgCom": "https://www.mediafire.com/convkey/c50e/xzzvbbirmb4fhez6g.jpg",
-    "workingTime": "Full Time",
-    "position": "Financial Analyst",
-    "location": {
-      "street": "Khu Cong Nghe Cao",
-      "district": "09",
-      "city": "Ho Chi Minh"
-    },
-    "nameCom": "Honda",
-    "siteCom": "honda.com.vn",
-    "thumbnail": "https://www.ciberseguridadlatam.com/wp-content/uploads/2019/08/Honda.jpeg",
-    "category": "Mechanical",
-    "createdAt": {
-      "$date": "2021-05-04T14:03:44.381Z"
-    },
-    "updatedAt": {
-      "$date": "2021-05-04T14:03:44.381Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "609154a2222e942cecbb4e85"
-    },
-    "detail": "You will be responsible for the day-to-day management and smooth operation of various digital projects, including site launches, online tools, web applications, mobile apps and CRM application and support data collection, tagging, reporting and analysis of digital channels.    For this position, we expect you to be a tech-savvy professional with an in-depth understanding of how technology can help us achieve our business goals.",
-    "benefit": "Demonstrate understanding of digital content workflows, post-production applications, and media technology, finding ways to apply industry best practices to the company. Willingness to learn business tools and technology to better understand needs, requirements, workflows and processes.",
-    "contact": {
-      "contactName": "Nguyen Thanh Loc",
-      "contactEmail": "nguyenthanhloc0813@gmail.com",
-      "contactAddress": "Da Nang",
-      "contactPhone": "077 4784 101"
-    },
-    "certification": "Degree: Bachelor",
-    "salary": {
-      "from": "721.31",
-      "to": "1002.22"
-    },
-    "requirement": "Probationary period: 02 month, Age: 23 - 35",
-    "imgCom": "https://logoart.vn/blog/wp-content/uploads/2013/07/thiet-ke-logo-dep-mat-sao-kim-Logoart4-1.jpg",
-    "workingTime": "Part Time",
-    "position": "Store Manager",
-    "location": {
-      "street": "11 Mai Chi Tho",
-      "district": "02",
-      "city": "Ho Chi Minh"
-    },
-    "nameCom": "Starbucks VietNam",
-    "siteCom": "starbucks.vn",
-    "thumbnail": "https://assets1.risnews.com/styles/hero/s3/2020-04/SBX20190424-Featured-Image-Earnings-Q2-3-1-1440x700.jpg?itok=dJC_ipHw",
-    "category": "Nutrition",
-    "createdAt": {
-      "$date": "2021-05-04T14:05:22.952Z"
-    },
-    "updatedAt": {
-      "$date": "2021-05-04T14:05:22.952Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
       "$oid": "609154f1222e972cecbb4e86"
     },
     "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
@@ -89,13 +13,13 @@
     },
     "certification": "Degree: Intermediate",
     "salary": {
-      "from": "750",
-      "to": "800"
+      "from": 750,
+      "to": 800
     },
     "requirement": "Probationary period: 02 month, Age: 23 - 35",
     "imgCom": "https://www.mediafire.com/convkey/bc22/2ejyaz5up96eywa6g.jpg",
     "workingTime": "Full Time",
-    "position": "Compensation Analyst",
+    "position": "compensation analyst",
     "location": {
       "street": "27 Dinh Bo Linh",
       "district": "Binh Thanh",
@@ -105,17 +29,20 @@
     "siteCom": "google.com",
     "thumbnail": "http://tech.nomudas.com/wp/wp-content/upload/2018/04/Google-Wharton-University-of-Pensilvania.jpg",
     "category": "Information Technology",
-    "createdAt": {
+    "isHot": "false",
+    "numofRecruit": 10,
+    "exp": "3 Year Experience",
+    "startDay": {
       "$date": "2021-05-04T14:06:41.170Z"
     },
-    "updatedAt": {
+    "endDay": {
       "$date": "2021-05-04T14:06:41.170Z"
     },
     "__v": 0
   },
   {
     "_id": {
-      "$oid": "60915524222e972cecbb4e87"
+      "$oid": "6091593ee6f95a4840163d01"
     },
     "detail": "Connect pipes from tank trucks to the milk receiver and tanks to carry out the import / export of milk into production. Operating the whole Raw Milk receiving system, CIP system, Pasteurization system. Check the condition of the milk receiving device, heat exchanger, milk tank and related equipment according to the work instructions. Monitor the temperature and quality of semi-finished milk during processing.",
     "benefit": "Salary bonus of 13 and 14 months. Considering annual salary increase according to work evaluation results. Birthday allowance, filial piety, joy ... Bonuses on holidays and New Year.",
@@ -127,65 +54,30 @@
     },
     "certification": "Degree: College",
     "salary": {
-      "from": "642.3",
-      "to": "983.2"
+      "from": 800,
+      "to": 910
     },
     "requirement": "Graduated from a college in food technology, biology, chemistry, electricity, automation, mechanical ... Have skills in working independently and in group coordination. Candidates who know a foreign language (English) are an advantage",
-    "imgCom": "https://i.pinimg.com/originals/ba/6b/e6/ba6be6ebf58374d1e47e8a6339518afd.png",
+    "imgCom": "https://www.mediafire.com/convkey/d530/2vwzvr13y1fnelm6g.jpg",
     "workingTime": "Full Time",
-    "position": "HR & GA Staff",
+    "position": "sales manager",
     "location": {
-      "street": "Khu Cong Nghe Cao",
-      "district": "09",
+      "street": "219 Nguyen Dinh Chieu",
+      "district": "03",
       "city": "Ho Chi Minh"
     },
-    "nameCom": "Red Bull",
-    "siteCom": "redbullvietnam.com",
-    "thumbnail": "http://www.checkyoursecurity.com/assets/gfx/casestudy/redbull/redbull_racing_.jpg",
+    "nameCom": "TH True Milk",
+    "siteCom": "thmilk.vn",
+    "thumbnail": "https://www.thmilk.vn/wp-content/uploads/2020/09/Banner_TH-MILK-Canh-dong-huong-duong.jpg",
     "category": "Nutrition",
-    "createdAt": {
-      "$date": "2021-05-04T14:07:32.781Z"
+    "isHot": "false",
+    "numofRecruit": 3,
+    "exp": "5 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:25:02.205Z"
     },
-    "updatedAt": {
-      "$date": "2021-05-04T14:07:32.781Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "60915554222e972cecbb4e88"
-    },
-    "detail": "Customer service. Ensure work shop hygiene. Support work in the counter and lobby as arranged by the Store Manager.Mastering the operating process and company rules, ensuring the correct implementation of the working process at the store. Responsible for the main work shift. Directly handle arising problems, customer inquiries, or guide employees to handle them thoroughly in order to maintain service quality during the work shift.",
-    "benefit": "Work in a professional service environment. To learn, train and develop skills of dispensing & cashier (if desired). Opportunities for rapid promotion to managerial positions with new stores opening every week. Preferential programs for TCH employees.",
-    "contact": {
-      "contactName": "Nguyen The Luan",
-      "contactEmail": "nguyenluan.work@gmail.com",
-      "contactAddress": "HCM",
-      "contactPhone": "090 9774 474"
-    },
-    "certification": "Degree: College",
-    "salary": {
-      "from": "540",
-      "to": "950"
-    },
-    "requirement": "Pupils and students of 18 years or older are able to work from 24 hours a week or more (equivalent to 4-5 work shifts / week, 5-6 hours each shift). Passionate & want to accumulate experience working in the F&B service industry in the fields (serving customers, preparing) .Good health, diligence, proactive at work",
-    "imgCom": "http://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/the-coffee-house-logo-2.jpg",
-    "workingTime": "Full Time",
-    "position": "Dispensing Beverages",
-    "location": {
-      "street": "35 Dien Bien Phu",
-      "district": "Binh Thanh",
-      "city": "Ho Chi Minh"
-    },
-    "nameCom": "The Coffee House",
-    "siteCom": "thecoffeehouse.com",
-    "thumbnail": "https://www.dfurni.com/wp-content/uploads/2020/10/The-Coffee-House-31.jpg",
-    "category": "Nutrition",
-    "createdAt": {
-      "$date": "2021-05-04T14:08:20.374Z"
-    },
-    "updatedAt": {
-      "$date": "2021-05-04T14:08:20.374Z"
+    "endDay": {
+      "$date": "2021-05-04T14:25:02.205Z"
     },
     "__v": 0
   },
@@ -203,13 +95,13 @@
     },
     "certification": "Degree: College",
     "salary": {
-      "from": "742.22",
-      "to": "899.12"
+      "from": 924,
+      "to": 2499
     },
     "requirement": "Graduated from a college in food technology, biology, chemistry, electricity, automation, mechanical ... Have skills in working independently and in group coordination. Candidates who know a foreign language (English) are an advantage",
     "imgCom": "https://images.careerbuilder.vn/employer_folders/lot7/79117/148x148/171124tảixuống.jpg",
     "workingTime": "Part Time",
-    "position": "Food Center Monitoring",
+    "position": "food center monitoring",
     "location": {
       "street": "421 Ky Con",
       "district": "01",
@@ -219,49 +111,14 @@
     "siteCom": "thmilk.vn",
     "thumbnail": "https://www.thmilk.vn/wp-content/uploads/2020/09/Banner_TH-MILK-Canh-dong-huong-duong.jpg",
     "category": "Nutrition",
-    "createdAt": {
+    "isHot": "false",
+    "numofRecruit": 22,
+    "exp": "2 Year Experience",
+    "startDay": {
       "$date": "2021-05-04T14:14:51.613Z"
     },
-    "updatedAt": {
+    "endDay": {
       "$date": "2021-05-04T14:14:51.613Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "60915721e6f94a4840163cf5"
-    },
-    "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
-    "benefit": "Within the broader CSO organization, the Incentives and Integrity team plays a key role in influencing GCS business rhythms by designing incentives, setting productivity goals, encouraging a culture of ethical selling, and deploying Google policies in a GCS-centric way.",
-    "contact": {
-      "contactName": "Nguyen The Luan",
-      "contactEmail": "nguyenluan.work@gmail.com",
-      "contactAddress": "HCM",
-      "contactPhone": "090 9774 474"
-    },
-    "certification": "Degree: Intermediate",
-    "salary": {
-      "from": "700",
-      "to": "800"
-    },
-    "requirement": "Probationary period: 02 month, Age: 23 - 35",
-    "imgCom": "https://www.mediafire.com/convkey/99aa/9445kni996pdo6f6g.jpg",
-    "workingTime": "Part Time",
-    "position": "Administrative Manager",
-    "location": {
-      "street": "150 Quang Trung",
-      "district": "12",
-      "city": "Ho Chi Minh"
-    },
-    "nameCom": "AdManage",
-    "siteCom": "admanage.com",
-    "thumbnail": "https://www.mediafire.com/convkey/a05f/oeqre8n19xeia056g.jpg",
-    "category": "Electronic",
-    "createdAt": {
-      "$date": "2021-05-04T14:16:01.293Z"
-    },
-    "updatedAt": {
-      "$date": "2021-05-04T14:16:01.293Z"
     },
     "__v": 0
   },
@@ -279,35 +136,38 @@
     },
     "certification": "Degree: Intermediate",
     "salary": {
-      "from": "750",
-      "to": "800"
+      "from": 817,
+      "to": 1300
     },
     "requirement": "Probationary period: 02 month, Age: 23 - 35",
     "imgCom": "https://www.mediafire.com/convkey/c6c8/cifotkk7nn5jx626g.jpg",
     "workingTime": "Full Time",
-    "position": "Digital Marketing Manager",
+    "position": "digital marketing manager",
     "location": {
-      "street": "81 Tran Nao",
-      "district": "02",
-      "city": "Ho Chi Minh"
+      "street": "57 Nguyen Quoc Tri",
+      "district": "Cau Giay",
+      "city": "Ha Noi"
     },
     "nameCom": "AutoDesk",
     "siteCom": "autodesk.com",
     "thumbnail": "https://www.mediafire.com/convkey/a05f/oeqre8n19xeia056g.jpg",
     "category": "Entertaiment",
-    "createdAt": {
+    "isHot": "false",
+    "numofRecruit": 15,
+    "exp": "2 Year Experience",
+    "startDay": {
       "$date": "2021-05-04T14:16:24.207Z"
     },
-    "updatedAt": {
+    "endDay": {
       "$date": "2021-05-04T14:16:24.207Z"
     },
     "__v": 0
   },
   {
     "_id": {
-      "$oid": "6091574fe6f94a4840163cf7"
+      "$oid": "6091592de6f94a4840163d00"
     },
-    "detail": "Customer service. Ensure work shop hygiene. Support work in the counter and lobby as arranged by the Store Manager.",
+    "detail": "Customer service. Ensure work shop hygiene. Support work in the counter and lobby as arranged by the Store Manager.Mastering the operating process and company rules, ensuring the correct implementation of the working process at the store. Responsible for the main work shift. Directly handle arising problems, customer inquiries, or guide employees to handle them thoroughly in order to maintain service quality during the work shift.",
     "benefit": "Work in a professional service environment. To learn, train and develop skills of dispensing & cashier (if desired). Opportunities for rapid promotion to managerial positions with new stores opening every week. Preferential programs for TCH employees.",
     "contact": {
       "contactName": "Nguyen The Luan",
@@ -317,65 +177,71 @@
     },
     "certification": "Degree: College",
     "salary": {
-      "from": "563.33",
-      "to": "932.11"
+      "from": 540,
+      "to": 950
     },
     "requirement": "Pupils and students of 18 years or older are able to work from 24 hours a week or more (equivalent to 4-5 work shifts / week, 5-6 hours each shift). Passionate & want to accumulate experience working in the F&B service industry in the fields (serving customers, preparing) .Good health, diligence, proactive at work",
-    "imgCom": "https://www.mediafire.com/convkey/3815/8wxis8efja9isos6g.jpg",
+    "imgCom": "http://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/the-coffee-house-logo-2.jpg",
     "workingTime": "Full Time",
-    "position": "Store Accountant",
+    "position": "dispensing beverages",
     "location": {
-      "street": "05 Tran Hung Dao",
-      "district": "01",
+      "street": "35 Dien Bien Phu",
+      "district": "Binh Thanh",
       "city": "Ho Chi Minh"
     },
-    "nameCom": "Phuc Long",
-    "siteCom": "phuclong.vn",
-    "thumbnail": "https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2019/01/18/phuc-long.jpg",
+    "nameCom": "The Coffee House",
+    "siteCom": "thecoffeehouse.com",
+    "thumbnail": "https://www.dfurni.com/wp-content/uploads/2020/10/The-Coffee-House-31.jpg",
     "category": "Nutrition",
-    "createdAt": {
-      "$date": "2021-05-04T14:16:47.595Z"
+    "isHot": "false",
+    "numofRecruit": 20,
+    "exp": "1 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:24:45.794Z"
     },
-    "updatedAt": {
-      "$date": "2021-05-04T14:16:47.595Z"
+    "endDay": {
+      "$date": "2021-05-04T14:24:45.794Z"
     },
     "__v": 0
   },
   {
     "_id": {
-      "$oid": "60915770e6f94a4840163cf8"
+      "$oid": "60915554222e972cecbb4e88"
     },
-    "detail": "Connect pipes from tank trucks to the milk receiver and tanks to carry out the import / export of milk into production. Operating the whole Raw Milk receiving system, CIP system, Pasteurization system. Check the condition of the milk receiving device, heat exchanger, milk tank and related equipment according to the work instructions. Monitor the temperature and quality of semi-finished milk during processing.",
-    "benefit": "Salary bonus of 13 and 14 months. Considering annual salary increase according to work evaluation results. Birthday allowance, filial piety, joy ... Bonuses on holidays and New Year.",
+    "detail": "Customer service. Ensure work shop hygiene. Support work in the counter and lobby as arranged by the Store Manager.Mastering the operating process and company rules, ensuring the correct implementation of the working process at the store. Responsible for the main work shift. Directly handle arising problems, customer inquiries, or guide employees to handle them thoroughly in order to maintain service quality during the work shift.",
+    "benefit": "Work in a professional service environment. To learn, train and develop skills of dispensing & cashier (if desired). Opportunities for rapid promotion to managerial positions with new stores opening every week. Preferential programs for TCH employees.",
     "contact": {
-      "contactName": "Nguyen Thanh Loc",
-      "contactEmail": "nguyenthanhloc0813@gmail.com",
-      "contactAddress": "Da Nang",
-      "contactPhone": "077 4784 101"
+      "contactName": "Nguyen The Luan",
+      "contactEmail": "nguyenluan.work@gmail.com",
+      "contactAddress": "HCM",
+      "contactPhone": "090 9774 474"
     },
     "certification": "Degree: College",
     "salary": {
-      "from": "550",
-      "to": "1000"
+      "from": 540,
+      "to": 950
     },
-    "requirement": "Graduated from a college in food technology, biology, chemistry, electricity, automation, mechanical ... Have skills in working independently and in group coordination. Candidates who know a foreign language (English) are an advantage",
-    "imgCom": "https://www.mediafire.com/convkey/86ec/z7zqoipy2vg37zp6g.jpg",
+    "requirement": "Pupils and students of 18 years or older are able to work from 24 hours a week or more (equivalent to 4-5 work shifts / week, 5-6 hours each shift). Passionate & want to accumulate experience working in the F&B service industry in the fields (serving customers, preparing) .Good health, diligence, proactive at work",
+    "imgCom": "http://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/the-coffee-house-logo-2.jpg",
     "workingTime": "Full Time",
-    "position": "Internal Communication Supervisor",
+    "position": "sales online executive",
     "location": {
-      "street": "248A No Trang Long",
+      "street": "312 Bach Dang",
       "district": "Binh Thanh",
       "city": "Ho Chi Minh"
     },
-    "nameCom": "Pharmacity",
-    "siteCom": "pharmacity.vn",
-    "thumbnail": "https://esteemgift.vn/_cache/0/09a46d5e62421a59a7d1cd4b798d74b2.jpg",
-    "category": "Pharmaceutical",
-    "createdAt": {
-      "$date": "2021-05-04T14:17:20.990Z"
+    "nameCom": "The Coffee House",
+    "siteCom": "thecoffeehouse.com",
+    "thumbnail": "https://www.dfurni.com/wp-content/uploads/2020/10/The-Coffee-House-31.jpg",
+    "category": "Sales - Business",
+    "isHot": "true",
+    "numofRecruit": 12,
+    "exp": "2 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:08:20.374Z"
     },
-    "updatedAt": {
-      "$date": "2021-05-04T14:17:20.990Z"
+    "endDay": {
+      "$date": "2021-05-04T14:08:20.374Z"
     },
     "__v": 0
   },
@@ -393,13 +259,13 @@
     },
     "certification": "Degree: Intermediate",
     "salary": {
-      "from": "510",
-      "to": "700.21"
+      "from": 510,
+      "to": 700
     },
     "requirement": "Probationary period: 02 month, Age: 23 - 35",
     "imgCom": "https://www.mediafire.com/convkey/ced3/rphtvpf9wtvd4s56g.jpg",
     "workingTime": "Full Time",
-    "position": "Chief Executive Officer",
+    "position": "chief executive officer",
     "location": {
       "street": "72 Le Quang Dinh",
       "district": "Binh Thanh",
@@ -409,49 +275,55 @@
     "siteCom": "skype.com/en",
     "thumbnail": "https://nguoivietphone.com/images/file/A8W5ASTn0QgBAkxF/skype-gioi-thieu-ung-dung-giup-dich-trong-thoi-gian-thuc.png",
     "category": "Information Technology",
-    "createdAt": {
+    "isHot": "false",
+    "numofRecruit": 22,
+    "exp": "3 Year Experience",
+    "startDay": {
       "$date": "2021-05-04T14:20:56.010Z"
     },
-    "updatedAt": {
+    "endDay": {
       "$date": "2021-05-04T14:20:56.010Z"
     },
     "__v": 0
   },
   {
     "_id": {
-      "$oid": "6091586be6f94a4840163cfa"
+      "$oid": "60915770e6f94a4840163cf8"
     },
-    "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
-    "benefit": "Within the broader CSO organization, the Incentives and Integrity team plays a key role in influencing GCS business rhythms by designing incentives, setting productivity goals, encouraging a culture of ethical selling, and deploying Google policies in a GCS-centric way.",
+    "detail": "Connect pipes from tank trucks to the milk receiver and tanks to carry out the import / export of milk into production. Operating the whole Raw Milk receiving system, CIP system, Pasteurization system. Check the condition of the milk receiving device, heat exchanger, milk tank and related equipment according to the work instructions. Monitor the temperature and quality of semi-finished milk during processing.",
+    "benefit": "Salary bonus of 13 and 14 months. Considering annual salary increase according to work evaluation results. Birthday allowance, filial piety, joy ... Bonuses on holidays and New Year.",
     "contact": {
-      "contactName": "Nguyen The Luan",
-      "contactEmail": "nguyenluan.work@gmail.com",
-      "contactAddress": "HCM",
-      "contactPhone": "090 9774 474"
+      "contactName": "Nguyen Thanh Loc",
+      "contactEmail": "nguyenthanhloc0813@gmail.com",
+      "contactAddress": "Da Nang",
+      "contactPhone": "077 4784 101"
     },
-    "certification": "Degree: Intermediate",
+    "certification": "Degree: College",
     "salary": {
-      "from": "850",
-      "to": "1000"
+      "from": 550,
+      "to": 1000
     },
-    "requirement": "Probationary period: 02 month, Age: 23 - 35",
-    "imgCom": "https://www.mediafire.com/convkey/4c0c/ugv0j02uc0nwtuh6g.jpg",
-    "workingTime": "Freelancer",
-    "position": "Service Representative",
+    "requirement": "Graduated from a college in food technology, biology, chemistry, electricity, automation, mechanical ... Have skills in working independently and in group coordination. Candidates who know a foreign language (English) are an advantage",
+    "imgCom": "https://www.mediafire.com/convkey/86ec/z7zqoipy2vg37zp6g.jpg",
+    "workingTime": "Full Time",
+    "position": "internal communication supervisor",
     "location": {
-      "street": "312 Nguyen Luong Bang",
-      "district": "07",
+      "street": "2A No Trang Long",
+      "district": "Binh Thanh",
       "city": "Ho Chi Minh"
     },
-    "nameCom": "Microsoft",
-    "siteCom": "microsoft.com",
-    "thumbnail": "http://tech.nomudas.com/wp/wp-content/upload/2018/04/Google-Wharton-University-of-Pensilvania.jpg",
-    "category": "Information Technology",
-    "createdAt": {
-      "$date": "2021-05-04T14:21:31.617Z"
+    "nameCom": "Pharmacity",
+    "siteCom": "pharmacity.vn",
+    "thumbnail": "https://esteemgift.vn/_cache/0/09a46d5e62421a59a7d1cd4b798d74b2.jpg",
+    "category": "Pharmaceutical",
+    "isHot": "true",
+    "numofRecruit": 8,
+    "exp": "2 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:17:20.990Z"
     },
-    "updatedAt": {
-      "$date": "2021-05-04T14:21:31.617Z"
+    "endDay": {
+      "$date": "2021-05-04T14:17:20.990Z"
     },
     "__v": 0
   },
@@ -469,13 +341,13 @@
     },
     "certification": "Degree: Bachelor",
     "salary": {
-      "from": "600",
-      "to": "850"
+      "from": 600,
+      "to": 850
     },
     "requirement": "Probationary period: 02 month, Age: 23 - 35",
     "imgCom": "https://www.mediafire.com/convkey/c50e/xzzvbbirmb4fhez6g.jpg",
     "workingTime": "Part Time",
-    "position": "Investment Banker",
+    "position": "investment banker",
     "location": {
       "street": " 80B Nguyen Van Cu",
       "district": "Long Bien",
@@ -484,11 +356,14 @@
     "nameCom": "HonDa",
     "siteCom": "honda.com.vn",
     "thumbnail": "https://www.ciberseguridadlatam.com/wp-content/uploads/2019/08/Honda.jpeg",
-    "category": "Mechanical",
-    "createdAt": {
+    "category": "Bank",
+    "isHot": "false",
+    "numofRecruit": 20,
+    "exp": "5 Year Experience",
+    "startDay": {
       "$date": "2021-05-04T14:21:56.237Z"
     },
-    "updatedAt": {
+    "endDay": {
       "$date": "2021-05-04T14:21:56.237Z"
     },
     "__v": 0
@@ -507,13 +382,13 @@
     },
     "certification": "Degree: College",
     "salary": {
-      "from": "400",
-      "to": "600"
+      "from": 400,
+      "to": 1000
     },
     "requirement": "Pupils and students of 18 years or older are able to work from 24 hours a week or more (equivalent to 4-5 work shifts / week, 5-6 hours each shift). Passionate & want to accumulate experience working in the F&B service industry in the fields (serving customers, preparing) .Good health, diligence, proactive at work",
     "imgCom": "https://www.mediafire.com/convkey/3815/8wxis8efja9isos6g.jpg",
     "workingTime": "Full Time",
-    "position": "Sales Staff",
+    "position": "sales staff",
     "location": {
       "street": "643 Ta Quang Buu",
       "district": "08",
@@ -523,169 +398,20 @@
     "siteCom": "phuclong.vn",
     "thumbnail": "https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2019/01/18/phuc-long.jpg",
     "category": "Nutrition",
-    "createdAt": {
+    "isHot": "false",
+    "numofRecruit": 10,
+    "exp": "2 Year Experience",
+    "startDay": {
       "$date": "2021-05-04T14:22:16.731Z"
     },
-    "updatedAt": {
+    "endDay": {
       "$date": "2021-05-04T14:22:16.731Z"
     },
     "__v": 0
   },
   {
     "_id": {
-      "$oid": "609158cbe6f94a4840163cfd"
-    },
-    "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
-    "benefit": "Within the broader CSO organization, the Incentives and Integrity team plays a key role in influencing GCS business rhythms by designing incentives, setting productivity goals, encouraging a culture of ethical selling, and deploying Google policies in a GCS-centric way.",
-    "contact": {
-      "contactName": "Nguyen The Luan",
-      "contactEmail": "nguyenluan.work@gmail.com",
-      "contactAddress": "HCM",
-      "contactPhone": "090 9774 474"
-    },
-    "certification": "Degree: Intermediate",
-    "salary": {
-      "from": "460",
-      "to": "820"
-    },
-    "requirement": "Probationary period: 02 month, Age: 23 - 35",
-    "imgCom": "https://static.mservice.io/placebrand/s/momo-upload-api-190709165424-636982880641515855.jpg",
-    "workingTime": "Full Time",
-    "position": "Media Sales",
-    "location": {
-      "street": "28 Thanh Thai",
-      "district": "10",
-      "city": "Ho Chi Minh"
-    },
-    "nameCom": "CGV",
-    "siteCom": "cgv.vn",
-    "thumbnail": "https://images02.vietnamworks.com//companyprofile/Cj-cgv/en/Vietnamworks_2_1_.jpg",
-    "category": "Others",
-    "createdAt": {
-      "$date": "2021-05-04T14:23:07.253Z"
-    },
-    "updatedAt": {
-      "$date": "2021-05-04T14:23:07.253Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "609158fbe6f94a4840163cfe"
-    },
-    "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
-    "benefit": "Within the broader CSO organization, the Incentives and Integrity team plays a key role in influencing GCS business rhythms by designing incentives, setting productivity goals, encouraging a culture of ethical selling, and deploying Google policies in a GCS-centric way.",
-    "contact": {
-      "contactName": "Nguyen The Luan",
-      "contactEmail": "nguyenluan.work@gmail.com",
-      "contactAddress": "HCM",
-      "contactPhone": "090 9774 474"
-    },
-    "certification": "Degree: Intermediate",
-    "salary": {
-      "from": "873.2",
-      "to": "2000"
-    },
-    "requirement": "Probationary period: 02 month, Age: 23 - 35",
-    "imgCom": "https://cdn.iconscout.com/icon/free/png-512/samsung-1-282297.png",
-    "workingTime": "Full Time",
-    "position": "Logistics Manager",
-    "location": {
-      "street": "Khu Cong Nghe Cao",
-      "district": "09",
-      "city": "Ho Chi Minh"
-    },
-    "nameCom": "SamSung",
-    "siteCom": "samsung.com",
-    "thumbnail": "https://vnn-imgs-a1.vgcloud.vn/analyticsindiamag.com/wp-content/uploads/2020/04/samsung.jpg",
-    "category": "Electronic",
-    "createdAt": {
-      "$date": "2021-05-04T14:23:55.717Z"
-    },
-    "updatedAt": {
-      "$date": "2021-05-04T14:23:55.717Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "6091590ee6f94a4840163cff"
-    },
-    "detail": "Teaching and building subjects in Marketing, Brand, PR subjects. IMC, Digital Marketing / Social media marketing / Content Marketing / Data driven marketing. Research professional jobs related to MKT & technology applied in Marketing. Project guidance, internships, Student management, Professional activities: professional meetings, organize workshops, talk shows, field trips, guide students in scientific research. According to the Working Regulations of Lecturers of Hoa Sen University. Participate in other work according to the School's regulations. A number of other tasks are assigned by their superiors.",
-    "benefit": "Enjoy the full benefits in accordance with the Labor Law. Working in a professional and dynamic environment, enjoying the prescribed school benefits.",
-    "contact": {
-      "contactName": "Nguyen Thanh Loc",
-      "contactEmail": "nguyenthanhloc0813@gmail.com",
-      "contactAddress": "Da Nang",
-      "contactPhone": "077 4784 101"
-    },
-    "certification": "Degree: Bachelor",
-    "salary": {
-      "from": "800",
-      "to": "1000"
-    },
-    "requirement": "Graduated from a college in food technology, biology, chemistry, electricity, automation, mechanical ... Have skills in working independently and in group coordination. Candidates who know a foreign language (English) are an advantage",
-    "imgCom": "https://www.mediafire.com/convkey/5ad8/204hvep515ppox36g.jpg",
-    "workingTime": "Part Time",
-    "position": "Lecturer Marketing Department",
-    "location": {
-      "street": "08 Nguyen Van Trang",
-      "district": "01",
-      "city": "Ho Chi Minh"
-    },
-    "nameCom": "HSU",
-    "siteCom": "hoasen.edu.vn",
-    "thumbnail": "https://tuyensinh.hoasen.edu.vn/sites/default/files/tuyensinh/avatar/hoa_sen_university_4_0.jpg",
-    "category": "Education",
-    "createdAt": {
-      "$date": "2021-05-04T14:24:14.797Z"
-    },
-    "updatedAt": {
-      "$date": "2021-05-04T14:24:14.797Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "6091592de6f94a4840163d00"
-    },
-    "detail": "Customer service. Ensure work shop hygiene. Support work in the counter and lobby as arranged by the Store Manager.Mastering the operating process and company rules, ensuring the correct implementation of the working process at the store. Responsible for the main work shift. Directly handle arising problems, customer inquiries, or guide employees to handle them thoroughly in order to maintain service quality during the work shift.",
-    "benefit": "Work in a professional service environment. To learn, train and develop skills of dispensing & cashier (if desired). Opportunities for rapid promotion to managerial positions with new stores opening every week. Preferential programs for TCH employees.",
-    "contact": {
-      "contactName": "Nguyen The Luan",
-      "contactEmail": "nguyenluan.work@gmail.com",
-      "contactAddress": "HCM",
-      "contactPhone": "090 9774 474"
-    },
-    "certification": "Degree: College",
-    "salary": {
-      "from": "540",
-      "to": "950"
-    },
-    "requirement": "Pupils and students of 18 years or older are able to work from 24 hours a week or more (equivalent to 4-5 work shifts / week, 5-6 hours each shift). Passionate & want to accumulate experience working in the F&B service industry in the fields (serving customers, preparing) .Good health, diligence, proactive at work",
-    "imgCom": "http://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/the-coffee-house-logo-2.jpg",
-    "workingTime": "Full Time",
-    "position": "Dispensing Beverages",
-    "location": {
-      "street": "35 Dien Bien Phu",
-      "district": "Binh Thanh",
-      "city": "Ho Chi Minh"
-    },
-    "nameCom": "The Coffee House",
-    "siteCom": "thecoffeehouse.com",
-    "thumbnail": "https://www.dfurni.com/wp-content/uploads/2020/10/The-Coffee-House-31.jpg",
-    "category": "Nutrition",
-    "createdAt": {
-      "$date": "2021-05-04T14:24:45.794Z"
-    },
-    "updatedAt": {
-      "$date": "2021-05-04T14:24:45.794Z"
-    },
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "6091593ee6f95a4840163d01"
+      "$oid": "60915524222e972cecbb4e87"
     },
     "detail": "Connect pipes from tank trucks to the milk receiver and tanks to carry out the import / export of milk into production. Operating the whole Raw Milk receiving system, CIP system, Pasteurization system. Check the condition of the milk receiving device, heat exchanger, milk tank and related equipment according to the work instructions. Monitor the temperature and quality of semi-finished milk during processing.",
     "benefit": "Salary bonus of 13 and 14 months. Considering annual salary increase according to work evaluation results. Birthday allowance, filial piety, joy ... Bonuses on holidays and New Year.",
@@ -697,27 +423,71 @@
     },
     "certification": "Degree: College",
     "salary": {
-      "from": "800",
-      "to": "910"
+      "from": 642,
+      "to": 983
     },
     "requirement": "Graduated from a college in food technology, biology, chemistry, electricity, automation, mechanical ... Have skills in working independently and in group coordination. Candidates who know a foreign language (English) are an advantage",
-    "imgCom": "https://www.mediafire.com/convkey/d530/2vwzvr13y1fnelm6g.jpg",
+    "imgCom": "https://i.pinimg.com/originals/ba/6b/e6/ba6be6ebf58374d1e47e8a6339518afd.png",
     "workingTime": "Full Time",
-    "position": "Sales Manager",
+    "position": "hr & ga staff",
     "location": {
-      "street": "219 Nguyen Dinh Chieu",
-      "district": "03",
+      "street": "Khu Cong Nghe Cao",
+      "district": "09",
       "city": "Ho Chi Minh"
     },
-    "nameCom": "TH True Milk",
-    "siteCom": "thmilk.vn",
-    "thumbnail": "https://www.thmilk.vn/wp-content/uploads/2020/09/Banner_TH-MILK-Canh-dong-huong-duong.jpg",
+    "nameCom": "Red Bull",
+    "siteCom": "redbullvietnam.com",
+    "thumbnail": "http://www.checkyoursecurity.com/assets/gfx/casestudy/redbull/redbull_racing_.jpg",
     "category": "Nutrition",
-    "createdAt": {
-      "$date": "2021-05-04T14:25:02.205Z"
+    "isHot": "false",
+    "numofRecruit": 21,
+    "exp": "2 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:07:32.781Z"
     },
-    "updatedAt": {
-      "$date": "2021-05-04T14:25:02.205Z"
+    "endDay": {
+      "$date": "2021-05-04T14:07:32.781Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6091574fe6f94a4840163cf7"
+    },
+    "detail": "Customer service. Ensure work shop hygiene. Support work in the counter and lobby as arranged by the Store Manager.",
+    "benefit": "Work in a professional service environment. To learn, train and develop skills of dispensing & cashier (if desired). Opportunities for rapid promotion to managerial positions with new stores opening every week. Preferential programs for TCH employees.",
+    "contact": {
+      "contactName": "Nguyen The Luan",
+      "contactEmail": "nguyenluan.work@gmail.com",
+      "contactAddress": "HCM",
+      "contactPhone": "090 9774 474"
+    },
+    "certification": "Degree: College",
+    "salary": {
+      "from": 563,
+      "to": 932
+    },
+    "requirement": "Pupils and students of 18 years or older are able to work from 24 hours a week or more (equivalent to 4-5 work shifts / week, 5-6 hours each shift). Passionate & want to accumulate experience working in the F&B service industry in the fields (serving customers, preparing) .Good health, diligence, proactive at work",
+    "imgCom": "https://www.mediafire.com/convkey/3815/8wxis8efja9isos6g.jpg",
+    "workingTime": "Full Time",
+    "position": "store accountant",
+    "location": {
+      "street": "05 Tran Hung Dao",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Phuc Long",
+    "siteCom": "phuclong.vn",
+    "thumbnail": "https://vnn-imgs-a1.vgcloud.vn/image1.ictnews.vn/_Files/2019/01/18/phuc-long.jpg",
+    "category": "Nutrition",
+    "isHot": "true",
+    "numofRecruit": 7,
+    "exp": "1 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:16:47.595Z"
+    },
+    "endDay": {
+      "$date": "2021-05-04T14:16:47.595Z"
     },
     "__v": 0
   },
@@ -735,13 +505,13 @@
     },
     "certification": "Degree: Bachelor",
     "salary": {
-      "from": "510",
-      "to": "800"
+      "from": 510,
+      "to": 950
     },
     "requirement": "Passion & patience for teaching kids aged 6-15, A Bachelor's Degree from an accredited university, Office IT skills, Preferable: A qualification in English Language Teaching (TEFL/TESOL) or an English Test Certificate (IELTS/TOEFL) or teaching experience (at least 1 year)",
     "imgCom": "https://www.mediafire.com/convkey/a1f9/qe4ie51r4c3e6ri6g.jpg",
     "workingTime": "Internship",
-    "position": "English Teacher",
+    "position": "english teacher",
     "location": {
       "street": "189 Nguyen Thi Minh Khai",
       "district": "01",
@@ -751,12 +521,302 @@
     "siteCom": "vus.edu.vn",
     "thumbnail": "https://vus.edu.vn/media/237523/pho-i-ca-nh-vus-bi-nh-du-o-ng2-01.jpg?anchor=center&mode=crop&width=1200&height=600&rnd=&upscale=false&bgcolor=fff",
     "category": "Education",
-    "createdAt": {
+    "isHot": "false",
+    "numofRecruit": 6,
+    "exp": "5 Year Experience",
+    "startDay": {
       "$date": "2021-05-04T14:25:28.521Z"
     },
-    "updatedAt": {
+    "endDay": {
       "$date": "2021-05-04T14:25:28.521Z"
     },
     "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609158cbe6f94a4840163cfd"
+    },
+    "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
+    "benefit": "Within the broader CSO organization, the Incentives and Integrity team plays a key role in influencing GCS business rhythms by designing incentives, setting productivity goals, encouraging a culture of ethical selling, and deploying Google policies in a GCS-centric way.",
+    "contact": {
+      "contactName": "Nguyen The Luan",
+      "contactEmail": "nguyenluan.work@gmail.com",
+      "contactAddress": "HCM",
+      "contactPhone": "090 9774 474"
+    },
+    "certification": "Degree: Intermediate",
+    "salary": {
+      "from": 460,
+      "to": 1000
+    },
+    "requirement": "Probationary period: 02 month, Age: 23 - 35",
+    "imgCom": "https://static.mservice.io/placebrand/s/momo-upload-api-190709165424-636982880641515855.jpg",
+    "workingTime": "Full Time",
+    "position": "media sales",
+    "location": {
+      "street": "10 Hoa Lu",
+      "district": "Le Dai Hanh",
+      "city": "Ha Noi"
+    },
+    "nameCom": "CGV",
+    "siteCom": "cgv.vn",
+    "thumbnail": "https://images02.vietnamworks.com//companyprofile/Cj-cgv/en/Vietnamworks_2_1_.jpg",
+    "category": "Guard - Security",
+    "isHot": "true",
+    "numofRecruit": 11,
+    "exp": "1 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:23:07.253Z"
+    },
+    "endDay": {
+      "$date": "2021-05-04T14:23:07.253Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609154a2222e942cecbb4e85"
+    },
+    "detail": "You will be responsible for the day-to-day management and smooth operation of various digital projects, including site launches, online tools, web applications, mobile apps and CRM application and support data collection, tagging, reporting and analysis of digital channels.    For this position, we expect you to be a tech-savvy professional with an in-depth understanding of how technology can help us achieve our business goals.",
+    "benefit": "Demonstrate understanding of digital content workflows, post-production applications, and media technology, finding ways to apply industry best practices to the company. Willingness to learn business tools and technology to better understand needs, requirements, workflows and processes.",
+    "contact": {
+      "contactName": "Nguyen Thanh Loc",
+      "contactEmail": "nguyenthanhloc0813@gmail.com",
+      "contactAddress": "Da Nang",
+      "contactPhone": "077 4784 101"
+    },
+    "certification": "Degree: Bachelor",
+    "salary": {
+      "from": 1900,
+      "to": 3200
+    },
+    "requirement": "Probationary period: 02 month, Age: 23 - 35",
+    "imgCom": "https://logoart.vn/blog/wp-content/uploads/2013/07/thiet-ke-logo-dep-mat-sao-kim-Logoart4-1.jpg",
+    "workingTime": "Part Time",
+    "position": "store manager",
+    "location": {
+      "street": "11 Mai Chi Tho",
+      "district": "02",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Starbucks VietNam",
+    "siteCom": "starbucks.vn",
+    "thumbnail": "https://assets1.risnews.com/styles/hero/s3/2020-04/SBX20190424-Featured-Image-Earnings-Q2-3-1-1440x700.jpg?itok=dJC_ipHw",
+    "category": "Nutrition",
+    "isHot": "false",
+    "numofRecruit": 21,
+    "exp": "2 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:05:22.952Z"
+    },
+    "endDay": {
+      "$date": "2021-05-04T14:05:22.952Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60918740222e982cecbc2e84"
+    },
+    "detail": "You will be responsible for the day-to-day management and smooth operation of various digital projects, including site launches, online tools, web applications, mobile apps and CRM application and support data collection, tagging, reporting and analysis of digital channels.    For this position, we expect you to be a tech-savvy professional with an in-depth understanding of how technology can help us achieve our business goals.",
+    "benefit": "Demonstrate understanding of digital content workflows, post-production applications, and media technology, finding ways to apply industry best practices to the company. Willingness to learn business tools and technology to better understand needs, requirements, workflows and processes.",
+    "contact": {
+      "contactName": "Nguyen Thanh Loc",
+      "contactEmail": "nguyenthanhloc0813@gmail.com",
+      "contactAddress": "Da Nang",
+      "contactPhone": "077 4784 101"
+    },
+    "certification": "Degree: Bachelor",
+    "salary": {
+      "from": 662,
+      "to": 942
+    },
+    "requirement": "Probationary period: 02 month, Age: 23 - 35",
+    "imgCom": "https://www.mediafire.com/convkey/c50e/xzzvbbirmb4fhez6g.jpg",
+    "workingTime": "Full Time",
+    "position": "financial analyst",
+    "location": {
+      "street": "Khu Cong Nghe Cao",
+      "district": "09",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Honda",
+    "siteCom": "honda.com.vn",
+    "thumbnail": "https://www.ciberseguridadlatam.com/wp-content/uploads/2019/08/Honda.jpeg",
+    "category": "Mechanical",
+    "isHot": "false",
+    "numofRecruit": 5,
+    "exp": "2 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:03:44.381Z"
+    },
+    "endDay": {
+      "$date": "2021-05-04T14:03:44.381Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60915721e6f94a4840163cf5"
+    },
+    "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
+    "benefit": "Within the broader CSO organization, the Incentives and Integrity team plays a key role in influencing GCS business rhythms by designing incentives, setting productivity goals, encouraging a culture of ethical selling, and deploying Google policies in a GCS-centric way.",
+    "contact": {
+      "contactName": "Nguyen The Luan",
+      "contactEmail": "nguyenluan.work@gmail.com",
+      "contactAddress": "HCM",
+      "contactPhone": "090 9774 474"
+    },
+    "certification": "Degree: Intermediate",
+    "salary": {
+      "from": 700,
+      "to": 800
+    },
+    "requirement": "Probationary period: 02 month, Age: 23 - 35",
+    "imgCom": "https://www.mediafire.com/convkey/99aa/9445kni996pdo6f6g.jpg",
+    "workingTime": "Part Time",
+    "position": "administrative manager",
+    "location": {
+      "street": "137 Nguyen Ngoc Vu",
+      "district": "Cau Giay",
+      "city": "Ha Noi"
+    },
+    "nameCom": "AdManage",
+    "siteCom": "admanage.com",
+    "thumbnail": "https://www.mediafire.com/convkey/a05f/oeqre8n19xeia056g.jpg",
+    "category": "Electronic",
+    "isHot": "false",
+    "numofRecruit": 1,
+    "exp": "3 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:16:01.293Z"
+    },
+    "endDay": {
+      "$date": "2021-05-04T14:16:01.293Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6091586be6f94a4840163cfa"
+    },
+    "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
+    "benefit": "Within the broader CSO organization, the Incentives and Integrity team plays a key role in influencing GCS business rhythms by designing incentives, setting productivity goals, encouraging a culture of ethical selling, and deploying Google policies in a GCS-centric way.",
+    "contact": {
+      "contactName": "Nguyen The Luan",
+      "contactEmail": "nguyenluan.work@gmail.com",
+      "contactAddress": "HCM",
+      "contactPhone": "090 9774 474"
+    },
+    "certification": "Degree: Intermediate",
+    "salary": {
+      "from": 850,
+      "to": 1000
+    },
+    "requirement": "Probationary period: 02 month, Age: 23 - 35",
+    "imgCom": "https://i.pinimg.com/originals/91/92/1c/91921cec4f8a8cbe3d09e596e0659d81.png",
+    "workingTime": "Freelancer",
+    "position": "service representative",
+    "location": {
+      "street": "312 Nguyen Luong Bang",
+      "district": "07",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "Microsoft",
+    "siteCom": "microsoft.com",
+    "thumbnail": "http://tech.nomudas.com/wp/wp-content/upload/2018/04/Google-Wharton-University-of-Pensilvania.jpg",
+    "category": "Stock",
+    "isHot": "true",
+    "numofRecruit": 3,
+    "exp": "4 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:21:31.617Z"
+    },
+    "endDay": {
+      "$date": "2021-05-04T14:21:31.617Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609158fbe6f94a4840163cfe"
+    },
+    "detail": "The Business Strategy & Operations organization provides business critical insights using analytics, ensures cross functional alignment of goals and execution, and helps teams drive strategic partnerships and new initiatives forward. We stay focused on aligning the highest-level company priorities with effective day-to-day operations, and help evolve early stage ideas into future-growth initiatives.",
+    "benefit": "Within the broader CSO organization, the Incentives and Integrity team plays a key role in influencing GCS business rhythms by designing incentives, setting productivity goals, encouraging a culture of ethical selling, and deploying Google policies in a GCS-centric way.",
+    "contact": {
+      "contactName": "Nguyen The Luan",
+      "contactEmail": "nguyenluan.work@gmail.com",
+      "contactAddress": "HCM",
+      "contactPhone": "090 9774 474"
+    },
+    "certification": "Degree: Intermediate",
+    "salary": {
+      "from": 1677,
+      "to": 2599
+    },
+    "requirement": "Probationary period: 02 month, Age: 23 - 35",
+    "imgCom": "https://cdn.iconscout.com/icon/free/png-512/samsung-1-282297.png",
+    "workingTime": "Full Time",
+    "position": "logistics manager",
+    "location": {
+      "street": "Khu Cong Nghe Cao",
+      "district": "09",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "SamSung",
+    "siteCom": "samsung.com",
+    "thumbnail": "https://vnn-imgs-a1.vgcloud.vn/analyticsindiamag.com/wp-content/uploads/2020/04/samsung.jpg",
+    "category": "Electronic",
+    "isHot": "false",
+    "numofRecruit": 3,
+    "exp": "5 Year Experience",
+    "startDay": {
+      "$date": "2021-05-04T14:23:55.717Z"
+    },
+    "endDay": {
+      "$date": "2021-05-04T14:23:55.717Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609b42d201e0222c500fd1c5"
+    },
+    "detail": "Teaching and building subjects in Marketing, Brand, PR subjects. IMC, Digital Marketing / Social media marketing / Content Marketing / Data driven marketing. Research professional jobs related to MKT & technology applied in Marketing. Project guidance, internships, Student management, Professional activities: professional meetings, organize workshops, talk shows, field trips, guide students in scientific research. According to the Working Regulations of Lecturers of Hoa Sen University. Participate in other work according to the School's regulations. A number of other tasks are assigned by their superiors.",
+    "benefit": "Enjoy the full benefits in accordance with the Labor Law. Working in a professional and dynamic environment, enjoying the prescribed school benefits.",
+    "contact": {
+      "contactName": "Nguyen Thanh Loc",
+      "contactEmail": "nguyenthanhloc0813@gmail.com",
+      "contactAddress": "Da Nang",
+      "contactPhone": "077 4784 101"
+    },
+    "certification": "Degree: Bachelor",
+    "salary": {
+      "from": 800,
+      "to": 1899
+    },
+    "requirement": "Graduated from a college in food technology, biology, chemistry, electricity, automation, mechanical ... Have skills in working independently and in group coordination. Candidates who know a foreign language (English) are an advantage",
+    "imgCom": "https://tintuyensinhmoi.com/wp-content/uploads/2020/04/logo-truong-dai-hoc-hoa-sen-1.png",
+    "workingTime": "Part Time",
+    "position": "lecturer marketing department",
+    "location": {
+      "street": "08 Nguyen Van Trang",
+      "district": "01",
+      "city": "Ho Chi Minh"
+    },
+    "nameCom": "HSU",
+    "siteCom": "hoasen.edu.vn",
+    "thumbnail": "https://tuyensinh.hoasen.edu.vn/sites/default/files/tuyensinh/avatar/hoa_sen_university_4_0.jpg",
+    "category": "Education",
+    "numofRecruit": 3,
+    "exp": "5 Year Experience",
+    "startDay": {
+      "$date": "2021-05-12T02:52:02.134Z"
+    },
+    "endDay": {
+      "$date": "2021-05-12T02:52:02.134Z"
+    },
+    "__v": 0,
+    "isHot": "true"
   }
 ]

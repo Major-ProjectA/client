@@ -6,18 +6,14 @@ import Footer from '../../components/Footers';
 import JobList from './JobList';
 import Filters from './Filters';
 import LoadMore from './LoadMore';
-
-// import Pagination from '../components/Pagination';
+// import Loading from '../Loading';
 
 function ListPage() {
   const state = useContext(GlobalState);
   const [jobs] = state.jobAPI.jobs;
   console.log(jobs);
 
-  // const pageNumber = match.params.pageNumber || 1;
-  // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState(false);
-
   // const [page, setPage] = useState(pageNumber);
   // const [pages, setPages] = useState(1);
 
@@ -73,6 +69,7 @@ function ListPage() {
         //     {error}
         //   </h3>
         // ) : (
+
         <>
           <Navbars />
           <br /> <br />

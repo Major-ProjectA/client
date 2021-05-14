@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
+
 function JobList({ job }) {
   return (
     <>
@@ -13,7 +14,7 @@ function JobList({ job }) {
           </div>
           <div class="col-md-5 col-sm-5">
             <div class="brows-job-position">
-              <h3> {job.position} </h3>
+              <h3 className="job-position"> {job.position} </h3>
               <p>
                 <span class="brows-job-sallery">
                   <i class="fa fa-money"></i>
@@ -38,7 +39,7 @@ function JobList({ job }) {
           </div>
           <div class="col-md-2 col-sm-2">
             <div class="brows-job-link">
-              <Link className="btn_view" to={`detail/${job._id}`}>
+              <Link className="btn_view" to={`jobs/detail/${job._id}`}>
                 View Detail
               </Link>
             </div>

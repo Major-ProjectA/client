@@ -1,34 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
+import { GlobalState } from '../../GlobalState';
 
-import categoryApi from '../../api/categoryAPI';
-
-const Category = () => {
-  const [fetchCategories, setFetchCategories] = useState([]);
+function Category() {
+  const state = useContext(GlobalState);
+  const [categories] = state.categoriesAPI.categories;
   const [visible, setVisible] = useState([8]);
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const categorylist = await categoryApi.getAllCategory();
-      // console.log(categorylist);
-      setFetchCategories(categorylist);
-    };
-    fetchCategories();
-  }, [categoryApi]);
-
-  var categories = fetchCategories.slice(0, visible).map((listcategories) => {
+  var loadcategories = categories.slice(0, visible).map((rendercategories) => {
     return (
-      <div key={listcategories._id}>
+      <div key={rendercategories._id}>
         <div className="col-md-3 col-sm-6 category-cus" style={{ float: 'left' }}>
           <div className="category-box" data-aos="fade-up">
             <div className="category-desc">
               <div className="category-icon">
-                <img src={listcategories.career.icon} alt="" width="17%" />
+                <img src={rendercategories.career.icon} alt="" width="17%" />
               </div>
               <div className="category-detail category-desc-text">
-                <h4>
-                  <a href={'# '}>{listcategories.career.careerName}</a>
-                </h4>
-                <p>122 Jobs</p>
+                <h4 style={{ fontWeight: 'bold', color: 'grey' }}>{rendercategories.career.careerName}</h4>
+                <h5 style={{ color: 'grey' }}>{rendercategories.career.total} Jobs</h5>
               </div>
             </div>
           </div>
@@ -37,11 +26,11 @@ const Category = () => {
     );
   });
 
-  const handleLoadMore = () => {
+  function handleLoadMore() {
     setVisible(visible + 4);
-  };
+  }
 
-  return !fetchCategories.length ? (
+  return !categories.length ? (
     <div className="main-heading">
       <h2>Category</h2>
       <h4>Don't have data !</h4>
@@ -54,9 +43,11 @@ const Category = () => {
           <div className="main-heading">
             <h2>
               Browse Jobs By <span>Category</span>
-              <div>{categories}</div>
+              <br />
+              <br />
+              <div>{loadcategories}</div>
               <div>
-                {visible < fetchCategories.length && (
+                {visible < categories.length && (
                   <a className="btn btn-primary" onClick={handleLoadMore}>
                     Load More
                   </a>
@@ -68,6 +59,6 @@ const Category = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Category;

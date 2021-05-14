@@ -1,16 +1,15 @@
 import React from 'react';
 import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
-import FormLogin from '../../features/Form/FormLogin';
-
-function Login() {
+import CrudCategory from '../../features/Category/CrudCategory';
+function ManageCategory() {
   return (
     <>
-      <Navbars /> <br />
-      <FormLogin />
+      <Navbars />
+      <CrudCategory />
       <Footers />
     </>
   );
 }
 
-export default Login;
+export default ManageCategory;

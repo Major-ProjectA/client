@@ -7,6 +7,7 @@ function Filters() {
 
   const [category, setCategory] = state.jobAPI.category;
   const [search, setSearch] = state.jobAPI.search;
+  const [sort, setSort] = state.jobAPI.sort;
 
   const handleCategory = (e) => {
     setCategory(e.target.value);
@@ -31,7 +32,7 @@ function Filters() {
                 className="form-control"
                 placeholder="What Is Your Favorite Job ?"
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => setSearch(e.target.value.toLowerCase())}
               />
             </div>
 
@@ -56,9 +57,15 @@ function Filters() {
             </div>
 
             <div className="col-md-3 col-sm-6">
-              <select id="choose-filter" className="form-control">
-                <option value="">Ascending</option>
-                <option value="">Descending</option>
+              <select
+                id="choose-filter"
+                className="form-control"
+                value={sort}
+                onChange={(e) => setSort(e.target.value)}
+              >
+                <option value="">Newest</option>
+                <option value="sort=-salary.to">Salary: high-low</option>
+                <option value="sort=salary.to">Salary: low-high</option>
               </select>
             </div>
           </form>

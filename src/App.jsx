@@ -11,7 +11,7 @@ import DetailPage from './features/Job/JobDetails';
 import CV from './pages/CV';
 
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import DetailJobHotPage from './features/Job/JobHotDetails';
+import ManageCategory from './pages/ManageCategory';
 
 const App = () => {
   return (
@@ -21,8 +21,8 @@ const App = () => {
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/jobs" component={Jobs} exact />
-            <Route path="/detail/:id" component={DetailPage} exact />
-            <Route path="/detail-jobhot/:id" component={DetailJobHotPage} exact />
+            <Route path="/jobs/detail/:id" component={DetailPage} exact />
+            <Route path="/manager/categories" component={ManageCategory} exact />
             <Route path="/register" component={Register} exact />
             <Route path="/login" component={Login} exact />
             <Route path="/create-cv" component={CV} exact />

@@ -23,38 +23,40 @@ function JobHot() {
           </div>
         </div>
         <div className="row">
-          {jobhot.map((jobhot) => {
+          {jobhot.map((job) => {
             return (
               <>
-                <div className="col-md-4 col-sm-4" key={jobhot._id}>
+                <div className="col-md-4 col-sm-4" key={job._id}>
                   <div className="popular-jobs-container">
                     <div className="popular-jobs-box">
-                      <span className="popular-jobs-status bg-success">Salary</span>
+                      <span className="popular-jobs-status bg-success">Hot</span>
                       <h4 className="flc-rate" style={{ fontWeight: 'bold' }}>
-                        ${jobhot.salary.to}
+                        ${job.salary.to}
                       </h4>
 
                       <div className="popular-jobs-box">
                         <div className="popular-jobs-box-detail">
-                          <Link className="btn_view1" to={`detail-jobhot/${jobhot._id}`}>
-                            <img src={jobhot.imgCom} style={{ width: '40%' }} />
+                          <Link className="btn_view1" to={`jobs/detail/${job._id}`}>
+                            <img src={job.imgCom} style={{ width: '40%' }} />
                           </Link>
 
-                          <h4 style={{ fontWeight: 'bold', color: '#00CC00' }}>{jobhot.nameCom}</h4>
-                          <span className="desination">{jobhot.position}</span>
+                          <h4 style={{ fontWeight: 'bold', color: '#00CC00' }}>{job.nameCom}</h4>
+                          <span className="jobhot-position" style={{ textTransform: 'capitalize' }}>
+                            {job.position}
+                          </span>
                         </div>
                       </div>
                       <div className="popular-jobs-box-extra">
                         <ul>
-                          <li>{jobhot.workingTime}</li>
-                          <li>{jobhot.siteCom}</li>
-                          <li>{jobhot.category}</li>
+                          <li>{job.workingTime}</li>
+                          <li>{job.siteCom}</li>
+                          <li>{job.category}</li>
                           <li className="more-skill bg-primary">+3</li>
                         </ul>
 
                         <p>
                           <i class="fa fa-map-marker"></i>&nbsp;
-                          {jobhot.location.street}
+                          {job.location.street}
                         </p>
                       </div>
                     </div>
@@ -64,7 +66,7 @@ function JobHot() {
             );
           })}
         </div>
-        <LoadMore />;
+        <LoadMore />
       </div>
       <div className="clearfix"></div>
       <br />

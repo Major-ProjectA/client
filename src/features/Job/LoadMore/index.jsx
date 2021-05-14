@@ -4,7 +4,6 @@ import { GlobalState } from '../../../GlobalState';
 function LoadMore() {
   const state = useContext(GlobalState);
   const [page, setPage] = state.jobAPI.page;
-  // const [result] = state.jobAPI.result;
 
   return (
     <>

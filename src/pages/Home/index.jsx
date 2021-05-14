@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Navbars from '../../components/Navbars';
 import Banner from '../../components/Banner';
-import Category from '../../components/Category';
+import Category from '../../features/Category';
 import JobHot from '../../features/Job/JobHot';
 import Testimonial from '../../components/Testimonial';
 import Footers from '../../components/Footers';
