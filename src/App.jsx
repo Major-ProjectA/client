@@ -22,7 +22,7 @@ const App = () => {
             <Route path="/" component={Home} exact />
             <Route path="/jobs" component={Jobs} exact />
             <Route path="/jobs/detail/:id" component={DetailPage} exact />
-            <Route path="/manager/categories" component={ManageCategory} exact />
+            <Route path="/manage/category" component={ManageCategory} exact />
             <Route path="/register" component={Register} exact />
             <Route path="/login" component={Login} exact />
             <Route path="/create-cv" component={CV} exact />

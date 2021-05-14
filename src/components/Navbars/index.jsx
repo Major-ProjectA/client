@@ -136,10 +136,10 @@ class Navbars extends Component {
                           <div className="content">
                             <ul className="menu-col">
                               <li>
-                                <a href={'/manager/categories'}>Categories Manager</a>
+                                <a href={'/manage/category'}>Manage Category</a>
                               </li>
                               <li>
-                                <a href={'# '}>Jobs Manager</a>
+                                <a href={'/manage/job'}>Manage Job</a>
                               </li>
                               <li>
                                 <a href={'# '}>Payment Methode</a>
