@@ -1,16 +1,16 @@
 import React from 'react';
 import Footers from '../../components/Footers';
 import Navbars from '../../components/Navbars';
-import Register from '../../features/Form/FormRegister';
+import FormRegister from '../../features/Form/FormRegister';
 
-function FRmployee() {
+function Register() {
   return (
     <>
       <Navbars />
-      <Register />
+      <FormRegister />
       <Footers />
     </>
   );
 }
 
-export default FRmployee;
+export default Register;

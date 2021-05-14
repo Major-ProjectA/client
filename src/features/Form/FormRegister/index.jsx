@@ -1,26 +1,58 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useHttpClient } from "../../../hooks/http-hook";
+import {
+  VALIDATOR_EMAIL,
+  VALIDATOR_MINLENGTH,
+  VALIDATOR_REQUIRE,
+} from "../../../util/Validator";
+import { AuthContext } from "../../context/authcontext";
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
-function FormRegisterEmployee() {
+const FormRegister = () => {
+  const auth = useContext(AuthContext);
   const [userName, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [passwordHash, setPasswordHash] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const { sendRequest } = useHttpClient();
+  const [error, setError] = useState("");
 
   async function register(e) {
     e.preventDefault();
-
     try {
-      const registerData = {
-        userName,
-        email,
-        passwordHash,
-        confirmPassword,
-      };
-
-      await axios.post('http://localhost:5000/api/users/signup', registerData);
+      const responseData = await sendRequest(
+        "http://localhost:5000/api/users/signup",
+        "POST",
+        JSON.stringify({
+          userName,
+          email,
+          passwordHash,
+          confirmPassword,
+        }),
+        {
+          "Content-Type": "application/json",
+        }
+      );
+      console.log(responseData);
+      //alert("Login successfully.");
+      Swal.fire('Awesome!', "You're successfully registered in!", 'success').then(
+        (result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            
+          }
+        }
+      );
+      auth.login(responseData.user.id);
+      auth.authorization(responseData.user.userName);
+      auth.authorization(responseData.user.role);
     } catch (err) {
       console.error(err);
+      setError("Something went wrong, please try again.");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
     }
   }
 
@@ -50,6 +82,7 @@ function FormRegisterEmployee() {
                           placeholder="Username"
                           onChange={(e) => setUsername(e.target.value)}
                           value={userName}
+                          validators={[VALIDATOR_REQUIRE]}
                           // name="email"
                           // type="email"
                           // autofocus
@@ -102,12 +135,19 @@ function FormRegisterEmployee() {
                           Remember Me
                         </label>
                       </div>
-
+                      <div>
+                        {error && <span className="error-message">{error}</span>}
+                      </div>
                       <button type="submit" className="btn btn-login" style={{ height: '1%' }}>
                         Register
                       </button>
                     </fieldset>
                   </form>
+                  <div style={{ textAlign: 'center', marginTop: '-4%' }}>
+                    <a>
+                      <label>Already have an account? <Link to="/login"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></label>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -118,4 +158,4 @@ function FormRegisterEmployee() {
   );
 }
 
-export default FormRegisterEmployee;
+export default FormRegister;
