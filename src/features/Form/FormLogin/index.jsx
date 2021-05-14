@@ -76,6 +76,7 @@ const FormLogin = () => {
                           placeholder="Email"
                           onChange={(e) => setEmail(e.target.value)}
                           value={email}
+                          required
                           // name="email"
                           // type="email"
                           // autofocus
@@ -89,7 +90,7 @@ const FormLogin = () => {
                           onChange={(e) => setPasswordHash(e.target.value)}
                           value={passwordHash}
                           validators={[VALIDATOR_EMAIL()]}
-
+                          required
                           // name="password"
                           // type="password"
                           // value=""
@@ -116,24 +117,10 @@ const FormLogin = () => {
                   </form>
                   <div style={{ textAlign: 'center', marginTop: '-4%' }}>
                     <a>
-                      <label>You don't have account ? <Link to="/register"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></label>
+                      <p>Do not have an account? <Link to="/register"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></p>
                     </a>
                   </div>
-
-                  <ul className="social-login">
-                    <li className="facebook-login">
-                      <a href="# ">
-                        <i className="fa fa-facebook"></i>Facebook
-                      </a>
-                    </li>
-                    <span>OR</span>
-                    <li className="google-plus-login">
-                      <a href="# ">
-                        <i className="fa fa-google-plus"></i>Google
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+               </div>
               </div>
             </div>
           </div>

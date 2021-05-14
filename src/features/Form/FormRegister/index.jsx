@@ -83,6 +83,7 @@ const FormRegister = () => {
                           onChange={(e) => setUsername(e.target.value)}
                           value={userName}
                           validators={[VALIDATOR_REQUIRE]}
+                          required
                           // name="email"
                           // type="email"
                           // autofocus
@@ -94,6 +95,7 @@ const FormRegister = () => {
                           placeholder="Email"
                           onChange={(e) => setEmail(e.target.value)}
                           value={email}
+                          required
                           // name="email"
                           // type="email"
                           // autofocus
@@ -107,6 +109,7 @@ const FormRegister = () => {
                           placeholder="Password"
                           onChange={(e) => setPasswordHash(e.target.value)}
                           value={passwordHash}
+                          required
                           // name="password"
                           // type="password"
                           // value=""
@@ -118,6 +121,7 @@ const FormRegister = () => {
                           placeholder="Verify your password"
                           onChange={(e) => setConfirmPassword(e.target.value)}
                           value={confirmPassword}
+                          required
                           // name="password"
                           // type="password"
                           // value=""
@@ -145,7 +149,7 @@ const FormRegister = () => {
                   </form>
                   <div style={{ textAlign: 'center', marginTop: '-4%' }}>
                     <a>
-                      <label>Already have an account? <Link to="/login"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></label>
+                      <p>Already have an account? <Link to="/login"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></p>
                     </a>
                   </div>
                 </div>
