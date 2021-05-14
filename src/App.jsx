@@ -11,14 +11,11 @@ import DetailPage from './features/Job/JobDetails';
 import CV from './pages/CV';
 import Auxx from './features/context/Auxx';
 
-<<<<<<< Updated upstream
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import DetailJobHotPage from './features/Job/JobHotDetails';
-=======
+
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import CvRouter from './pages/CV/CvRouter';
 import { AuthContext } from './features/context/authcontext';
->>>>>>> Stashed changes
 
 const App = () => {
   const [ isLoggedIn, setIsLoggedIn ] = useState(false);
@@ -77,37 +74,38 @@ const App = () => {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/jobs" component={Jobs} exact />
+        <Route path="/detail-jobhot/:id" component={DetailJobHotPage} exact />
         <Route path="/detail/:id" component={DetailPage} exact />
         <Route path="/register" component={Register} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/create-cv" component={CV} exact />
         <Route path="/createcv-profile" component={CvRouter} exact />
-            <Route path="/createcv-education" component={CvRouter} exact/>
-            <Route path="/createcv-project" component={CvRouter} exact/>
+        <Route path="/createcv-education" component={CvRouter} exact/>
+        <Route path="/createcv-project" component={CvRouter} exact/>
+        <Route component={Error} />
         <Redirect to="/" /> 
       </Switch>
     );
   }
 
   return (
-<<<<<<< Updated upstream
-    <div className="App">
-      <DataProvider>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" component={Home} exact />
-            <Route path="/jobs" component={Jobs} exact />
-            <Route path="/detail/:id" component={DetailPage} exact />
-            <Route path="/detail-jobhot/:id" component={DetailJobHotPage} exact />
-            <Route path="/register" component={Register} exact />
-            <Route path="/login" component={Login} exact />
-            <Route path="/create-cv" component={CV} exact />
-            <Route component={Error} />
-          </Switch>
-        </BrowserRouter>
-      </DataProvider>
-    </div>
-=======
+    // <div className="App">
+    //   <DataProvider>
+    //     <BrowserRouter>
+    //       <Switch>
+    //         <Route path="/" component={Home} exact />
+    //         <Route path="/jobs" component={Jobs} exact />
+    //         <Route path="/detail/:id" component={DetailPage} exact />
+    //         <Route path="/detail-jobhot/:id" component={DetailJobHotPage} exact />
+    //         <Route path="/register" component={Register} exact />
+    //         <Route path="/login" component={Login} exact />
+    //         <Route path="/create-cv" component={CV} exact />
+    //         <Route component={Error} />
+    //       </Switch>
+    //     </BrowserRouter>
+    //   </DataProvider>
+    // </div>
+
     // <div className="App">
     //   <DataProvider>
     //     <BrowserRouter>
@@ -126,20 +124,21 @@ const App = () => {
     //     </BrowserRouter>
     //   </DataProvider>
     // </div>
-    <BrowserRouter>
-      <Auxx>
-        <AuthContext.Provider value={
-          { authorization:author, 
-            isLoggedIn: isLoggedIn,
-            isAdmin:isAdmin,
-            userId: userId,
-            login: login, 
-            logout: logout }}>
-          <main>{routes}</main>
-        </AuthContext.Provider>
-      </Auxx>
-    </BrowserRouter>
->>>>>>> Stashed changes
+    <DataProvider>
+      <BrowserRouter>
+        <Auxx>
+          <AuthContext.Provider value={
+            { authorization:author, 
+              isLoggedIn: isLoggedIn,
+              isAdmin:isAdmin,
+              userId: userId,
+              login: login, 
+              logout: logout }}>
+            <main>{routes}</main>
+          </AuthContext.Provider>
+        </Auxx>
+      </BrowserRouter>
+    </DataProvider>
   );
 };
 
