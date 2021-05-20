@@ -6,7 +6,7 @@ import LoadMore from '../LoadMore';
 function JobHot() {
   const state = useContext(GlobalState);
   const [jobhot] = state.jobAPI.jobhot;
-  console.log(jobhot);
+  // console.log(jobhot);
 
   return (
     <>

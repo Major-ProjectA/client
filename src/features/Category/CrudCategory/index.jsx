@@ -91,6 +91,7 @@ function CrudCategory() {
               <input
                 name="total"
                 type="number"
+                min="0"
                 class="form-control"
                 placeholder="Total"
                 value={catetotal}

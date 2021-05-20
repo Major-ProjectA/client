@@ -1,24 +1,25 @@
-input, button{
+/* input,
+button {
   width: 200px;
   height: 30px;
   font-size: 20px;
   margin-left: 10px;
 }
 
-.head{
+.head {
   padding-left: 20%;
   padding-bottom: 2%;
 }
 
-.main{
+.main {
   margin-left: 18%;
 }
 
-.in-out{
+.in-out {
   padding-left: 10%;
 }
 
-.job{
+.job {
   width: 350px;
   height: 280px;
   border: 1px solid black;
@@ -26,25 +27,24 @@ input, button{
   font-size: 12px;
   float: left;
   text-align: center;
-
 }
 
-.new-cus h1{
+.new-cus h1 {
   font-size: 3rem;
 }
 
-.btnUpdate,.btnAdd{
+.btnUpdate,
+.btnAdd {
   border: none;
   cursor: pointer;
   width: 12rem;
   height: 4rem;
- 
 }
 
-.btnDelete{
+.btnDelete {
   width: 95%;
   border: none;
   cursor: pointer;
   margin-top: 5%;
   height: 4rem;
-}
+} */

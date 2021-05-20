@@ -12,7 +12,7 @@ function DetailPage() {
   const [jobs] = state.jobAPI.jobs;
   const [jobhot] = state.jobAPI.jobhot;
   const [detailJob, setDetailJob] = useState([]);
-  console.log(params);
+  // console.log(params);
 
   useEffect(() => {
     if (params) {
@@ -26,7 +26,7 @@ function DetailPage() {
     }
   }, [jobs, jobhot, params]);
 
-  console.log(detailJob);
+  // console.log(detailJob);
 
   if (detailJob.length === 0) return null;
   return (
