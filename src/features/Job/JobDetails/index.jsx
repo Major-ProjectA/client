@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { GlobalState } from '../../../GlobalState';
 
 import Navbars from '../../../components/Navbars';
@@ -216,9 +216,9 @@ function DetailPage() {
             </ul>
           </div>
           <div class="detail-pannel-footer-btn pull-right">
-            <a href="/jobs" class="footer-btn blu-btn" title="">
+            <Link to="/jobs" class="footer-btn blu-btn" title="" style={{backgroundColor:"#11B719"}}>
               Back
-            </a>
+            </Link>
           </div>
         </div>
       </section>

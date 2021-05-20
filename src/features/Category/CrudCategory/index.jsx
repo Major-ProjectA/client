@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { GlobalState } from '../../../GlobalState';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 function CrudCategory() {
   const state = useContext(GlobalState);
@@ -20,12 +21,24 @@ function CrudCategory() {
         const res = await axios.put(`/api/categories/${id}`, {
           career: { careerName: category, icon: cateicon, total: catetotal },
         });
-        alert(res.data.msg);
+        Swal.fire('Awesome!', "You're successfully updated!", 'success').then(
+          (result) => {
+            if (result.isConfirmed || result.isDismissed) {
+              
+            }
+          }
+        );
       } else {
         const res = await axios.post('/api/categories', {
           career: { careerName: category, icon: cateicon, total: catetotal },
         });
-        alert(res.data.msg);
+        Swal.fire('Awesome!', "You're successfully created!", 'success').then(
+          (result) => {
+            if (result.isConfirmed || result.isDismissed) {
+              
+            }
+          }
+        );
       }
 
       //Reset Form
@@ -52,8 +65,14 @@ function CrudCategory() {
 
   const deleteCategory = async (id) => {
     try {
-      const res = await axios.delete(`api/categories/${id}`);
-      alert(res.data.msg);
+      await axios.delete(`api/categories/${id}`);
+      Swal.fire('Awesome!', "You're successfully deleted!", 'success').then(
+        (result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            
+          }
+        }
+      );
       setCallBack(!callback);
     } catch (error) {
       alert(error.response.data.msg);

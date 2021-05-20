@@ -61,7 +61,7 @@ const Profile = (props) => {
                       type="text"
                       class="form-control"
                       placeholder="First Name"
-                      defaultValue={formik.this.props.firstName}
+                      defaultValue={formik.values.firstName}
                       onChange={formik.handleChange}
                     />
                   </div>

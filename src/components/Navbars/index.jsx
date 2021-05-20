@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import axios from 'axios';
 import { useCV } from '../Store/CV';
-import './Navbars.css';
 
 const Navbars = () => {
   const [ state, actions ] = useCV();
@@ -29,170 +28,11 @@ const Navbars = () => {
               <img src={'../../assets/img/Job-Listing.png'} className="logo logo-scrolled" alt="" />
             </NavLink>
           </div>
+
           <div className="collapse navbar-collapse" id="navbar-menu">
             <ul className="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-              <li className="dropdown megamenu-fw">
-                <a href={'# '} className="dropdown-toggle" data-toggle="dropdown">
-                  Brows
-                </a>
-                <ul className="dropdown-menu megamenu-content" role="menu">
-                  <li>
-                    <div className="row">
-                      <div className="col-menu col-md-3">
-                        <h6 className="title">Main Pages</h6>
-
-                        <div className="content">
-                          <ul className="menu-col">
-                            <li>
-                              <a href={'/'}>Home</a>
-                            </li>
-                            <li>
-                              <a href={'/'}>About</a>
-                            </li>
-                            <li>
-                              <a href={'# '}>Blog</a>
-                            </li>
-                            <li>
-                              <a href={'# '}>Interview</a>
-                            </li>
-                            <li>
-                              <a href={'# '}>Wage</a>
-                            </li>
-                            <li>
-                              <a href={'/login'}>Login</a>
-                            </li>
-                            <li>
-                              <a href={'/register'}>Register</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
-                        <div className="col-menu col-md-3">
-                          <h6 className="title">For Employee</h6>
-
-                          <div className="content">
-                            <ul className="menu-col">
-                              <li>
-                                <a href={'/jobs'}>Browse Jobs</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Browse Companies</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Create Resume</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Resume Detail</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Manage Jobs</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Job Detail</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Job In Grid</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Candidate Profile</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Manage Resume 2</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Company Detail</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      )}
-
-                      {auth.isLoggedIn && auth.isEmployer && (
-                        <div className="col-menu col-md-3">
-                          <h6 className="title">For Employers</h6>
-
-                          <div className="content">
-                            <ul className="menu-col">
-                              <li>
-                                <a href={'# '}>Create Job</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Create Company</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Manage Company</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Manage Candidate</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Manage Employee</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Browse Resume</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>New Search Job</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Employer Profile</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Manage Resume</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>New Job Detail</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      )}
-
-                      {auth.isLoggedIn && auth.isAdmin && (
-                        <div className="col-menu col-md-3">
-                          <h6 className="title">{/* Extra Pages <span className="new-offer">New</span> */}For Admin</h6>
-
-                          <div className="content">
-                            <ul className="menu-col">
-                              <li>
-                                <a href={'/manage/category'}>Manage Category</a>
-                              </li>
-                              <li>
-                                <a href={'/manage/job'}>Manage Job</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Payment Methode</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>New LogIn / SignUp</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Freelancing Jobs</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Freelancers</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Freelancers 2</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Premium Candidate</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Premium Candidate Detail</a>
-                              </li>
-                              <li>
-                                <a href={'# '}>Blog detail</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </li>
-                </ul>
+              <li>
+                <a href={'/'}>Home</a>
               </li>
               <li>
                 <NavLink to="/jobs">Find Job</NavLink>
@@ -200,40 +40,98 @@ const Navbars = () => {
               <li>
                 <a href={'# '}>Blog</a>
               </li>
+
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
-                <li onClick={ createCV }>
+                <li class="btn-group" onClick={ createCV }>
                   <NavLink to="/create-cv">Create CV</NavLink>
                 </li>
               )}
-              {/* {auth.isLoggedIn && auth.isEmployer (
-                  <li>
-                    <NavLink to='/'>Create Job</NavLink>
-                </li>
-                )}  */}
+
               {auth.isLoggedIn && auth.isAdmin && (
-                <li>
-                  <NavLink to="/manage/category">Manage Category</NavLink>
-                </li>
-              )}
-              {/* {auth.isLoggedIn && (
-                    <li>
-                      <a>
-                        <p style={{ color: 'green', fontWeight: 'bold' }}>HELLO {auth.userName}</p>
-                      </a>
+                <>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <li>
+                    <NavLink className="dropdown-item" to="/manage-category" style={{ color: '#000000' }}>
+                      Category
+                    </NavLink>
                   </li>
-                )} */}
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Job
+                    </a>
+                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <NavLink className="dropdown-item" to="/create-job" style={{ color: '#000000' }}>
+                        Create Job
+                      </NavLink>
+                      <NavLink className="dropdown-item" to="/subjectB" style={{ color: '#000000' }}>
+                        Manage Job
+                      </NavLink>
+                    </div>
+                  </li>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      User
+                    </a>
+                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <NavLink className="dropdown-item" to="/subjectA" style={{ color: '#000000' }}>
+                        Create User
+                      </NavLink>
+                      <NavLink className="dropdown-item" to="/subjectB" style={{ color: '#000000' }}>
+                        Manage User
+                      </NavLink>
+                    </div>
+                  </li>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      CV
+                    </a>
+                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <NavLink className="dropdown-item" to="/create-cv" style={{ color: '#000000' }}>
+                        Create CV
+                      </NavLink>
+                      <NavLink className="dropdown-item" to="/subjectB" style={{ color: '#000000' }}>
+                        Manage CV
+                      </NavLink>
+                    </div>
+                  </li>
+                </>
+              )}
             </ul>
 
             <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
               {auth.isLoggedIn && (
-                <li class="left-br">
-                  <button class="button" type="button" onClick={auth.logout}>
+                <li>
+                  <a class="signin" onClick={auth.logout} style={{ cursor: 'pointer' }}>
                     <i class="fa fa-sign-in" aria-hidden="true"></i>Log out
-                  </button>
+                  </a>
                 </li>
               )}
               {!auth.isLoggedIn && (
-                <li class="left-br">
+                <li>
                   <NavLink to="/login" class="signin">
                     Log In Now
                   </NavLink>

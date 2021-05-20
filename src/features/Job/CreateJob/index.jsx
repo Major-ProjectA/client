@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { GlobalState } from '../../../GlobalState';
 import Loading from '../../../features/Loading';
+import Swal from "sweetalert2"
 // import { useHistory, useParams } from 'react-router-dom';
 
 function CreateJob() {
@@ -50,9 +51,21 @@ function CreateJob() {
       const file = e.target.files[0];
       //console.log(file);
 
-      if (!file) return alert('File not exist.');
-      if (file.size > 1024 * 1024) return alert('Size too large!');
-      if (file.type !== 'image/jpeg' && file.type !== 'image/png') return alert('File format is incorrect.');
+      if (!file) return (Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "File not existed!"
+      }));
+      if (file.size > 1024 * 1024) return (Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Size is too large!"
+      }));
+      if (file.type !== 'image/jpeg' && file.type !== 'image/png') return (Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "File format is incorrect!"
+      }));
 
       let formData = new FormData();
       formData.append('file', file);
@@ -65,7 +78,11 @@ function CreateJob() {
 
       // console.log(res);
     } catch (error) {
-      alert(error.response.data.msg);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Something went wrong, please try again."
+      })
     }
   };
 
@@ -74,22 +91,43 @@ function CreateJob() {
       await axios.post('/api/photo/destroy', { public_id: photos.public_id });
       setPhotos(false);
     } catch (error) {
-      alert(error.response.data.msg);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "No image upload!"
+      });
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (!photos) return alert('No Image Upload');
+      if (!photos) 
+        return (
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: "File not existed!"
+          })
+        );
       // await axios.post('/api/jobs', { ...job }).then((res) => {
       //   console.log(res.data);
       // });
       await axios.post('/api/jobs', { ...job });
-      alert('Job created and wait for admin to approve the post... 🎉🎉');
+      Swal.fire('Awesome!', "Job created and wait for admin to approve the post... 🎉🎉", 'success').then(
+        (result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            
+          }
+        }
+      );
       clear();
     } catch (error) {
-      alert(error.response.data.msg);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Something went wrong, please try again."
+      })
     }
   };
 
@@ -499,9 +537,9 @@ function CreateJob() {
                     required
                     value={job.location.street}
                     onChange={(e) =>
-                      setJob((preJob) => ({
-                        ...preJob,
-                        location: { ...preJob.location, street: e.target.value },
+                      setJob((prevJob) => ({
+                        ...prevJob,
+                        location: { ...prevJob.location, street: e.target.value },
                       }))
                     }
                   />
@@ -520,9 +558,9 @@ function CreateJob() {
                     required
                     value={job.location.district}
                     onChange={(e) =>
-                      setJob((preJob) => ({
-                        ...preJob,
-                        location: { ...preJob, district: e.target.value },
+                      setJob((prevJob) => ({
+                        ...prevJob,
+                        location: { ...prevJob.location, district: e.target.value },
                       }))
                     }
                   />
@@ -539,9 +577,9 @@ function CreateJob() {
                     required
                     value={job.location.city}
                     onChange={(e) =>
-                      setJob((preJob) => ({
-                        ...preJob,
-                        location: { ...preJob, city: e.target.value },
+                      setJob((prevJob) => ({
+                        ...prevJob,
+                        location: { ...prevJob.location, city: e.target.value },
                       }))
                     }
                   >

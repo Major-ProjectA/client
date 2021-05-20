@@ -68,7 +68,10 @@ const App = () => {
     routes = (
       <Switch>
         <Route path="/" component={Home} exact />
+        <Route path="/jobs" component={Jobs} exact />
         <Route path="/create-cv" component={CV} exact />
+        <Route path="/detail/:id" component={DetailPage} exact />
+        <Route path="/jobs/detail/:id" component={DetailPage} exact />
         <Redirect to="/" />
       </Switch>
     );
@@ -81,7 +84,6 @@ const App = () => {
         <Route path="/jobs/detail/:id" component={DetailPage} exact />
         <Route path="/register" component={Register} exact />
         <Route path="/login" component={Login} exact />
-        <Route path="/create-cv" component={CV} exact />
         <Route component={Error} />
         <Redirect to="/" />
       </Switch>
