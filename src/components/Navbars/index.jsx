@@ -1,12 +1,22 @@
-import React, { Component, useContext } from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AuthContext } from '../../features/context/authcontext';
-
+import { AuthContext } from '../Context/AuthContext';
+import axios from 'axios';
+import { useCV } from '../Store/CV';
 import './Navbars.css';
 
 const Navbars = () => {
+  const [ state, actions ] = useCV();
   const auth = useContext(AuthContext);
-  console.log(auth);
+
+  const createCV = async () => {
+    const userId = auth.userId;
+    const response = await axios.post('http://localhost:5000/api/cvs/createCV'); //create empty CV
+    actions.saveCvId(response.data.user.id);
+    //actions.saveUserId(userId.data.user.id);
+    console.log();
+  }
+
   return (
     <>
       <nav className="navbar navbar-default navbar-fixed navbar-light white bootsnav">
@@ -191,7 +201,7 @@ const Navbars = () => {
                 <a href={'# '}>Blog</a>
               </li>
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
-                <li>
+                <li onClick={ createCV }>
                   <NavLink to="/create-cv">Create CV</NavLink>
                 </li>
               )}
@@ -217,7 +227,7 @@ const Navbars = () => {
             <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
               {auth.isLoggedIn && (
                 <li class="left-br">
-                  <button class="signin" type="button" onClick={auth.logout}>
+                  <button class="button" type="button" onClick={auth.logout}>
                     <i class="fa fa-sign-in" aria-hidden="true"></i>Log out
                   </button>
                 </li>

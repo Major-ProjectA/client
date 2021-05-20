@@ -9,11 +9,10 @@ import Register from './pages/Register';
 import Jobs from './features/Job';
 import DetailPage from './features/Job/JobDetails';
 import CV from './pages/CV';
-import Auxx from './features/context/Auxx';
 
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
-import CvRouter from './pages/CV/CvRouter';
-import { AuthContext } from './features/context/authcontext';
+import { AuthContext } from './components/Context/AuthContext';
+import Auxx from './components/Context/Auxx';
 import ManageCategory from './pages/ManageCategory';
 
 const App = () => {
@@ -77,9 +76,6 @@ const App = () => {
         <Route path="/register" component={Register} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/create-cv" component={CV} exact />
-        <Route path="/createcv-profile" component={CvRouter} exact />
-        <Route path="/createcv-education" component={CvRouter} exact />
-        <Route path="/createcv-project" component={CvRouter} exact />
         <Route component={Error} />
         <Redirect to="/" />
       </Switch>
@@ -87,41 +83,6 @@ const App = () => {
   }
 
   return (
-    // <div className="App">
-    //   <DataProvider>
-    //     <BrowserRouter>
-    //       <Switch>
-    //         <Route path="/" component={Home} exact />
-    //         <Route path="/jobs" component={Jobs} exact />
-    //         <Route path="/detail/:id" component={DetailPage} exact />
-    //         <Route path="/detail-jobhot/:id" component={DetailJobHotPage} exact />
-    //         <Route path="/register" component={Register} exact />
-    //         <Route path="/login" component={Login} exact />
-    //         <Route path="/create-cv" component={CV} exact />
-    //         <Route component={Error} />
-    //       </Switch>
-    //     </BrowserRouter>
-    //   </DataProvider>
-    // </div>
-
-    // <div className="App">
-    //   <DataProvider>
-    //     <BrowserRouter>
-    //       <Switch>
-    //         <Route path="/" component={Home} exact />
-    //         <Route path="/jobs" component={Jobs} exact />
-    //         <Route path="/detail/:id" component={DetailPage} exact />
-    //         <Route path="/register" component={Register} exact />
-    //         <Route path="/login" component={Login} exact />
-    //         <Route path="/create-cv" component={CV} exact />
-    // <Route path="/createcv-profile" component={CvRouter} exact />
-    // <Route path="/createcv-education" component={CvRouter} exact/>
-    // <Route path="/createcv-project" component={CvRouter} exact/>
-    //         <Route component={Error} />
-    //       </Switch>
-    //     </BrowserRouter>
-    //   </DataProvider>
-    // </div>
     <DataProvider>
       <BrowserRouter>
         <Auxx>
