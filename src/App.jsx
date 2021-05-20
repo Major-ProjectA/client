@@ -9,11 +9,10 @@ import Register from './pages/Register';
 import Jobs from './features/Job';
 import DetailPage from './features/Job/JobDetails';
 import CV from './pages/CV';
-import Auxx from './features/context/Auxx';
 
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
-import CvRouter from './pages/CV/CvRouter';
-import { AuthContext } from './features/context/authcontext';
+import { AuthContext } from './components/Context/AuthContext';
+import Auxx from './components/Context/Auxx';
 import ManageCategory from './pages/ManageCategory';
 import AddJob from './pages/Job/AddJob';
 
@@ -83,9 +82,6 @@ const App = () => {
         <Route path="/register" component={Register} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/create-cv" component={CV} exact />
-        <Route path="/createcv-profile" component={CvRouter} exact />
-        <Route path="/createcv-education" component={CvRouter} exact />
-        <Route path="/createcv-project" component={CvRouter} exact />
         <Route component={Error} />
         <Redirect to="/" />
       </Switch>

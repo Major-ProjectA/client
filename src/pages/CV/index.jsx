@@ -1,14 +1,14 @@
 import React from 'react';
 import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
-import Resume from '../../features/Form/FormCV/Resume';
+import Main from '../../features/Form/FormCV/Main';
 
 function CV() {
   return (
     <>
       <Navbars />
 
-      <Resume />
+      <Main />
 
       <Footers />
     </>

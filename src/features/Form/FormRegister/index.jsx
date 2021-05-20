@@ -1,12 +1,6 @@
-import axios from 'axios';
 import React, { useContext, useState } from 'react';
-import { useHttpClient } from "../../../hooks/http-hook";
-import {
-  VALIDATOR_EMAIL,
-  VALIDATOR_MINLENGTH,
-  VALIDATOR_REQUIRE,
-} from "../../../util/Validator";
-import { AuthContext } from "../../context/authcontext";
+import { AuthContext } from '../../../components/Context/AuthContext';
+import { useHttpClient } from "../../../components/Hooks/Http-hook";
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
@@ -36,8 +30,7 @@ const FormRegister = () => {
         }
       );
       console.log(responseData);
-      //alert("Login successfully.");
-      Swal.fire('Awesome!', "You're successfully registered in!", 'success').then(
+      Swal.fire('Awesome!', "You're successfully interested in!", 'success').then(
         (result) => {
           if (result.isConfirmed || result.isDismissed) {
             
@@ -71,7 +64,7 @@ const FormRegister = () => {
                 <div className="panel-body">
                   {/* <img src={'/assets/img/Job-Listing.png'} className="img-responsive" alt="" /> */}
 
-                  <form role="form" onSubmit={register}>
+                  <form onSubmit={register}>
                     <fieldset>
                       <div className="form-group">
                         <img src={'/assets/img/Job-Listing.png'} className="img-responsive" alt="" />
@@ -82,7 +75,6 @@ const FormRegister = () => {
                           placeholder="Username"
                           onChange={(e) => setUsername(e.target.value)}
                           value={userName}
-                          validators={[VALIDATOR_REQUIRE]}
                           required
                           // name="email"
                           // type="email"
@@ -148,9 +140,9 @@ const FormRegister = () => {
                     </fieldset>
                   </form>
                   <div style={{ textAlign: 'center', marginTop: '-4%' }}>
-                    <a>
+                    <div>
                       <p>Already have an account? <Link to="/login"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></p>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
