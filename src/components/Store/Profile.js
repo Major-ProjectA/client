@@ -13,8 +13,6 @@ const Store = createStore({
 
   actions: {
     stepProfile: (data) => async ({ setState, getState }) => {
-      const response = await axios.post('http://localhost:5000/api/cvs/createProfile', data);
-      console.log(response);
       setState({
         firstname: data.firstname,
         lastname: data.lastname,
@@ -23,8 +21,10 @@ const Store = createStore({
         email: data.email,
         address: data.address,
       })
+      const response = await axios.patch(`http://localhost:5000/api/cvs/updateProfile/${data.profileId}`, data);
+      console.log(response);
     },
   },
 });
 
-export const useFormCV = createHook(Store);
+export const useProfile = createHook(Store);

@@ -1,6 +1,4 @@
 import React from "react";
-import { Steps, Step } from "react-step-builder";
-import { Button, Col, Row } from "antd";
 
 import Profile from "./Profile";
 import Education from "./Education";
@@ -9,42 +7,72 @@ import Experience from "./Experience";
 import Extras from "./Extras";
 import Review from "./Review";
 
-const Navigation = (props) => {
-  console.log({ props });
-  return (
-    <Row align="center">
-      <Col>
-        <Button type="primary" onClick={props.prev} style={{ marginRight: 10 }}>
-          Previous
-        </Button>
-      </Col>
-      <Col>
-        <Button type="primary" onClick={props.next}>
-          Next
-        </Button>
-      </Col>
-    </Row>
-  );
-};
+export default class Main extends React.Component {
+  state = {
+    step: 1,
+  }
+  // process to next step
+  next = () => {
+    this.setState(prevState => {
+      return {
+        step: prevState.step + 1
+      }
+    })
+  }
 
-function Main() {
-  const config = {
-    navigation: {
-      component: Navigation, // a React component with special props provided automatically
-      location: "after" // or before
+  // process to previous step
+  back = () => {
+    this.setState(prevState => {
+      return {
+        step: prevState.step - 1
+      }
+    })
+  }
+
+  render() {
+    const { step } = this.state
+    switch (step) {
+      case 1:
+        return (
+          <Profile
+            next={this.next}
+          />
+        );
+      case 2:
+        return (
+          <Education
+            next={this.next}
+            back={this.back}
+          />
+        );
+      case 3:
+        return (
+          <Project
+            next={this.next}
+            back={this.back}
+          />
+        );
+      case 4:
+        return (
+          <Experience
+            next={this.next}
+            back={this.back}
+          />
+        );
+      case 5:
+        return (
+          <Extras
+            next={this.next}
+            back={this.back}
+          />
+        );
+      case 6:
+        return (
+          <Review
+            back={this.back}
+          />
+        );
+      default:
     }
-  };
-
-  return (
-    <Steps config={config}>
-      <Step component={Profile} />
-      <Step component={Education} />
-      <Step component={Project} />
-      <Step component={Experience} />
-      <Step component={Extras} />
-      <Step component={Review} />
-    </Steps>
-  );
+  }
 }
-
-export default Main;

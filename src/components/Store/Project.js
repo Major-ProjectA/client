@@ -9,10 +9,14 @@ const Store = createStore({
 
   actions: {
     stepProject: (data) => async ({ setState, getState }) => {
-      const response = await axios.post('http://localhost:5000/api/cvs/createProject', data);
+      setState({
+        projectName: data.projectName,
+        projectDescription: data.projectName,
+      })
+      const response = await axios.patch(`http://localhost:5000/api/cvs/updateProject/${data.projectId}`, data);
       console.log(response)
     },
   },
 });
 
-export const useFormCV = createHook(Store);
+export const useProject = createHook(Store);

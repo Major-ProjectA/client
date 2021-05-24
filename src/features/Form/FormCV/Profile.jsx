@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useCV } from '../../../components/Store/CV';
-import { useFormCV } from '../../../components/Store/Profile';
+import { useProfile } from '../../../components/Store/Profile';
 import { useFormik } from 'formik';
+import axios from 'axios';
+import * as Yup from 'yup';
 
 const Profile = (props) => {
   const [cvState, cvActions] = useCV();
-  const [formState, formActions] = useFormCV();
+  const [formState, formActions] = useProfile();
   const formik = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
+      firstname: '',
+      lastname: '',
       email: '',
       phone: '',
       dob: '',
       address: '',
     },
+
+    validationSchema: Yup.object().shape({
+      firstname: Yup.string()
+        .max(20, 'Your first name is too long.')
+        .required('Required'),
+      lastname: Yup.string()
+        .max(20, 'Your last name is too long.')
+        .required('Required'),
+      email: Yup.string().email('Invalid email').required('Required'),
+    }),
 
     onSubmit: async (values) => {
       const data = {
@@ -25,10 +37,25 @@ const Profile = (props) => {
         address: values.address,
         phone: values.phone,
         cvId: cvState.cvId,
+        profileId: cvState.profileId,
       };
       await formActions.stepProfile(data)
     },
   });
+
+  useEffect(() => {
+    if (!cvState.profileId) {
+      const fetch = async () => {
+        const profile = await axios.post(`http://localhost:5000/api/cvs/createProfile/${cvState.cvId}`); //create empty CV
+        cvActions.saveProfileId(profile.data.cv._id);
+      }
+      fetch();
+    } else {
+      return () => formik.handleSubmit;
+    }
+  }, [cvState.cvId])
+
+  const { next, back } = props;
 
   return (
     <>
@@ -38,117 +65,186 @@ const Profile = (props) => {
         </div>
       </section>
 
-      <div class="section detail-desc">
-        <div class="container white-shadow">
-          <div class="row">
-            <div class="detail-pic js">
-              <div class="box">
-                <input type="file" name="upload-pic[]" id="upload-pic" class="inputfile" />
-                <label for="upload-pic">
-                  <i class="fa fa-upload" aria-hidden="true"></i>
-                </label>
+      <form onSubmit={formik.handleSubmit}>
+        <div class="detail-desc section">
+          <div class="container white-shadow">
+            <div class="row">
+              <div class="detail-pic js">
+                <div class="box">
+                  <input type="file" name="upload-pic[]" id="upload-pic" class="inputfile" />
+                  <label for="upload-pic">
+                    <i class="fa fa-upload" aria-hidden="true"></i>
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="newcontainer" style={{ marginLeft: '-1%' }}>
-            <div class="row bottom-mrg">
-              <form class="add-feild" onSubmit={formik.handleSubmit}>
-                <div class="col-md-6 col-sm-6">
+            <div class="add-feild">
+              <div class="row bottom-mrg">
+                <div class="col-md-4 col-sm-6">
                   <div class="input-group">
+                    <label>First Name</label>
                     <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter your first name."
+                      required
                       name="firstname"
-                      type="text"
-                      class="form-control"
-                      placeholder="First Name"
-                      defaultValue={formik.values.firstName}
+                      defaultValue={formState.firstname}
                       onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
                     />
                   </div>
+                  {formik.errors.firstname && formik.touched.firstname && (<div>{formik.errors.firstname}</div>)}
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                   <div class="input-group">
+                    <label>Last Name</label>
                     <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter your last name."
+                      required
                       name="lastname"
-                      type="text"
-                      class="form-control"
-                      placeholder="Last Name"
-                      defaultValue={formik.values.lastName}
+                      defaultValue={formState.lastname}
                       onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
                     />
                   </div>
+                  {formik.errors.lastname && formik.touched.lastname && <div>{formik.errors.lastname}</div>}
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                   <div class="input-group">
+                    <label>Email</label>
                     <input
-                      name="dob"
-                      type="date"
-                      class="form-control"
-                      placeholder="Date of Birth"
-                      defaultValue={formik.values.dob}
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-sm-6">
-                  <div class="input-group">
-                    <input
-                      name="phone"
-                      type="phone"
-                      class="form-control"
-                      placeholder="Phone"
-                      defaultValue={formik.values.phone}
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-sm-6">
-                  <div class="input-group">
-                    <input
-                      name="email"
                       type="email"
                       class="form-control"
-                      placeholder="Email"
-                      defaultValue={formik.values.email}
+                      placeholder="Enter your email."
+                      required
+                      name="email"
+                      defaultValue={formState.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                  </div>
+                  {formik.errors.email && formik.touched.email && (<div>{formik.errors.email}</div>)}
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                  <div class="input-group">
+                    <label>Date of Birth</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      placeholder="Enter your date of birth."
+                      required
+                      name="dob"
+                      defaultValue={formState.dob}
                       onChange={formik.handleChange}
                     />
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                   <div class="input-group">
+                    <label>Phone</label>
                     <input
-                      name="address"
+                      type="number"
+                      class="form-control"
+                      placeholder="Enter your phone."
+                      required
+                      name="phone"
+                      defaultValue={formState.phone}
+                      onChange={formik.handleChange}
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                  <div class="input-group">
+                    <label>Address</label>
+                    <input
                       type="text"
                       class="form-control"
-                      placeholder="Address"
-                      defaultValue={formik.values.address}
+                      placeholder="Enter your address."
+                      required
+                      name="address"
+                      defaultValue={formState.address}
                       onChange={formik.handleChange}
                     />
                   </div>
                 </div>
 
-                <div class="row no-padd">
-                  <div class="detail pannel-footer">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="detail-pannel-footer-btn pull-right">
-                        <button variant="contained" color="secondary" type="submit">
-                          Save Profile
-                        </button>
-                      </div>
+                <div class="detail pannel-footer">
+                  <div class="col-md-12 col-sm-12">
+                    <div class="detail-pannel-footer-btn pull-left">
+                      <button
+                        onClick={back}
+                        class="footer-btn choose-cover"
+                        type="submit"
+                        style={{
+                          backgroundColor: '#3DB810',
+                          border: 'none',
+                          color: 'white',
+                          padding: '15px 22px',
+                          textAlign: 'center',
+                          textDecoration: 'none',
+                          display: 'inline-block',
+                          fontSize: '16px',
+                        }}
+                      >
+                        Back
+                      </button>
+                    </div>
+
+                    <div class="detail-pannel-footer-btn pull-left">
+                      <button
+                        onClick={next}
+                        class="footer-btn choose-cover"
+                        type="submit"
+                        style={{
+                          backgroundColor: '#3DB810',
+                          border: 'none',
+                          color: 'white',
+                          padding: '15px 22px',
+                          textAlign: 'center',
+                          textDecoration: 'none',
+                          display: 'inline-block',
+                          fontSize: '16px',
+                        }}
+                      >
+                        Next
+                      </button>
+                    </div>
+
+                    <div class="detail-pannel-footer-btn pull-right">
+                      <button
+                        class="footer-btn choose-cover"
+                        type="submit"
+                        style={{
+                          backgroundColor: '#3DB810',
+                          border: 'none',
+                          color: 'white',
+                          padding: '15px 22px',
+                          textAlign: 'center',
+                          textDecoration: 'none',
+                          display: 'inline-block',
+                          fontSize: '16px',
+                        }}
+                      >
+                        Update
+                      </button>
                     </div>
                   </div>
                 </div>
-              </form>
+                <p className="text-center text-muted">Step 1 / 6</p>
+              </div>
             </div>
           </div>
-          <p className="text-center text-muted">Step 1 / 6</p>
         </div>
-      </div>
+      </form>
     </>
   );
 };

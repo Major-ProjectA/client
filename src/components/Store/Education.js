@@ -14,10 +14,18 @@ const Store = createStore({
 
   actions: {
     stepEducation: (data) => async ({ setState, getState }) => {
-      const response = await axios.post('http://localhost:5000/api/cvs/createEducation', data);
+      setState({
+        collegeName: data.collegeName,
+        collegeMajor: data.collegeMajor,
+        collegeQualification: data.collegeQualification,
+        schoolName: data.schoolName,
+        schoolMajor: data.schoolMajor,
+        schoolQualification: data.schoolQualification,
+      })
+      const response = await axios.patch(`http://localhost:5000/api/cvs/updateEducation/${data.educationId}`, data);
       console.log(response)
     },
   },
 });
 
-export const useFormCV = createHook(Store);
+export const useEducation = createHook(Store);
