@@ -8,13 +8,13 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Jobs from './features/Job';
 import DetailPage from './features/Job/JobDetails';
-import CV from './pages/CV';
 
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import { AuthContext } from './components/Context/AuthContext';
 import Auxx from './components/Context/Auxx';
 import ManageCategory from './pages/ManageCategory';
 import AddJob from './pages/Job/AddJob';
+import CvRouter from './pages/CV/CvRouter';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -69,7 +69,12 @@ const App = () => {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/jobs" component={Jobs} exact />
-        <Route path="/create-cv" component={CV} exact />
+        <Route path="/createcv-profile" component={CvRouter} exact />
+        <Route path="/createcv-education" component={CvRouter} exact />
+        <Route path="/createcv-project" component={CvRouter} exact />
+        <Route path="/createcv-experience" component={CvRouter} exact />
+        <Route path="/createcv-extras" component={CvRouter} exact />
+        <Route path="/createcv-review" component={CvRouter} exact />
         <Route path="/detail/:id" component={DetailPage} exact />
         <Route path="/jobs/detail/:id" component={DetailPage} exact />
         <Redirect to="/" />
@@ -84,6 +89,7 @@ const App = () => {
         <Route path="/jobs/detail/:id" component={DetailPage} exact />
         <Route path="/register" component={Register} exact />
         <Route path="/login" component={Login} exact />
+        <Route path="/create-job" component={AddJob} exact />
         <Route component={Error} />
         <Redirect to="/" />
       </Switch>

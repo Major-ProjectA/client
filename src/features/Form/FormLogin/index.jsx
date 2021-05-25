@@ -26,15 +26,7 @@ const FormLogin = () => {
           "Content-Type": "application/json",
         }
       );
-      console.log(responseData);
-      //alert("Login successfully.");
-      Swal.fire('Awesome!', "You're successfully interested in!", 'success').then(
-        (result) => {
-          if (result.isConfirmed || result.isDismissed) {
-            
-          }
-        }
-      );
+      Swal.fire('Awesome!', "You're successfully interested in!", 'success')
       auth.login(responseData.user.id);
       auth.authorization(responseData.user.userName);
       auth.authorization(responseData.user.role);

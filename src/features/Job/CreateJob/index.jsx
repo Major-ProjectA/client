@@ -7,7 +7,6 @@ import Swal from "sweetalert2"
 
 function CreateJob() {
   const state = useContext(GlobalState);
-
   const [job, setJob] = useState({
     jobId: '',
     startDay: '',
