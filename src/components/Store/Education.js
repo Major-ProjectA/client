@@ -3,29 +3,24 @@ import axios from 'axios';
 
 const Store = createStore({
   initialState: {
-    collegeName: '',
-    collegeMajor: '',
-    collegeQualification: '',
-
-    schoolName: '',
-    schoolMajor: '',
-    schoolQualification: '',
+    education: [],
   },
 
   actions: {
     stepEducation: (data) => async ({ setState, getState }) => {
+      // setState({
+      //   education: data.education,
+      // })
+      await axios.patch(`http://localhost:5000/api/cvs/updateEducation/${data.educationId}`, getState());
+    },
+    addEdu: (data) => ({ setState, getState }) => {
+      console.log(data)
       setState({
-        collegeName: data.collegeName,
-        collegeMajor: data.collegeMajor,
-        collegeQualification: data.collegeQualification,
-        schoolName: data.schoolName,
-        schoolMajor: data.schoolMajor,
-        schoolQualification: data.schoolQualification,
+        education : [...getState().education, data]
       })
-      const response = await axios.patch(`http://localhost:5000/api/cvs/updateEducation/${data.educationId}`, data);
-      console.log(response)
     },
   },
+
 });
 
 export const useEducation = createHook(Store);

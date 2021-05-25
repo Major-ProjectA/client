@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import JobAPI from './api/JobApi';
+import JobAPI from './api/jobApi';
 import CategoriesAPI from './api/CategoriesAPI';
 
 export const GlobalState = createContext();

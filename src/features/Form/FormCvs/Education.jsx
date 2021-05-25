@@ -21,7 +21,7 @@ const Educations = (props) => {
                         class="form-control"
                         placeholder="College name"
                         name="collegeName"
-                        defaultValue={formik.collegeName}
+                        defaultValue={data && data.collegeName}
                         onChange={props.handlerchange}
                     />
                 </div>
@@ -35,7 +35,7 @@ const Educations = (props) => {
                         class="form-control"
                         placeholder="College Major"
                         name="collegeMajor"
-                        defaultValue={formik.collegeMajor}
+                        defaultValue={data && data.collegeMajor}
                         onChange={props.handlerchange}
                     />
                 </div>
@@ -49,7 +49,7 @@ const Educations = (props) => {
                         class="form-control"
                         placeholder="College Qualification"
                         name="collegeQualification"
-                        defaultValue={formik.collegeQualification}
+                        defaultValue={data && data.collegeQualification}
                         onChange={props.handlerchange}
                     />
                 </div>
