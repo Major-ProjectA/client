@@ -21,8 +21,8 @@ const Store = createStore({
         email: data.email,
         address: data.address,
       })
-      const response = await axios.patch(`http://localhost:5000/api/cvs/updateProfile/${data.profileId}`, data);
-      console.log(response);
+      const response = await axios.patch(`http://localhost:5000/api/cvs/updateProfile/${data.profileId}`, getState());
+      console.log(getState());
     },
   },
 });

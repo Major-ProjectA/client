@@ -29,7 +29,7 @@ const Store = createStore({
     deleteEdu : (index) => ({ setState, getState }) => {
       console.log(index)
       setState({
-        education : getState().education.splice(index,0)
+        education : getState().education.splice(index,1)
       })
     }
   },
