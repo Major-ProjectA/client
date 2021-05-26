@@ -3,16 +3,18 @@ import axios from 'axios';
 
 const Store = createStore({
   initialState: {
-    skill:'',
-    interest:'',
+    addInfor:'',
   },
 
   actions: {
     stepExtra: (data) => async ({ setState, getState }) => {
-      const response = await axios.post('http://localhost:5000/api/cvs/createExtra', data);
+      setState({
+        addInfor: data.addInfor,
+      })
+      const response = await axios.patch(`http://localhost:5000/api/cvs/updateExtra/${data.extraId}`, data);
       console.log(response)
     },
   },
 });
 
-export const useFormCV = createHook(Store);
+export const useExtra = createHook(Store);

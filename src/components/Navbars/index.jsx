@@ -9,12 +9,9 @@ const Navbars = () => {
   const auth = useContext(AuthContext);
 
   const createCV = async () => {
-    // const userId = auth.userId;
-    const response = await axios.post('http://localhost:5000/api/cvs/createCV'); //create empty CV
-    actions.saveCvId(response.data.user.id);
-    //actions.saveUserId(userId.data.user.id);
-    console.log();
-  };
+    const cv = await axios.post(`http://localhost:5000/api/cvs/createCV/${auth.userId}`); //create empty CV
+    actions.saveCvId(cv.data.user._id);
+  }
 
   return (
     <>
@@ -32,7 +29,7 @@ const Navbars = () => {
           <div className="collapse navbar-collapse" id="navbar-menu">
             <ul className="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
               <li>
-                <Link to="/">Home</Link>
+                <Link to='/'>Home</Link>
               </li>
               <li>
                 <NavLink to="/jobs">Find Job</NavLink>

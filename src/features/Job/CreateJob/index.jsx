@@ -12,7 +12,6 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function CreateJob() {
   const state = useContext(GlobalState);
-
   const [job, setJob] = useState({
     jobId: '',
     startDay: '',

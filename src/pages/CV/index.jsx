@@ -7,7 +7,7 @@ function CV() {
   return (
     <>
       <Navbars />
-
+ 
       <Main />
 
       <Footers />
