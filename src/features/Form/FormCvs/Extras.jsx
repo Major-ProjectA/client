@@ -37,6 +37,7 @@ const Extras = (props) => {
     }, [cvState.cvId])
 
   const previous = (data) => {
+    console.log(data);
     props.history.push('/createcv-experience');
   };
 

@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import React, { useEffect } from 'react';
 import { useCV } from '../../../components/Store/CV';
 import { useEducation } from '../../../components/Store/Education';
-import Education from './Education';
 
 const Educations = (props) => {
   const [cvState, cvActions] = useCV();
@@ -58,14 +57,155 @@ const Educations = (props) => {
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Education Details</h2>
-              {formState.education.map(item => (
-                <Education data={item} />
-              ))}
+              <>
+                <div class="col-md-3 col-sm-6">
+                  <label>College</label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="College name"
+                      name="collegeName"
+                      onChange={formik.handleChange}
+                    />
+                  </div>
+                </div>
 
-              <Education handlerchange={formik.handleChange} />
-              <button type="button" onClick={addEdu}>Save</button>
+                <div class="col-md-3 col-sm-6">
+                  <label>Major</label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="College Major"
+                      name="collegeMajor"
+                      onChange={formik.handleChange}
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                  <label>Qualification</label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="College Qualification"
+                      name="collegeQualification"
+                      onChange={formik.handleChange}
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                  <label>Features</label>
+                  <div class="input-group">
+                    <button
+                      style={{
+                        backgroundColor: '#3DB810',
+                        border: 'none',
+                        color: 'white',
+                        padding: '13px 18px',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                        display: 'inline-block',
+                        fontSize: '16px',
+                      }}
+                      type="button"
+                      onClick={addEdu}
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </>
+              {formState.education.map(item => {
+                return (
+                  <>
+                    <div class="col-md-3 col-sm-6">
+                      <label>College</label>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="College name"
+                          name="collegeName"
+                          defaultValue={item.collegeName}
+                          onChange={formik.handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                      <label>Major</label>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="College Major"
+                          name="collegeMajor"
+                          defaultValue={item.collegeMajor}
+                          onChange={formik.handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                      <label>Qualification</label>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="College Qualification"
+                          name="collegeQualification"
+                          defaultValue={item.collegeQualification}
+                          onChange={formik.handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                      <label>Features</label>
+                      <div class="input-group">
+                        <button
+                          style={{
+                            backgroundColor: '#FFBF00',
+                            border: 'none',
+                            color: 'white',
+                            padding: '13px 18px',
+                            textAlign: 'center',
+                            textDecoration: 'none',
+                            display: 'inline-block',
+                            fontSize: '16px',
+                          }}
+                          type="button"
+                          onClick={addEdu}
+                        >
+                          Update
+                        </button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button
+                          style={{
+                            backgroundColor: '#FF0000',
+                            border: 'none',
+                            color: 'white',
+                            padding: '13px 18px',
+                            textAlign: 'center',
+                            textDecoration: 'none',
+                            display: 'inline-block',
+                            fontSize: '16px',
+                          }}
+                          type="button"
+                          onClick={addEdu}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
             </div>
-
             <div class="detail pannel-footer">
               <div class="col-md-12 col-sm-12">
                 <div class="detail-pannel-footer-btn pull-left">
