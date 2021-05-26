@@ -20,7 +20,7 @@ const Store = createStore({
     },
     updateEdu : (index, data) => ({ setState, getState }) => {
       let newArr = [...getState().education];
-      newArr[index + 1] = data;
+      newArr[index] = data;
       setState({
         education : newArr,
       })
@@ -29,7 +29,7 @@ const Store = createStore({
     deleteEdu : (index) => ({ setState, getState }) => {
       console.log(index)
       setState({
-        education : getState().education.splice(index,1)
+        education : getState().education.splice(index,0)
       })
     }
   },
