@@ -32,7 +32,22 @@ const Educations = (props) => {
       collegeQualification: formik.values.collegeQualification
     }
     formActions.addEdu(data)
+  };
+
+  const updateEdu = (index) => {
+    const  data = {
+      collegeName: formik.values.collegeName,
+      collegeMajor: formik.values.collegeMajor,
+      collegeQualification: formik.values.collegeQualification
+    }
+    formActions.updateEdu(index, data)
   }
+
+  const deleteEdu = (index) => {
+    formActions.deleteEdu(index);
+  }
+
+  console.log(formState)
 
   useEffect(() => {
     if (!cvState.educationId) {
@@ -119,7 +134,7 @@ const Educations = (props) => {
                   </div>
                 </div>
               </>
-              {formState.education.map(item => {
+              {formState.education.map((item,index) => {
                 return (
                   <>
                     <div class="col-md-3 col-sm-6">
@@ -179,7 +194,7 @@ const Educations = (props) => {
                             fontSize: '16px',
                           }}
                           type="button"
-                          onClick={addEdu}
+                          onClick={() => updateEdu(index)}
                         >
                           Update
                         </button>
@@ -196,7 +211,7 @@ const Educations = (props) => {
                             fontSize: '16px',
                           }}
                           type="button"
-                          onClick={addEdu}
+                          onClick={() => deleteEdu(index)}
                         >
                           Delete
                         </button>

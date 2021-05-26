@@ -14,11 +14,24 @@ const Store = createStore({
       await axios.patch(`http://localhost:5000/api/cvs/updateEducation/${data.educationId}`, getState());
     },
     addEdu: (data) => ({ setState, getState }) => {
-      console.log(data)
       setState({
         education : [...getState().education, data]
       })
     },
+    updateEdu : (index, data) => ({ setState, getState }) => {
+      let newArr = [...getState().education];
+      newArr[index + 1] = data;
+      setState({
+        education : newArr,
+      })
+    },
+
+    deleteEdu : (index) => ({ setState, getState }) => {
+      console.log(index)
+      setState({
+        education : getState().education.splice(index,1)
+      })
+    }
   },
 
 });
