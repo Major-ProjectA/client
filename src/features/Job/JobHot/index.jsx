@@ -25,8 +25,8 @@ function JobHot() {
         <div className="row">
           {jobhot.map((job) => {
             return (
-              <>
-                <div className="col-md-4 col-sm-4" key={job._id}>
+              <div key={job._id}>
+                <div className="col-md-4 col-sm-4">
                   <div className="popular-jobs-container">
                     <div className="popular-jobs-box">
                       <span className="popular-jobs-status bg-success">Hot</span>
@@ -62,7 +62,7 @@ function JobHot() {
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

@@ -18,27 +18,21 @@ function CrudCategory() {
     e.preventDefault();
     try {
       if (onEdit) {
-        const res = await axios.put(`/api/categories/${id}`, {
+        await axios.put(`/api/categories/${id}`, {
           career: { careerName: category, icon: cateicon, total: catetotal },
         });
-        Swal.fire('Awesome!', "You're successfully updated!", 'success').then(
-          (result) => {
-            if (result.isConfirmed || result.isDismissed) {
-              
-            }
+        Swal.fire('Awesome!', "You're successfully updated!", 'success').then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
           }
-        );
+        });
       } else {
-        const res = await axios.post('/api/categories', {
+        await axios.post('/api/categories', {
           career: { careerName: category, icon: cateicon, total: catetotal },
         });
-        Swal.fire('Awesome!', "You're successfully created!", 'success').then(
-          (result) => {
-            if (result.isConfirmed || result.isDismissed) {
-              
-            }
+        Swal.fire('Awesome!', "You're successfully created!", 'success').then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
           }
-        );
+        });
       }
 
       //Reset Form
@@ -66,13 +60,10 @@ function CrudCategory() {
   const deleteCategory = async (id) => {
     try {
       await axios.delete(`api/categories/${id}`);
-      Swal.fire('Awesome!', "You're successfully deleted!", 'success').then(
-        (result) => {
-          if (result.isConfirmed || result.isDismissed) {
-            
-          }
+      Swal.fire('Awesome!', "You're successfully deleted!", 'success').then((result) => {
+        if (result.isConfirmed || result.isDismissed) {
         }
-      );
+      });
       setCallBack(!callback);
     } catch (error) {
       alert(error.response.data.msg);
@@ -121,7 +112,7 @@ function CrudCategory() {
             <div class="col-md-4 col-sm-6">
               <input
                 name="icon"
-                type="text"
+                type="url"
                 class="form-control"
                 placeholder="Link icon"
                 value={cateicon}

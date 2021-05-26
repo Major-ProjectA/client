@@ -1,10 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
+import HtmlReactParse from 'html-react-parser';
 import { GlobalState } from '../../../GlobalState';
+// import Loading from '../../Loading';
 
 import Navbars from '../../../components/Navbars';
 import Footer from '../../../components/Footers';
-// import JobList from '../JobList';
 
 function DetailPage() {
   const params = useParams();
@@ -12,7 +14,7 @@ function DetailPage() {
   const [jobs] = state.jobAPI.jobs;
   const [jobhot] = state.jobAPI.jobhot;
   const [detailJob, setDetailJob] = useState([]);
-  // console.log(params);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (params) {
@@ -30,7 +32,7 @@ function DetailPage() {
 
   if (detailJob.length === 0) return null;
   return (
-    <>
+    <div>
       <Navbars />
       <br /> <br />
       <section
@@ -69,7 +71,9 @@ function DetailPage() {
                 <span class="designation">
                   <u>{detailJob.position}</u>
                 </span>
+
                 <p style={{ textAlign: 'justify' }}>{detailJob.detail}</p>
+
                 <ul>
                   <li>
                     <i class="fa fa-briefcase"></i>
@@ -77,7 +81,7 @@ function DetailPage() {
                   </li>
                   <li>
                     <i class="fa fa-flask"></i>
-                    <span>{detailJob.exp}</span>
+                    <span>{detailJob.experience}</span>
                   </li>
                   <li>
                     <i class="fa fa-money"></i>
@@ -145,29 +149,29 @@ function DetailPage() {
               <div class="col-md-5 col-sm-5">
                 <ul class="detail-footer-social">
                   <li>
-                    <a href={'# '}>
-                      <i class="fa fa-facebook"></i>
+                    <a href={'# '} style={{ color: 'white' }}>
+                      <i class="fa fa-facebook" style={{ backgroundColor: '#3B5998' }}></i>
                     </a>
                   </li>
 
                   <li>
-                    <a href="#">
-                      <i class="fa fa-google-plus"></i>
+                    <a href="# " style={{ color: 'white' }}>
+                      <i class="fa fa-google-plus" style={{ backgroundColor: '#DC3545' }}></i>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i class="fa fa-twitter"></i>
+                    <a href="#" style={{ color: 'white' }}>
+                      <i class="fa fa-twitter" style={{ backgroundColor: '#1DA1F2' }}></i>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i class="fa fa-linkedin"></i>
+                    <a href="#" style={{ color: 'white' }}>
+                      <i class="fa fa-linkedin" style={{ backgroundColor: '#0088CC' }}></i>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <i class="fa fa-instagram"></i>
+                    <a href="#" style={{ color: 'white' }}>
+                      <i class="fa fa-instagram" style={{ backgroundColor: '#E83E8C' }}></i>
                     </a>
                   </li>
                 </ul>
@@ -191,7 +195,7 @@ function DetailPage() {
         <div class="container">
           <div class="row row-bottom">
             <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
-              About a Job
+              Job Requirements
             </h2>
             <ul class="detail-list">
               <li>{detailJob.requirement}</li>
@@ -209,22 +213,28 @@ function DetailPage() {
 
           <div class="row row-bottom">
             <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
-              Other Information
+              Certification
             </h2>
             <ul class="detail-list">
               <li>{detailJob.certification}</li>
             </ul>
           </div>
-          <div class="detail-pannel-footer-btn pull-right">
-            <Link to="/jobs" class="footer-btn blu-btn" title="" style={{backgroundColor:"#11B719"}}>
-              Back
-            </Link>
+
+          <div class="row row-bottom">
+            <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
+              Other Information
+            </h2>
+
+            <div style={{ marginTop: '20px', width: '100%' }}>
+              <Box color="white" bgcolor="#DDC488" p={1} fontSize="120%" color="text.secondary">
+                {HtmlReactParse(detailJob.otherInfo)}
+              </Box>
+            </div>
           </div>
         </div>
       </section>
-      <div class="clearfix"></div>
       <Footer />
-    </>
+    </div>
   );
 }
 
