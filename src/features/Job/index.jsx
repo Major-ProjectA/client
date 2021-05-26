@@ -11,7 +11,7 @@ import LoadMore from './LoadMore';
 function ListPage() {
   const state = useContext(GlobalState);
   const [jobs] = state.jobAPI.jobs;
-  console.log(jobs);
+  // console.log(jobs);
 
   // const [error, setError] = useState(false);
   // const [page, setPage] = useState(pageNumber);

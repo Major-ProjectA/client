@@ -1,9 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
+import { useHistory, useParams } from 'react-router-dom';
+import './styles.css';
 import { GlobalState } from '../../../GlobalState';
+import axios from 'axios';
+
 import Loading from '../../../features/Loading';
-import Swal from "sweetalert2"
-// import { useHistory, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function CreateJob() {
   const state = useContext(GlobalState);
@@ -27,6 +32,8 @@ function CreateJob() {
     nameCom: '',
     siteCom: '',
     thumbnail: '',
+    imgCom: '',
+    otherInfo: '',
     location: {
       street: '',
       district: '',
@@ -36,13 +43,17 @@ function CreateJob() {
       contactName: 'Nguyen The Luan',
       contactEmail: 'nguyenluan.work@gmail.com',
       contactAddress: 'Ho Chi Minh',
-      contactPhone: '090977xxxx',
+      contactPhone: '0909774xxx',
     },
+    id: '',
   });
 
   const [categories] = state.categoriesAPI.categories;
   const [photos, setPhotos] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // const history = useHistory();
+  // const param = useParams();
 
   const handleUpload = async (e) => {
     e.preventDefault();
@@ -50,27 +61,32 @@ function CreateJob() {
       const file = e.target.files[0];
       //console.log(file);
 
-      if (!file) return (Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: "File not existed!"
-      }));
-      if (file.size > 1024 * 1024) return (Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: "Size is too large!"
-      }));
-      if (file.type !== 'image/jpeg' && file.type !== 'image/png') return (Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: "File format is incorrect!"
-      }));
+      if (!file)
+        return Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'File not existed!',
+        });
+      if (file.size > 1024 * 1024)
+        return Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Size is too large!',
+        });
+      if (file.type !== 'image/jpeg' && file.type !== 'image/png')
+        return Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'File format is incorrect!',
+        });
 
       let formData = new FormData();
       formData.append('file', file);
 
       setLoading(true);
-      const res = await axios.post('/api/photo/upload', formData);
+      const res = await axios.post('/api/photo/upload', formData, { url: photos.url });
+
+      console.log(res.data.url);
 
       setLoading(false);
       setPhotos(res.data);
@@ -80,8 +96,8 @@ function CreateJob() {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: "Something went wrong, please try again."
-      })
+        text: 'Something went wrong, please try again.',
+      });
     }
   };
 
@@ -93,7 +109,7 @@ function CreateJob() {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: "No image upload!"
+        text: 'No image upload!',
       });
     }
   };
@@ -101,36 +117,35 @@ function CreateJob() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (!photos) 
-        return (
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: "File not existed!"
-          })
-        );
+      if (!photos)
+        return Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'File not existed!',
+        });
+
+      await axios.post('/api/jobs', { ...job });
+      Swal.fire('Awesome!', 'Job created and wait for admin to approve the post... 🎉🎉', 'success').then((result) => {
+        if (result.isConfirmed || result.isDismissed) {
+        }
+      });
+
       // await axios.post('/api/jobs', { ...job }).then((res) => {
       //   console.log(res.data);
       // });
-      await axios.post('/api/jobs', { ...job });
-      Swal.fire('Awesome!', "Job created and wait for admin to approve the post... 🎉🎉", 'success').then(
-        (result) => {
-          if (result.isConfirmed || result.isDismissed) {
-            
-          }
-        }
-      );
+
       clear();
     } catch (error) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: "Something went wrong, please try again."
-      })
+        text: 'Something went wrong, please try again.',
+      });
     }
   };
 
   const clear = () => {
+    setPhotos(false);
     setJob({
       jobId: '',
       startDay: '',
@@ -148,6 +163,8 @@ function CreateJob() {
       nameCom: '',
       siteCom: '',
       thumbnail: '',
+      otherInfo: '',
+      imgCom: '',
       location: {
         street: '',
         district: '',
@@ -157,7 +174,7 @@ function CreateJob() {
         contactName: 'Nguyen The Luan',
         contactEmail: 'nguyenluan.work@gmail.com',
         contactAddress: 'Ho Chi Minh',
-        contactPhone: '090977xxxx',
+        contactPhone: '0909774xxx',
       },
     });
   };
@@ -166,9 +183,20 @@ function CreateJob() {
     display: photos ? 'block' : 'none',
   };
 
+  // const [jobs] = state.jobAPI.jobs;
   // useEffect(() => {
-  //   return () => {};
-  // }, []);
+  //   if (param.id) {
+  //     jobs.forEach((job) => {
+  //       if (job._id === param.id) {
+  //         setJob(job);
+  //         setPhotos(job.photos);
+  //       }
+  //     });
+  //   } else {
+  //     // setOnEdit(false)
+  //     clear();
+  //   }
+  // }, [param.id, jobs]);
 
   return (
     <>
@@ -210,7 +238,6 @@ function CreateJob() {
                         <img
                           src={photos ? photos.url : ''}
                           style={{
-                            // overflow: 'hidden',
                             position: 'absolute',
                             top: '0',
                             left: '0',
@@ -235,10 +262,11 @@ function CreateJob() {
                     <input
                       type="text"
                       class="form-control"
-                      placeholder=""
+                      placeholder="Please input an ID"
                       required
                       value={job.jobId}
                       onChange={(e) => setJob({ ...job, jobId: e.target.value })}
+                      disabled={job.id}
                     />
                   </div>
                 </div>
@@ -327,7 +355,7 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                   <label>Category</label>
                   <div class="input-group">
                     <select
@@ -346,7 +374,7 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                   <div class="input-group">
                     <label>Working Time</label>
                     <select
@@ -355,12 +383,26 @@ function CreateJob() {
                       value={job.workingTime}
                       onChange={(e) => setJob({ ...job, workingTime: e.target.value })}
                     >
+                      <option value="">All</option>
                       <option value="Full Time">Full Time</option>
                       <option value="Part Time">Part Time</option>
                       <option value="Freelancer">Freelancer</option>
                       <option value="Internship">Internship</option>
-                      <option value="Others">Others</option>
                     </select>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                  <div class="input-group">
+                    <label>Url Company</label>
+                    <input
+                      type="url"
+                      class="form-control"
+                      placeholder="Please input a URL image company"
+                      required
+                      value={job.imgCom}
+                      onChange={(e) => setJob({ ...job, imgCom: e.target.value })}
+                    />
                   </div>
                 </div>
               </div>
@@ -397,10 +439,13 @@ function CreateJob() {
         <section class="full-detail">
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">Job Requirement</h2>
-              <div class="col-md-12 col-sm-12">
+              <h2 class="detail-title">
+                <b>Job Information</b>
+              </h2>
+              <div class="col-md-6 col-sm-12">
                 <label>Detail</label>
                 <textarea
+                  rows="6"
                   class="form-control"
                   placeholder="Keep the content short and easy to understand..."
                   required
@@ -409,9 +454,10 @@ function CreateJob() {
                 ></textarea>
               </div>
 
-              <div class="col-md-12 col-sm-12">
+              <div class="col-md-6 col-sm-12">
                 <label>Requirement</label>
                 <textarea
+                  rows="6"
                   class="form-control textarea"
                   placeholder="Requirement"
                   required
@@ -420,7 +466,31 @@ function CreateJob() {
                 ></textarea>
               </div>
 
-              <div class="col-md-12 col-sm-12">
+              <div class="col-md-6 col-sm-12">
+                <label>Benefit</label>
+                <textarea
+                  rows="6"
+                  class="form-control textarea"
+                  placeholder="About Company"
+                  required
+                  value={job.benefit}
+                  onChange={(e) => setJob({ ...job, benefit: e.target.value })}
+                ></textarea>
+              </div>
+
+              <div class="col-md-6 col-sm-12">
+                <label>Certification</label>
+                <textarea
+                  rows="6"
+                  class="form-control textarea"
+                  placeholder="Certification"
+                  required
+                  value={job.certification}
+                  onChange={(e) => setJob({ ...job, certification: e.target.value })}
+                ></textarea>
+              </div>
+
+              <div class="col-md-6 col-sm-12">
                 <label>Experience</label>
                 <select
                   class="form-control input-lg"
@@ -436,30 +506,7 @@ function CreateJob() {
                   <option value="More than 3 years">More than 3 years</option>
                 </select>
               </div>
-
-              <div class="col-md-12 col-sm-12">
-                <label>Certification</label>
-                <textarea
-                  class="form-control textarea"
-                  placeholder="Certification"
-                  required
-                  value={job.certification}
-                  onChange={(e) => setJob({ ...job, certification: e.target.value })}
-                ></textarea>
-              </div>
-
-              <div class="col-md-12 col-sm-12">
-                <label>Benefit</label>
-                <textarea
-                  class="form-control textarea"
-                  placeholder="About Company"
-                  required
-                  value={job.benefit}
-                  onChange={(e) => setJob({ ...job, benefit: e.target.value })}
-                ></textarea>
-              </div>
-
-              <div class="col-md-12 col-sm-12">
+              <div class="col-md-6 col-sm-12">
                 <label>Number of Recruit</label>
                 <input
                   placeholder="Number of recruit"
@@ -471,10 +518,24 @@ function CreateJob() {
                   onChange={(e) => setJob({ ...job, numofRecruit: e.target.value })}
                 />
               </div>
+
+              <div class="col-md-12 col-sm-12">
+                <label>Other Information</label>
+                <CKEditor
+                  id="otherinfo"
+                  editor={ClassicEditor}
+                  onChange={(event, editor) => {
+                    const data = editor.getData();
+                    setJob({ ...job, otherInfo: data });
+                  }}
+                />
+              </div>
             </div>
 
             <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">Company Information</h2>
+              <h2 class="detail-title">
+                <b>Company Information</b>
+              </h2>
 
               <div class="col-md-4 col-sm-6">
                 <div class="input-group">
@@ -591,7 +652,9 @@ function CreateJob() {
             </div>
 
             <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">Contact</h2>
+              <h2 class="detail-title">
+                <b>Contact Information</b>
+              </h2>
               <div class="col-md-6 col-sm-6">
                 <div class="input-group">
                   <span class="input-group-addon">
@@ -676,11 +739,13 @@ function CreateJob() {
               </div>
             </div>
           </div>
+          <div class="col-md-12 col-sm-12">
+            <button class="btn btn-success btn-primary small-btn">Submit your company</button>
+          </div>
         </section>
-        <div class="col-md-12 col-sm-12">
-          <button class="btn btn-success btn-primary small-btn">Submit your company</button>
-        </div>
       </form>
+
+      <br />
     </>
   );
 }
