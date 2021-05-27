@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useCV } from '../Store/CV';
 
 const Navbars = () => {
-  const [actions] = useCV();
+  const [ state, actions ] = useCV();
   const auth = useContext(AuthContext);
 
   const createCV = async () => {
@@ -35,12 +35,12 @@ const Navbars = () => {
                 <NavLink to="/jobs">Find Job</NavLink>
               </li>
               <li>
-                <Link to="#">Blog</Link>
+                <Link to='#'>Blog</Link>
               </li>
 
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
-                <li class="btn-group" onClick={createCV}>
-                  <NavLink to="/create-cv">Create CV</NavLink>
+                <li class="btn-group" onClick={ createCV }>
+                  <NavLink to="/createcv-profile">Create CV</NavLink>
                 </li>
               )}
 
@@ -86,6 +86,9 @@ const Navbars = () => {
                       User
                     </a>
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <NavLink className="dropdown-item" to="/subjectA" style={{ color: '#000000' }}>
+                        Create User
+                      </NavLink>
                       <NavLink className="dropdown-item" to="/subjectB" style={{ color: '#000000' }}>
                         Manage User
                       </NavLink>
