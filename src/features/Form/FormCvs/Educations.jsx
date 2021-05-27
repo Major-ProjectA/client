@@ -44,7 +44,12 @@ const Educations = (props) => {
   }
 
   const deleteEdu = (index) => {
-    formActions.deleteEdu(index);
+    const data = {
+      collegeName: formik.values.collegeName,
+      collegeMajor: formik.values.collegeMajor,
+      collegeQualification: formik.values.collegeQualification
+    }
+    formActions.deleteEdu(index, data);
   }
 
   console.log(formState)
@@ -129,7 +134,7 @@ const Educations = (props) => {
                       type="button"
                       onClick={addEdu}
                     >
-                      Save
+                      Add
                     </button>
                   </div>
                 </div>

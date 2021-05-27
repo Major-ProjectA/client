@@ -11,6 +11,7 @@ const Review = (props) => {
   const [projectState] = useProject();
   const [expState] = useExperience();
   const [extraState] = useExtra();
+  console.log(projectState.project)
   const finish = () => {
     props.history.push('/home');
   };
@@ -84,6 +85,7 @@ const Review = (props) => {
             <div class="col-md-4 col-sm-12">
               <label>Project Description</label>
               <p>{projectState.projectDescription}</p>
+              <p>{projectState.project.projectName}</p>
             </div>
           </div>
 
