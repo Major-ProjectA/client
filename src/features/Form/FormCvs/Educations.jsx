@@ -35,7 +35,7 @@ const Educations = (props) => {
   };
 
   const updateEdu = (index) => {
-    const  data = {
+    const data = {
       collegeName: formik.values.collegeName,
       collegeMajor: formik.values.collegeMajor,
       collegeQualification: formik.values.collegeQualification
@@ -134,7 +134,7 @@ const Educations = (props) => {
                   </div>
                 </div>
               </>
-              {formState.education.map((item,index) => {
+              {formState.education.map((item, index) => {
                 return (
                   <>
                     <div class="col-md-3 col-sm-6">

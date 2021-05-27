@@ -20,7 +20,7 @@ const Store = createStore({
     },
     updateEdu : (index, data) => ({ setState, getState }) => {
       let newArr = [...getState().education];
-      newArr[index + 1] = data;
+      newArr[index] = data;
       setState({
         education : newArr,
       })
