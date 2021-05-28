@@ -10,10 +10,7 @@ const Navbars = () => {
 
   const createCV = async () => {
     const cv = await axios.post(`http://localhost:5000/api/cvs/createCV/${auth.userId}`); //create empty CV
-    console.log(cv)
-    console.log(cv.data)
-    console.log(cv.data.cv._id)
-    actions.saveCvId(cv.data.cv._id);
+    actions.saveCvId(cv.data.cv._id); 
   }
 
   return (

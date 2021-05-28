@@ -3,12 +3,12 @@ import axios from 'axios';
 
 const Store = createStore({
   initialState: {
-    firstname:'',
-    lastname:'',
-    dob:'',
-    phone:'',
-    email:'',
-    address:'',
+    firstname: '',
+    lastname: '',
+    dob: '',
+    phone: '',
+    email: '',
+    address: '',
   },
 
   actions: {

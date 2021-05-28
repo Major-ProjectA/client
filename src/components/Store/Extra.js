@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Store = createStore({
   initialState: {
-    addInfor:'',
+    addInfor: '',
   },
 
   actions: {

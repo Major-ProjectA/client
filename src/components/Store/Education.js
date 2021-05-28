@@ -16,23 +16,24 @@ const Store = createStore({
     },
     addEdu: (data) => ({ setState, getState }) => {
       setState({
-        education : [...getState().education, data]
+        education: [...getState().education, data]
       })
     },
-    updateEdu : (index, data) => ({ setState, getState }) => {
+    updateEdu: (index, data) => ({ setState, getState }) => {
       let newArr = [...getState().education];
       newArr[index] = data;
       setState({
-        education : newArr,
+        education: newArr,
       })
     },
-    deleteEdu : (index, data) => ({ setState, getState }) => {
+    deleteEdu: (index, data) => ({ setState, getState }) => {
+      console.log(index)
       console.log(data)
       let newArr = [...getState().education];
       newArr[index] = data;
-      newArr.splice(index,1);
+      newArr.splice(index, 1);
       setState({
-        education : newArr,
+        education: newArr,
       })
     }
   },

@@ -24,7 +24,7 @@ const Store = createStore({
       let newArr = [...getState().project];
       newArr[index] = data;
       setState({
-        project : newArr,
+        project: newArr,
       })
     },
 
@@ -39,7 +39,7 @@ const Store = createStore({
       setState({
         project: newArr
       })
-      
+
     }
   },
 });
