@@ -69,6 +69,7 @@ const App = () => {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/jobs" component={Jobs} exact />
+        <Route path="/createcv" component={CvRouter} exact />
         <Route path="/createcv-profile" component={CvRouter} exact />
         <Route path="/createcv-education" component={CvRouter} exact />
         <Route path="/createcv-project" component={CvRouter} exact />

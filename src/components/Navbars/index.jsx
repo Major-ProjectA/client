@@ -40,7 +40,7 @@ const Navbars = () => {
 
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
                 <li class="btn-group" onClick={ createCV }>
-                  <NavLink to="/createcv-profile">Create CV</NavLink>
+                  <NavLink to="/createcv">Create CV</NavLink>
                 </li>
               )}
 

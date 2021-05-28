@@ -5,6 +5,7 @@ import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
 import '../../features/Form/FormCvs/styles.scss';
 
+import CvName from '../../features/Form/FormCvs/CvName';
 import Profiles from '../../features/Form/FormCvs/Profiles';
 import Educations from '../../features/Form/FormCvs/Educations';
 import Projects from '../../features/Form/FormCvs/Projects';
@@ -18,9 +19,10 @@ const CvRouter = () => {
       <Navbars />
       <br /><br /><br />
       <BrowserRouter>
-        <Header />
+        <Header />      
         <Switch>
-          <Route component={Profiles} path="/createcv-profile" exact={true} />
+          <Route component={CvName} path="/createcv" exact={true} />
+          <Route component={Profiles} path="/createcv-profile" />
           <Route component={Educations} path="/createcv-education" />
           <Route component={Projects} path="/createcv-project" />
           <Route component={Experiences} path="/createcv-experience" />
