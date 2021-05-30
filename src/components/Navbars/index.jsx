@@ -5,12 +5,12 @@ import axios from 'axios';
 import { useCV } from '../Store/CV';
 
 const Navbars = () => {
-  const [ state, actions ] = useCV();
+  const [state, actions] = useCV();
   const auth = useContext(AuthContext);
 
   const createCV = async () => {
     const cv = await axios.post(`http://localhost:5000/api/cvs/createCV/${auth.userId}`); //create empty CV
-    actions.saveCvId(cv.data.cv._id); 
+    actions.saveCvId(cv.data.cv._id);
   }
 
   return (
@@ -39,8 +39,14 @@ const Navbars = () => {
               </li>
 
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
-                <li class="btn-group" onClick={ createCV }>
+                <li class="btn-group" onClick={createCV}>
                   <NavLink to="/createcv">Create CV</NavLink>
+                </li>
+              )}
+
+              {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
+                <li class="btn-group">
+                  <NavLink to="/managecv">Manage CV</NavLink>
                 </li>
               )}
 

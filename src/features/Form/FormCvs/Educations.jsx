@@ -139,7 +139,6 @@ const Educations = (props) => {
                 </div>
               </>
               {formState.education.map((data, index) => {
-                {console.log(index)}
                 return (                 
                   <>
                     <div class="col-md-3 col-sm-6">

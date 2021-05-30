@@ -12,7 +12,7 @@ const Store = createStore({
   actions: {
     stepExperience: (data) => async ({ setState, getState }) => {
       setState({
-        companyName: data.projectName,
+        companyName: data.companyName,
         duration: data.duration,
         position: data.position,
         expDescription: data.expDescription,
