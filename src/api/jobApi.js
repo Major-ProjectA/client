@@ -9,20 +9,25 @@ function JobAPI() {
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [location, setLocation] = useState('');
-  // const [callback, setCallBack] = useState(false);
+  const [callback, setCallBack] = useState(false);
   // const [result, setResult] = useState(0);
+
+  const [loading, setLoading] = useState(true);
 
   //JOB-LIST
   useEffect(() => {
     const getJobs = async () => {
       const res = await axios.get(`/api/jobs?limit=${page * 6}&${category}&${sort}&position[regex]=${search}`);
       setJobs(res.data.jobs);
+
+      setLoading(false);
+
       // setResult(res.data.result);
       // console.log(res.data.jobs);
       // console.log(res);
     };
     getJobs();
-  }, [category, location, search, sort, page]);
+  }, [callback, category, location, search, sort, page]);
 
   //HOT-JOB
   useEffect(() => {
@@ -43,7 +48,8 @@ function JobAPI() {
     search: [search, setSearch],
     page: [page, setPage],
     location: [location, setLocation],
-    // callback: [callback, setCallBack],
+    loading: [loading, setLoading],
+    callback: [callback, setCallBack],
     // result: [result, setResult],
   };
 }

@@ -5,13 +5,13 @@ import axios from 'axios';
 import { useCV } from '../Store/CV';
 
 const Navbars = () => {
-  const [ state, actions ] = useCV();
+  const [state, actions] = useCV();
   const auth = useContext(AuthContext);
 
   const createCV = async () => {
     const cv = await axios.post(`http://localhost:5000/api/cvs/createCV/${auth.userId}`); //create empty CV
     actions.saveCvId(cv.data.user._id);
-  }
+  };
 
   return (
     <>
@@ -29,17 +29,14 @@ const Navbars = () => {
           <div className="collapse navbar-collapse" id="navbar-menu">
             <ul className="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
               <li>
-                <Link to='/'>Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <NavLink to="/jobs">Find Job</NavLink>
               </li>
-              <li>
-                <Link to='#'>Blog</Link>
-              </li>
 
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
-                <li class="btn-group" onClick={ createCV }>
+                <li class="btn-group" onClick={createCV}>
                   <NavLink to="/createcv-profile">Create CV</NavLink>
                 </li>
               )}
@@ -68,7 +65,7 @@ const Navbars = () => {
                       <NavLink className="dropdown-item" to="/create-job" style={{ color: '#000000' }}>
                         Create Job
                       </NavLink>
-                      <NavLink className="dropdown-item" to="/subjectB" style={{ color: '#000000' }}>
+                      <NavLink className="dropdown-item" to="/jobs" style={{ color: '#000000' }}>
                         Manage Job
                       </NavLink>
                     </div>
@@ -86,9 +83,6 @@ const Navbars = () => {
                       User
                     </a>
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <NavLink className="dropdown-item" to="/subjectA" style={{ color: '#000000' }}>
-                        Create User
-                      </NavLink>
                       <NavLink className="dropdown-item" to="/subjectB" style={{ color: '#000000' }}>
                         Manage User
                       </NavLink>

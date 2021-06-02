@@ -51,6 +51,7 @@ const App = () => {
         <Route path="/" component={Home} exact />
         <Route path="/manage-category" component={ManageCategory} exact />
         <Route path="/create-job" component={AddJob} exact />
+        <Route path="/edit-job/:id" component={AddJob} exact />
         <Route path="/jobs" component={Jobs} exact />
         <Route path="/detail/:id" component={DetailPage} exact />
         <Route path="/jobs/detail/:id" component={DetailPage} exact />
@@ -89,7 +90,6 @@ const App = () => {
         <Route path="/jobs/detail/:id" component={DetailPage} exact />
         <Route path="/register" component={Register} exact />
         <Route path="/login" component={Login} exact />
-        <Route path="/create-job" component={AddJob} exact />
         <Route component={Error} />
         <Redirect to="/" />
       </Switch>

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import HtmlReactParse from 'html-react-parser';
 import { GlobalState } from '../../../GlobalState';
+
 // import Loading from '../../Loading';
 
 import Navbars from '../../../components/Navbars';
@@ -49,13 +50,26 @@ function DetailPage() {
         <div class="container white-shadow" style={{ backgroundColor: '#ECECEC' }}>
           <div class="row">
             <div class="detail-pic">
-              <img src={detailJob.imgCom} class="img" alt="" />
+              <img
+                src={detailJob.imgCom}
+                class="img"
+                alt=""
+                style={{
+                  position: 'absolute',
+                  top: '0',
+                  left: '0',
+                  display: 'block',
+                  zIndex: '1',
+                  width: '100%',
+                  height: '100%',
+                }}
+              />
             </div>
 
             <div class="detail-status">
               <span style={{ float: 'right', width: '100%', backgroundColor: '#FF7F24', color: '#F0FFFF' }}>
                 Start: {detailJob.startDay.split('T')[0]}
-              </span>{' '}
+              </span>
               <br />
               <br />
               <span style={{ float: 'right', width: '100%', backgroundColor: '#FF3030', color: '#F0FFFF' }}>
@@ -183,7 +197,7 @@ function DetailPage() {
                     Quick Apply
                   </a>
                   <a href="#" class="footer-btn blu-btn" title="">
-                    Save Draft
+                    Save Favorites
                   </a>
                 </div>
               </div>

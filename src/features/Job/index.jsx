@@ -1,75 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { GlobalState } from '../../GlobalState';
-
 import Navbars from '../../components/Navbars';
 import Footer from '../../components/Footers';
+import Swal from 'sweetalert2';
 import JobList from './JobList';
 import Filters from './Filters';
 import LoadMore from './LoadMore';
-// import Loading from '../Loading';
+import Loading from '../../features/Loading';
+import axios from 'axios';
 
 function ListPage() {
   const state = useContext(GlobalState);
   const [jobs] = state.jobAPI.jobs;
-  // console.log(jobs);
+  const [loading, setLoading] = useState(false);
+  const [callback, setCallBack] = state.jobAPI.callback;
 
-  // const [error, setError] = useState(false);
-  // const [page, setPage] = useState(pageNumber);
-  // const [pages, setPages] = useState(1);
+  const deleteJob = async (id, public_id) => {
+    try {
+      setLoading(true);
+      await axios.delete(`/api/jobs/${id}`).then((res) => {
+        // console.log(res.data);
+      });
 
-  //1> Pagination
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [jobsPerPage] = useState(6);
-  // const indexOfLastPost = currentPage * jobsPerPage;
-  // const indexOfFirstPost = indexOfLastPost - jobsPerPage;
-  // const currentJobs = fetchJobs.slice(indexOfFirstPost, indexOfLastPost);
-  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  //Search by Keywords
-  // const [search, setSearch] = useState();
-  // const [filteredJobs, setFilteredJobs] = useState([]);
-
-  // useEffect(() => {
-  //   const getJobs = async () => {
-  //     const res = await axios.get(`/api/jobs/get`);
-  //     setFetchJobs(res.data.jobs);
-  //   };
-  //   getJobs();
-  // }, []);
-
-  // useEffect(() => {
-  //   const fetchJobs = async () => {
-  //     setLoading(true);
-  //     try {
-  //       const res = await fetch(`api/jobs?page=${page}`);
-  //       const { data, pages: totalPages } = await res.json();
-
-  //       setPages(totalPages);
-  //       setFetchJobs(data);
-  //       setLoading(false);
-  //     } catch (error) {
-  //       console.log(error);
-  //       setLoading(false);
-  //       setError('Some error occured');
-  //     }
-  //   };
-
-  //   fetchJobs();
-  // }, [page]);
+      setCallBack(!callback);
+      setLoading(false);
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong, please try again.',
+      });
+    }
+  };
 
   return (
     <>
-      {
-        // loading ? (
-        //   <h3 className="loading-text" style={{ fontSize: '2rem', textAlign: 'center' }}>
-        //     Loading...
-        //   </h3>
-        // ) : error ? (
-        //   <h3 className="error-text" style={{ fontSize: '2rem', textAlign: 'center' }}>
-        //     {error}
-        //   </h3>
-        // ) : (
-
+      {loading ? (
+        <Loading />
+      ) : (
         <>
           <Navbars />
           <br /> <br />
@@ -88,7 +56,7 @@ function ListPage() {
               <Filters />
               <div class="item-click">
                 {jobs.map((job) => {
-                  return <JobList key={job._id} job={job} />;
+                  return <JobList key={job._id} job={job} deleteJob={deleteJob} />;
                 })}
               </div>
 
@@ -97,7 +65,7 @@ function ListPage() {
           </section>
           <Footer />
         </>
-      }
+      )}
     </>
   );
 }

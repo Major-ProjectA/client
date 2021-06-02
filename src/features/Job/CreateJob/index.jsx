@@ -1,19 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import './styles.css';
-import { GlobalState } from '../../../GlobalState';
-import axios from 'axios';
-
-import Loading from '../../../features/Loading';
-import Swal from 'sweetalert2';
-
-import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import { GlobalState } from '../../../GlobalState';
+import Loading from '../../../features/Loading';
+import HTMLReactParser from 'html-react-parser';
+import Moment from 'react-moment';
+import Swal from 'sweetalert2';
+import axios from 'axios';
+import './styles.css';
 
 function CreateJob() {
-  const state = useContext(GlobalState);
   const [job, setJob] = useState({
-    jobId: '',
+    // jobId: '',
     startDay: '',
     endDay: '',
     position: '',
@@ -45,21 +44,39 @@ function CreateJob() {
       contactAddress: 'Ho Chi Minh',
       contactPhone: '0909774xxx',
     },
-    id: '',
+    _id: '',
   });
-
+  const state = useContext(GlobalState);
   const [categories] = state.categoriesAPI.categories;
+  const [jobs] = state.jobAPI.jobs;
   const [photos, setPhotos] = useState(false);
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
+  const param = useParams();
+  const [onEdit, setOnEdit] = useState(false);
+  const [callback, setCallBack] = state.jobAPI.callback;
 
-  // const history = useHistory();
-  // const param = useParams();
+  useEffect(() => {
+    if (param.id) {
+      setOnEdit(true);
+      jobs.forEach((job) => {
+        if (job._id === param.id) {
+          setJob(job);
+          setPhotos(job.imgCom);
+        }
+      });
+    } else {
+      //Job detail to Create job
+      setOnEdit(false);
+      clear();
+    }
+  }, [param.id, jobs]);
 
   const handleUpload = async (e) => {
     e.preventDefault();
     try {
       const file = e.target.files[0];
-      //console.log(file);
+      // console.log(file);
 
       if (!file)
         return Swal.fire({
@@ -87,11 +104,8 @@ function CreateJob() {
       const res = await axios.post('/api/photo/upload', formData, { url: photos.url });
 
       console.log(res.data.url);
-
       setLoading(false);
       setPhotos(res.data);
-
-      // console.log(res);
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -104,7 +118,11 @@ function CreateJob() {
   const handleDestroy = async () => {
     try {
       await axios.post('/api/photo/destroy', { public_id: photos.public_id });
-      setPhotos(false);
+      Swal.fire({
+        icon: 'success',
+        title: 'Good job !',
+        text: 'Remove photo successfully',
+      });
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -124,15 +142,21 @@ function CreateJob() {
           text: 'File not existed!',
         });
 
-      await axios.post('/api/jobs', { ...job });
+      if (onEdit) {
+        await axios.put(`/api/jobs/${job._id}`, { ...job }).then((res) => {
+          // console.log(res.data);
+        });
+      } else {
+        await axios.post('/api/jobs', { ...job }).then((res) => {
+          // console.log(res.data);
+        });
+      }
+      setCallBack(!callback);
+      history.push('/');
       Swal.fire('Awesome!', 'Job created and wait for admin to approve the post... 🎉🎉', 'success').then((result) => {
         if (result.isConfirmed || result.isDismissed) {
         }
       });
-
-      // await axios.post('/api/jobs', { ...job }).then((res) => {
-      //   console.log(res.data);
-      // });
 
       clear();
     } catch (error) {
@@ -147,7 +171,7 @@ function CreateJob() {
   const clear = () => {
     setPhotos(false);
     setJob({
-      jobId: '',
+      // jobId: '',
       startDay: '',
       endDay: '',
       position: '',
@@ -183,21 +207,6 @@ function CreateJob() {
     display: photos ? 'block' : 'none',
   };
 
-  // const [jobs] = state.jobAPI.jobs;
-  // useEffect(() => {
-  //   if (param.id) {
-  //     jobs.forEach((job) => {
-  //       if (job._id === param.id) {
-  //         setJob(job);
-  //         setPhotos(job.photos);
-  //       }
-  //     });
-  //   } else {
-  //     // setOnEdit(false)
-  //     clear();
-  //   }
-  // }, [param.id, jobs]);
-
   return (
     <>
       <section
@@ -220,7 +229,7 @@ function CreateJob() {
                   <input
                     type="file"
                     name="upload-pic[]"
-                    id="upload-pic"
+                    // id="upload-pic"
                     className="inputfile"
                     onChange={handleUpload}
                   />
@@ -237,6 +246,7 @@ function CreateJob() {
                       <div style={styleUpload}>
                         <img
                           src={photos ? photos.url : ''}
+                          srcSet={job.imgCom}
                           style={{
                             position: 'absolute',
                             top: '0',
@@ -258,7 +268,7 @@ function CreateJob() {
               <div class="row bottom-mrg">
                 <div class="col-md-4 col-sm-6">
                   <div class="input-group">
-                    <label>Job ID</label>
+                    {/* <label>Job ID</label>
                     <input
                       type="text"
                       class="form-control"
@@ -266,14 +276,24 @@ function CreateJob() {
                       required
                       value={job.jobId}
                       onChange={(e) => setJob({ ...job, jobId: e.target.value })}
-                      disabled={job.id}
+                      disabled={onEdit}
+                    /> */}
+                    <label>Position</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Please input your position"
+                      required
+                      value={job.position}
+                      onChange={(e) => setJob({ ...job, position: e.target.value })}
                     />
                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-6">
                   <div class="input-group">
-                    <label>Start Day</label>
+                    <label>Start Day</label>&nbsp;&nbsp;
+                    <Moment format="DD-MM-YYYY">{job.startDay}</Moment>
                     <input
                       id="startDay"
                       type="date"
@@ -288,7 +308,8 @@ function CreateJob() {
 
                 <div class="col-md-4 col-sm-6">
                   <div class="input-group">
-                    <label>End Day</label>
+                    <label>End Day</label>&nbsp;&nbsp;
+                    <Moment format="DD-MM-YYYY">{job.endDay}</Moment>
                     <input
                       id="endDay"
                       type="date"
@@ -303,15 +324,20 @@ function CreateJob() {
 
                 <div class="col-md-4 col-sm-6">
                   <div class="input-group">
-                    <label>Position</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Please input your position"
+                    <label>Category</label>
+                    <select
+                      class="form-control input-lg"
                       required
-                      value={job.position}
-                      onChange={(e) => setJob({ ...job, position: e.target.value })}
-                    />
+                      value={job.category}
+                      onChange={(e) => setJob({ ...job, category: e.target.value })}
+                    >
+                      <option value="">Please select a category</option>
+                      {categories.map((category) => (
+                        <option value={category.career.careerName} key={category._id}>
+                          {category.career.careerName}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 
@@ -356,34 +382,15 @@ function CreateJob() {
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                  <label>Category</label>
+                  <label>Working Time</label>
                   <div class="input-group">
-                    <select
-                      class="form-control input-lg"
-                      required
-                      value={job.category}
-                      onChange={(e) => setJob({ ...job, category: e.target.value })}
-                    >
-                      <option value="">Please select a category</option>
-                      {categories.map((category) => (
-                        <option value={category.career.careerName} key={category._id}>
-                          {category.career.careerName}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
-                    <label>Working Time</label>
                     <select
                       class="form-control input-lg"
                       required
                       value={job.workingTime}
                       onChange={(e) => setJob({ ...job, workingTime: e.target.value })}
                     >
-                      <option value="">All</option>
+                      <option value="">Please select working time</option>
                       <option value="Full Time">Full Time</option>
                       <option value="Part Time">Part Time</option>
                       <option value="Freelancer">Freelancer</option>
@@ -405,6 +412,29 @@ function CreateJob() {
                     />
                   </div>
                 </div>
+
+                <div class="col-md-4 col-sm-6">
+                  <div class="input-group">
+                    <label>Upload File</label>
+                    <input
+                      type="file"
+                      name="upload-pic[]"
+                      id="upload-pic"
+                      class="form-control input-lg"
+                      style={{
+                        // backgroundColor: '#3DB810',
+                        // border: 'none',
+                        // color: 'white',
+                        padding: '15px ',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                        display: 'inline-block',
+                        fontSize: '16px',
+                      }}
+                      onChange={handleUpload}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -412,8 +442,25 @@ function CreateJob() {
               <div class="detail pannel-footer">
                 <div class="col-md-12 col-sm-12">
                   <div class="detail-pannel-footer-btn pull-right">
+                    {/* <input
+                      type="file"
+                      name="upload-pic[]"
+                      id="upload-pic"
+                      class="footer-btn choose-cover"
+                      style={{
+                        backgroundColor: '#3DB810',
+                        // border: 'none',
+                        color: 'white',
+                        padding: '15px ',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                        display: 'inline-block',
+                        fontSize: '16px',
+                      }}
+                      onChange={handleUpload}
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
                     <button
-                      href="#"
                       class="footer-btn choose-cover"
                       onClick={handleDestroy}
                       style={{
@@ -427,7 +474,7 @@ function CreateJob() {
                         fontSize: '16px',
                       }}
                     >
-                      Change Cover Image
+                      Change Cover Photos
                     </button>
                   </div>
                 </div>
@@ -521,6 +568,8 @@ function CreateJob() {
 
               <div class="col-md-12 col-sm-12">
                 <label>Other Information</label>
+                {HTMLReactParser(job.otherInfo)}
+                <hr />
                 <CKEditor
                   id="otherinfo"
                   editor={ClassicEditor}
@@ -740,7 +789,9 @@ function CreateJob() {
             </div>
           </div>
           <div class="col-md-12 col-sm-12">
-            <button class="btn btn-success btn-primary small-btn">Submit your company</button>
+            <button class="btn btn-success btn-primary small-btn">
+              {onEdit ? 'Update Available Jobs' : 'Create a new Job'}
+            </button>
           </div>
         </section>
       </form>
