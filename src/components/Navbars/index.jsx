@@ -10,7 +10,7 @@ const Navbars = () => {
 
   const createCV = async () => {
     const cv = await axios.post(`http://localhost:5000/api/cvs/createCV/${auth.userId}`); //create empty CV
-    actions.saveCvId(cv.data.user._id);
+    actions.saveCvId(cv.data.cv._id);
   };
 
   return (
@@ -37,7 +37,13 @@ const Navbars = () => {
 
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
                 <li class="btn-group" onClick={createCV}>
-                  <NavLink to="/createcv-profile">Create CV</NavLink>
+                  <NavLink to="/createcv">Create CV</NavLink>
+                </li>
+              )}
+
+              {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
+                <li class="btn-group">
+                  <NavLink to="/managecv">Manage CV</NavLink>
                 </li>
               )}
 

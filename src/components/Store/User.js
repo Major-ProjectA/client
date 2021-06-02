@@ -4,15 +4,15 @@ const Store = createStore({
   initialState: {
     userId: '',
   },
-    actions: {
-        saveUserId:
-        (id) =>
+  actions: {
+    saveUserId:
+      (id) =>
         ({ setState, getState }) => {
-            setState({
-                userId: id,
-            });
+          setState({
+            userId: id,
+          });
         },
-    }
+  }
 });
 
 export const useCV = createHook(Store);

@@ -44,10 +44,14 @@ const Educations = (props) => {
   }
 
   const deleteEdu = (index) => {
-    formActions.deleteEdu(index);
+    const data = {
+      collegeName: formik.values.collegeName,
+      collegeMajor: formik.values.collegeMajor,
+      collegeQualification: formik.values.collegeQualification
+    }
+    formActions.deleteEdu(index, data);
+    console.log(index)
   }
-
-  console.log(formState)
 
   useEffect(() => {
     if (!cvState.educationId) {
@@ -129,13 +133,13 @@ const Educations = (props) => {
                       type="button"
                       onClick={addEdu}
                     >
-                      Save
+                      Add
                     </button>
                   </div>
                 </div>
               </>
-              {formState.education.map((item, index) => {
-                return (
+              {formState.education.map((data, index) => {
+                return (                 
                   <>
                     <div class="col-md-3 col-sm-6">
                       <label>College</label>
@@ -145,7 +149,7 @@ const Educations = (props) => {
                           class="form-control"
                           placeholder="College name"
                           name="collegeName"
-                          defaultValue={item.collegeName}
+                          defaultValue={data.collegeName}
                           onChange={formik.handleChange}
                         />
                       </div>
@@ -159,7 +163,7 @@ const Educations = (props) => {
                           class="form-control"
                           placeholder="College Major"
                           name="collegeMajor"
-                          defaultValue={item.collegeMajor}
+                          defaultValue={data.collegeMajor}
                           onChange={formik.handleChange}
                         />
                       </div>
@@ -173,7 +177,7 @@ const Educations = (props) => {
                           class="form-control"
                           placeholder="College Qualification"
                           name="collegeQualification"
-                          defaultValue={item.collegeQualification}
+                          defaultValue={data.collegeQualification}
                           onChange={formik.handleChange}
                         />
                       </div>

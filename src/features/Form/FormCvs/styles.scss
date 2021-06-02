@@ -1,11 +1,16 @@
 $base-color: #22ac11;
 $blue-color: #22ac11;
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $base-color;
+}
+
 .steps {
   display: flex;
   justify-content: center;
   letter-spacing: 1px;
-  margin-top: 2rem;
+  margin-top: 5rem;
 
   .step {
     margin: 0.5rem 3rem;
@@ -55,16 +60,14 @@ $blue-color: #22ac11;
   font-weight: 300;
 }
 
-.login-error {
-  font-size: 1.1rem;
-}
-
 .successMsg {
   color: $blue-color;
 }
 
-.form-control.input-error {
-  border: 2px solid #f21e08;
+@media screen and (max-width: 1200px) {
+  .input-form {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 900px) {

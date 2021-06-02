@@ -45,10 +45,9 @@ const Profiles = (props) => {
     }
   }, [cvState.cvId])
 
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  //   props.history.push('/createcv-education');
-  // };
+  const previous = () => {
+    props.history.push('/createcv');
+  };
 
   return (
     <>
@@ -144,6 +143,26 @@ const Profiles = (props) => {
             </div>
 
             <div class="detail pannel-footer">
+              <div class="col-md-12 col-sm-12">
+                <div class="detail-pannel-footer-btn pull-left">
+                  <button
+                    class="footer-btn choose-cover"
+                    onClick={previous}
+                    style={{
+                      backgroundColor: '#3DB810',
+                      border: 'none',
+                      color: 'white',
+                      padding: '15px 22px',
+                      textAlign: 'center',
+                      textDecoration: 'none',
+                      display: 'inline-block',
+                      fontSize: '16px',
+                    }}
+                  >
+                    Previous
+                  </button>
+                </div>
+              </div>
               <div class="col-md-12 col-sm-12">
                 <div class="detail-pannel-footer-btn pull-right">
                   <button

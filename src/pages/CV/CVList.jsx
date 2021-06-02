@@ -1,18 +1,16 @@
 import React from 'react';
 import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
-import Main from '../../features/Form/FormCV/Main';
+import ManageCV from '../../features/CV/ManageCV'
 
-function CV() {
+const CVList = () => {
   return (
     <>
       <Navbars />
- 
-      <Main />
-
+      <ManageCV />
       <Footers />
     </>
   );
-}
+};
 
-export default CV;
+export default CVList;

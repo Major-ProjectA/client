@@ -4,6 +4,7 @@ import { useEducation } from '../../../components/Store/Education';
 import { useProject } from '../../../components/Store/Project';
 import { useExperience } from '../../../components/Store/Experience';
 import { useExtra } from '../../../components/Store/Extra';
+import { useHistory } from 'react-router';
 
 const Review = (props) => {
   const [profileState] = useProfile();
@@ -11,8 +12,11 @@ const Review = (props) => {
   const [projectState] = useProject();
   const [expState] = useExperience();
   const [extraState] = useExtra();
+
+  const history = useHistory();
+
   const finish = () => {
-    props.history.push('/home');
+    history.push('/managecv');
   };
 
   const previous = () => {
@@ -84,6 +88,7 @@ const Review = (props) => {
             <div class="col-md-4 col-sm-12">
               <label>Project Description</label>
               <p>{projectState.projectDescription}</p>
+              <p>{projectState.project.projectName}</p>
             </div>
           </div>
 

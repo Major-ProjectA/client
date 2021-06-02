@@ -2,12 +2,13 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 const Progress = ({ location: { pathname } }) => {
-  const isFirstStep = pathname === '/createcv-profile';
-  const isSecondStep = pathname === '/createcv-education';
-  const isThirdStep = pathname === '/createcv-project';
-  const isFourthStep = pathname === '/createcv-experience';
-  const isFifthStep = pathname === '/createcv-extras';
-  const isSixthStep = pathname === '/createcv-review';
+  const isFirstStep = pathname === '/createcv';
+  const isSecondStep = pathname === '/createcv-profile';
+  const isThirdStep = pathname === '/createcv-education';
+  const isFourthStep = pathname === '/createcv-project';
+  const isFifthStep = pathname === '/createcv-experience';
+  const isSixthStep = pathname === '/createcv-extras';
+  const isSeventhStep = pathname === '/createcv-review';
 
   return (
     <React.Fragment>
@@ -15,8 +16,8 @@ const Progress = ({ location: { pathname } }) => {
         <div className={`${isFirstStep ? 'step active' : 'step'}`}>
           <div>1</div>
           <div>
-            {isSecondStep || isThirdStep || isFourthStep || isFifthStep || isSixthStep ? 
-              <Link to="/createcv-profile">Profile</Link> : 'Profile'
+            {isSecondStep || isThirdStep || isFourthStep || isFifthStep || isSixthStep || isSeventhStep? 
+              <Link to="/createcv">Cv</Link> : 'Cv'
             }
           </div>
         </div>
@@ -24,8 +25,8 @@ const Progress = ({ location: { pathname } }) => {
         <div className={`${isSecondStep ? 'step active' : 'step'}`}>
           <div>2</div>
           <div>
-            {isThirdStep || isFourthStep || isFifthStep || isSixthStep ? 
-              <Link to="/createcv-education">Education</Link> : 'Education'
+            {isThirdStep || isFourthStep || isFifthStep || isSixthStep || isSeventhStep ? 
+              <Link to="/createcv-profile">Profile</Link> : 'Profile'
             }
           </div>
         </div>
@@ -33,8 +34,8 @@ const Progress = ({ location: { pathname } }) => {
         <div className={`${isThirdStep ? 'step active' : 'step'}`}>
           <div>3</div>
           <div>
-            {isFourthStep || isFifthStep || isSixthStep ? 
-              <Link to="/createcv-project">Project</Link> : 'Project'
+            {isFourthStep || isFifthStep || isSixthStep || isSeventhStep ? 
+              <Link to="/createcv-education">Education</Link> : 'Education'
             }
           </div>
         </div>
@@ -42,8 +43,8 @@ const Progress = ({ location: { pathname } }) => {
         <div className={`${isFourthStep ? 'step active' : 'step'}`}>
           <div>4</div>
           <div>
-            {isFifthStep || isSixthStep ? 
-              <Link to="/createcv-experience">Experience</Link> : 'Experience'
+            {isFifthStep || isSixthStep || isSeventhStep ? 
+              <Link to="/createcv-project">Project</Link> : 'Project'
             }
           </div>
         </div>
@@ -51,14 +52,23 @@ const Progress = ({ location: { pathname } }) => {
         <div className={`${isFifthStep ? 'step active' : 'step'}`}>
           <div>5</div>
           <div>
-            {isSixthStep ? 
+            {isSixthStep || isSeventhStep ? 
+              <Link to="/createcv-experience">Experience</Link> : 'Experience'
+            }
+          </div>
+        </div>
+
+        <div className={`${isSixthStep ? 'step active' : 'step'}`}>
+          <div>6</div>
+          <div>
+            {isSeventhStep ? 
               <Link to="/createcv-extras">Extras</Link> : 'Extras'
             }
           </div>
         </div>
 
         <div className={`${pathname === '/createcv-review' ? 'step active' : 'step'}`}>
-          <div>6</div>
+          <div>7</div>
           <div>Review</div>
         </div>
       </div>
