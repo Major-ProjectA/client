@@ -1,40 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCV } from '../../../components/Store/CV';
 import { useExtra } from '../../../components/Store/Extra';
-import { useFormik } from 'formik';
 import axios from 'axios';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import HTMLReactParser from 'html-react-parser';
 
 const Extras = (props) => {
-    const [cvState, cvActions] = useCV();
-    const [formState, formActions] = useExtra();
-    const formik = useFormik({
-      initialValues: {
-        addInfor: '',
-      },
-  
-      onSubmit: async (values) => {
-        const data = {
-          addInfor: values.addInfor,
-  
-          cvId: cvState.cvId,
-          extraId: cvState.extraId,
-        };
-        await formActions.stepExtra(data)
-        props.history.push('/createcv-review');
-      },
-    });
-  
-    useEffect(() => {
-      if (!cvState.extraId) {
-        const fetch = async () => {
-          const extra = await axios.post(`http://localhost:5000/api/cvs/createExtra/${cvState.cvId}`); //create empty CV
-          cvActions.saveExtraId(extra.data.cv._id);
-        }
-        fetch();
-      } else {
-        return () => formik.handleSubmit;
+  const [cvState, cvActions] = useCV();
+  const [formState, formActions] = useExtra();
+  const [extra, setExtra] = useState({
+    addInfor: '',
+  })
+
+  useEffect(() => {
+    if (!cvState.extraId) {
+      const fetch = async () => {
+        const extra = await axios.post(`http://localhost:5000/api/cvs/createExtra/${cvState.cvId}`);
+        cvActions.saveExtraId(extra.data.cv._id);
       }
-    }, [cvState.cvId])
+      fetch();
+    } else {
+      return () => handleSubmit;
+    }
+  }, [cvState.cvId])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+      addInfor: extra.addInfor,
+      cvId: cvState.cvId,
+      extraId: cvState.extraId,
+    };
+    await formActions.stepExtra(data);
+    props.history.push('/createcv-review');
+  }
 
   const previous = (data) => {
     console.log(data);
@@ -44,25 +44,20 @@ const Extras = (props) => {
   return (
     <>
       <section class="full-detail">
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Extras Details</h2>
-
-              <div class="col-md-12 col-sm-6">
-                <label>Additional Information</label>
-                <div class="input-group">
-                  <textarea
-                  class="form-control"
-                  placeholder="Describe some your skills or hobbies."
-                  required
-                  name="addInfor"
-                  defaultValue={formState.addInfor}
-                  onChange={formik.handleChange}
-                  >
-                  </textarea>
-                </div>
-              </div>
+              <label>Additional Information</label>
+              {HTMLReactParser(formState.addInfor)}
+              <CKEditor
+                id="addInfor"
+                editor={ClassicEditor}
+                onChange={(event, editor) => {
+                  const data = editor.getData();
+                  setExtra({ ...extra, addInfor: data });
+                }}
+              />
             </div>
 
             <div class="detail pannel-footer">

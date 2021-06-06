@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../components/Context/AuthContext";
 import { useHttpClient } from "../../components/Hooks/Http-hook";
 // import {GlobalState} from "../../GlobalState"
@@ -20,14 +21,39 @@ const ManageCV = (props) => {
         fetchCvs();
     }, [sendRequest]);
 
-    const onDeleteHandler = async (cv) => {
+    const onView = async (cv) => {
+        try {
+            await sendRequest(`http://localhost:5000/api/cvs/${cv}`);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const onDelete = async (cv) => {
         try {
             await sendRequest(`http://localhost:5000/api/cvs/${cv}`, "DELETE");
         } catch { }
     };
 
-    return (
+    return !loadedCvs.length ? (
         <>
+            <section
+                class="inner-header-title blank"
+                style={{
+                    backgroundImage: `URL("https://www.mediafire.com/convkey/94a5/ld2xj8f54j7colg6g.jpg")`,
+                }}
+            >
+                <div class="container">
+                    <h1>MANAGE CV</h1>
+                </div>
+            </section>
+            <div className="main-heading">
+                <h4>You do not have any cvs!</h4>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </div>
+        </>
+    ) : (
+        <h4>
             <section
                 class="inner-header-title blank"
                 style={{
@@ -54,20 +80,22 @@ const ManageCV = (props) => {
                                                             <i class="fa fa-gear"></i>
                                                         </button>
                                                         <div class="dropdown-menu pull-right animated flipInX">
-                                                            <a onClick={() => { onDeleteHandler(cv.id) }}>Delete</a>
+                                                            <a onClick={() => { onDelete(cv.id) }}>Delete</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="paid-candidate-inner--box">
                                                     <div class="paid-candidate-box-thumb">
-                                                        <img src="assets/img/client-1.jpg" class="img-responsive img-circle" alt="" />
+                                                        <img src={cv.cvImage} class="img-responsive img-circle" alt="" />
                                                     </div>
                                                     <div class="paid-candidate-box-detail">
                                                         <h4>{cv.cvName}</h4>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#" class="btn btn-paid-candidate bt-1">View Detail</a>
+                                            <Link to={`/cvs/details/${cv.id}`}>
+                                                <a class="btn btn-paid-candidate bt-1" onClick={onView}>View Detail</a>
+                                            </Link>                                          
                                         </div>
                                     </div>
                                 </>
@@ -76,7 +104,7 @@ const ManageCV = (props) => {
                     </div>
                 </div>
             </section>
-        </>
+        </h4>
     );
 };
 

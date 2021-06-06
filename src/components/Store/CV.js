@@ -4,7 +4,12 @@ import { createStore, createHook } from 'react-sweet-state';
 const Store = createStore({
   initialState: {
     cvId: '',
+
     cvName: '',
+    cvImage: '',
+    position: '',
+    bio: '',
+
     profileId: '',
     educationId: '',
     projectId: '',
@@ -22,8 +27,10 @@ const Store = createStore({
     updateCvName: (data) => async ({ setState, getState }) => {
       setState({
         cvName: data.cvName,
+        cvImage: data.cvImage,
+        position: data.position,
+        bio: data.bio,
       })
-      console.log(data.cvId)
       await axios.patch(`http://localhost:5000/api/cvs/updateCv/${data.cvId}`, getState());
       console.log(getState());
     },

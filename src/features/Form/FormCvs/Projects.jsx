@@ -48,8 +48,6 @@ const Projects = (props) => {
     formActions.deleteProject(index, data);
   }
 
-  console.log(formState)
-
   useEffect(() => {
     if (!cvState.projectId) {
       const fetch = async () => {
@@ -80,7 +78,7 @@ const Projects = (props) => {
                     <input
                       type="text"
                       class="form-control"
-                      placeholder=""
+                      placeholder="Example: Phone Management"
                       name="projectName"
                       onChange={formik.handleChange}
                     />
@@ -93,7 +91,7 @@ const Projects = (props) => {
                     <input
                       type="text"
                       class="form-control"
-                      placeholder=""
+                      placeholder="Example: Using some technology, ..."
                       name="projectDescription"
                       onChange={formik.handleChange}
                     />
@@ -117,7 +115,7 @@ const Projects = (props) => {
                       type="button"
                       onClick={addProject}
                     >
-                      Save
+                      Add
                     </button>
                   </div>
                 </div>
@@ -131,9 +129,8 @@ const Projects = (props) => {
                         <input
                           type="text"
                           class="form-control"
-                          placeholder=""
                           name="projectName"
-                          defaultValue={item.projectName}
+                          Value={item.projectName}
                           onChange={formik.handleChange}
                         />
                       </div>
@@ -145,9 +142,8 @@ const Projects = (props) => {
                         <input
                           type="text"
                           class="form-control"
-                          placeholder=""
                           name="projectDescription"
-                          defaultValue={item.projectDescription}
+                          Value={item.projectDescription}
                           onChange={formik.handleChange}
                         />
                       </div>

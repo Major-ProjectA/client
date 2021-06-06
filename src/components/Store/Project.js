@@ -8,12 +8,7 @@ const Store = createStore({
 
   actions: {
     stepProject: (data) => async ({ setState, getState }) => {
-      // setState({
-      //   projectName: data.projectName,
-      //   projectDescription: data.projectName,
-      // })
-      const response = await axios.patch(`http://localhost:5000/api/cvs/updateProject/${data.projectId}`, getState());
-      console.log(response)
+      await axios.patch(`http://localhost:5000/api/cvs/updateProject/${data.projectId}`, getState());
     },
     addProject: (data) => ({ setState, getState }) => {
       setState({
@@ -27,19 +22,12 @@ const Store = createStore({
         project: newArr,
       })
     },
-
-    deleteProject: (index, data) => ({ setState, getState }) => {
-      console.log(index)
-      console.log(data)
-      alert(index)
+    deleteProject: (index) => ({ setState, getState }) => {
       let newArr = [...getState().project];
-      newArr[index] = data;
       newArr.splice(index, 1)
-      console.log(newArr)
       setState({
         project: newArr
       })
-
     }
   },
 });

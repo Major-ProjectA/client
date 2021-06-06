@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Header from '../../features/Form/FormCvs/Header';
 import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
 import '../../features/Form/FormCvs/styles.scss';
 
-import CvName from '../../features/Form/FormCvs/CvName';
+import Overview from '../../features/Form/FormCvs/Overview';
 import Profiles from '../../features/Form/FormCvs/Profiles';
 import Educations from '../../features/Form/FormCvs/Educations';
 import Projects from '../../features/Form/FormCvs/Projects';
@@ -18,18 +18,14 @@ const CvRouter = () => {
     <>
       <Navbars />
       <br /><br /><br />
-      <BrowserRouter>
-        <Header />      
-        <Switch>
-          <Route component={CvName} path="/createcv" exact={true} />
-          <Route component={Profiles} path="/createcv-profile" />
-          <Route component={Educations} path="/createcv-education" />
-          <Route component={Projects} path="/createcv-project" />
-          <Route component={Experiences} path="/createcv-experience" />
-          <Route component={Extras} path="/createcv-extras" />
-          <Route component={Review} path="/createcv-review" />
-        </Switch>
-      </BrowserRouter>
+      <Header />
+      <Route component={Overview} path="/createcv" exact={true} />
+      <Route component={Profiles} path="/createcv-profile" />
+      <Route component={Educations} path="/createcv-education" />
+      <Route component={Projects} path="/createcv-project" />
+      <Route component={Experiences} path="/createcv-experience" />
+      <Route component={Extras} path="/createcv-extras" />
+      <Route component={Review} path="/createcv-review" />
       <Footers />
     </>
   );

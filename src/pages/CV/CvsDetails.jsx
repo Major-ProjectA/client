@@ -1,16 +1,16 @@
 import React from 'react';
 import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
-import ManageCV from '../../features/CV/ManageCV'
+import CvDetails from '../../features/CV/CvDetails'
 
-const CvList = () => {
+const CvsDetails = () => {
   return (
     <>
       <Navbars />
-      <ManageCV />
+      <CvDetails />
       <Footers />
     </>
   );
 };
 
-export default CvList;
+export default CvsDetails;
