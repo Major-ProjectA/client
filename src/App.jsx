@@ -16,6 +16,7 @@ import ManageCategory from './pages/ManageCategory';
 import AddJob from './pages/Job/AddJob';
 import CvRouter from './pages/CV/CvRouter';
 import CVList from './pages/CV/CVList';
+import FavoritesJob from './pages/Job/FavoritesJob';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -81,6 +82,7 @@ const App = () => {
         <Route path="/managecv" component={CVList} exact />
         <Route path="/detail/:id" component={DetailPage} exact />
         <Route path="/jobs/detail/:id" component={DetailPage} exact />
+        <Route path="/favorite" component={FavoritesJob} exact />
         <Redirect to="/" />
       </Switch>
     );

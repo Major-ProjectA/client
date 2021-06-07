@@ -3,10 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import axios from 'axios';
 import { useCV } from '../Store/CV';
+import { GlobalState } from '../../GlobalState';
 
 const Navbars = () => {
   const [state, actions] = useCV();
   const auth = useContext(AuthContext);
+
+  const state1 = useContext(GlobalState);
+  const [favorite] = state1.userAPI.favorite;
 
   const createCV = async () => {
     const cv = await axios.post(`http://localhost:5000/api/cvs/createCV/${auth.userId}`); //create empty CV
@@ -42,9 +46,16 @@ const Navbars = () => {
               )}
 
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
-                <li class="btn-group">
-                  <NavLink to="/managecv">Manage CV</NavLink>
-                </li>
+                <>
+                  <li class="btn-group">
+                    <NavLink to="/managecv">Manage CV</NavLink>
+                  </li>
+                  <li class="btn-group">
+                    <NavLink to="/favorite">
+                      <i class="far fa-heart">&nbsp;{favorite.length}</i>
+                    </NavLink>
+                  </li>
+                </>
               )}
 
               {auth.isLoggedIn && auth.isAdmin && (

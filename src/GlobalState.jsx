@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import JobAPI from './api/JobAPI';
 import CategoriesAPI from './api/CategoriesAPI';
-// import CvAPI from './api/cvAPI'
+import UserAPI from './api/UserAPI';
 
 export const GlobalState = createContext();
 
@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
   const state = {
     jobAPI: JobAPI(),
     categoriesAPI: CategoriesAPI(),
-    // cvAPI: CvAPI(),
+    userAPI: UserAPI(),
   };
 
   return <GlobalState.Provider value={state}>{children}</GlobalState.Provider>;

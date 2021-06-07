@@ -442,24 +442,6 @@ function CreateJob() {
               <div class="detail pannel-footer">
                 <div class="col-md-12 col-sm-12">
                   <div class="detail-pannel-footer-btn pull-right">
-                    {/* <input
-                      type="file"
-                      name="upload-pic[]"
-                      id="upload-pic"
-                      class="footer-btn choose-cover"
-                      style={{
-                        backgroundColor: '#3DB810',
-                        // border: 'none',
-                        color: 'white',
-                        padding: '15px ',
-                        textAlign: 'center',
-                        textDecoration: 'none',
-                        display: 'inline-block',
-                        fontSize: '16px',
-                      }}
-                      onChange={handleUpload}
-                    />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
                     <button
                       class="footer-btn choose-cover"
                       onClick={handleDestroy}
