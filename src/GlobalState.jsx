@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import JobAPI from './api/jobApi';
+import JobAPI from './api/JobAPI';
 import CategoriesAPI from './api/CategoriesAPI';
 import UserAPI from './api/UserAPI';
 
