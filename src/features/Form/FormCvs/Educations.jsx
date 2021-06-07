@@ -31,6 +31,7 @@ const Educations = (props) => {
       collegeMajor: formik.values.collegeMajor,
       collegeQualification: formik.values.collegeQualification
     }
+    console.log(data)
     formActions.addEdu(data)
   };
 
@@ -50,7 +51,6 @@ const Educations = (props) => {
       collegeQualification: formik.values.collegeQualification
     }
     formActions.deleteEdu(index, data);
-    console.log(index)
   }
 
   useEffect(() => {
@@ -76,14 +76,14 @@ const Educations = (props) => {
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Education Details</h2>
-              <>
+              <form onSubmit={formik.handleSubmit}>
                 <div class="col-md-3 col-sm-6">
                   <label>College</label>
                   <div class="input-group">
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="College name"
+                      placeholder="Example: ABC University"
                       name="collegeName"
                       onChange={formik.handleChange}
                     />
@@ -96,7 +96,7 @@ const Educations = (props) => {
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="College Major"
+                      placeholder="Example: Marketing"
                       name="collegeMajor"
                       onChange={formik.handleChange}
                     />
@@ -109,7 +109,7 @@ const Educations = (props) => {
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="College Qualification"
+                      placeholder="Diploma - Bachelor’s degree - Master’s degree"
                       name="collegeQualification"
                       onChange={formik.handleChange}
                     />
@@ -137,19 +137,19 @@ const Educations = (props) => {
                     </button>
                   </div>
                 </div>
-              </>
-              {formState.education.map((data, index) => {
-                return (                 
+              </form>
+              {formState.education.map((item, index) => {
+                return (
                   <>
                     <div class="col-md-3 col-sm-6">
-                      <label>College</label>
+                      <label>{item.collegeName}</label>
                       <div class="input-group">
                         <input
                           type="text"
                           class="form-control"
                           placeholder="College name"
                           name="collegeName"
-                          defaultValue={data.collegeName}
+                          Value={item.collegeName}
                           onChange={formik.handleChange}
                         />
                       </div>
@@ -163,7 +163,7 @@ const Educations = (props) => {
                           class="form-control"
                           placeholder="College Major"
                           name="collegeMajor"
-                          defaultValue={data.collegeMajor}
+                          Value={item.collegeMajor}
                           onChange={formik.handleChange}
                         />
                       </div>
@@ -177,7 +177,7 @@ const Educations = (props) => {
                           class="form-control"
                           placeholder="College Qualification"
                           name="collegeQualification"
-                          defaultValue={data.collegeQualification}
+                          Value={item.collegeQualification}
                           onChange={formik.handleChange}
                         />
                       </div>
@@ -221,6 +221,7 @@ const Educations = (props) => {
                         </button>
                       </div>
                     </div>
+
                   </>
                 );
               })}

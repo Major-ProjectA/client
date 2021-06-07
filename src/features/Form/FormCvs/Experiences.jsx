@@ -1,34 +1,17 @@
 import axios from 'axios';
-import { useFormik } from 'formik';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCV } from '../../../components/Store/CV';
 import { useExperience } from '../../../components/Store/Experience';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import HTMLReactParser from 'html-react-parser';
 
 const Experiences = (props) => {
   const [cvState, cvActions] = useCV();
   const [formState, formActions] = useExperience();
-  const formik = useFormik({
-    initialValues: {
-      companyName: '',
-      duration: '',
-      position: '',
-      expDescription: '',
-    },
-
-    onSubmit: async (values) => {
-      const data = {
-        companyName: values.companyName,
-        duration: values.duration,
-        position: values.position,
-        expDescription: values.expDescription,
-
-        cvId: cvState.cvId,
-        experienceId: cvState.experienceId
-      };
-      await formActions.stepExperience(data)
-      props.history.push('/createcv-extras');
-    },
-  });
+  const [exp, setExp] = useState({
+    expDescription: '',
+  })
 
   useEffect(() => {
     if (!cvState.experienceId) {
@@ -38,10 +21,21 @@ const Experiences = (props) => {
       }
       fetch();
     } else {
-      return () => formik.handleSubmit;
+      return () => handleSubmit;
     }
   }, [cvState.cvId])
   
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+      expDescription: exp.expDescription,
+      cvId: cvState.cvId,
+      experienceId: cvState.experienceId,
+    };
+    await formActions.stepExperience(data);
+    props.history.push('/createcv-extras');
+  }
+
   const previous = () => {
     props.history.push('/createcv-project'); 
   };
@@ -49,64 +43,20 @@ const Experiences = (props) => {
   return (
     <>
       <section class="full-detail">
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Experience Details</h2>
-
-              <div class="col-md-4 col-sm-6">
-                <label>Company Name</label>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Company name"
-                    name="companyName"
-                    defaultValue={formState.companyName}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
-
-              <div class="col-md-4 col-sm-6">
-                <label>Duration</label>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="duration"
-                    defaultValue={formState.duration}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
-
-              <div class="col-md-4 col-sm-6">
-                <label>Position</label>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="position"
-                    defaultValue={formState.position}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
-
-              <div class="col-md-12 col-sm-6">
-                <label>Description</label>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Description"
-                    name="expDescription"
-                    defaultValue={formState.expDescription}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
+              <label>Experience Description</label>
+              {HTMLReactParser(formState.expDescription)}
+              <CKEditor
+                id="expDescription"
+                editor={ClassicEditor}
+                onChange={(event, editor) => {
+                  const data = editor.getData();
+                  setExp({ ...exp, expDescription: data });
+                }}
+              />
             </div>
 
             <div class="detail pannel-footer">

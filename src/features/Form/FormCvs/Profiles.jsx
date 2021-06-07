@@ -63,7 +63,7 @@ const Profiles = (props) => {
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="First name"
+                    placeholder="Example: Bart"
                     name="firstname"
                     defaultValue={formState.firstname}
                     onChange={formik.handleChange}
@@ -77,7 +77,7 @@ const Profiles = (props) => {
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Last name"
+                    placeholder="Example: Simpson"
                     name="lastname"
                     defaultValue={formState.lastname}
                     onChange={formik.handleChange}
@@ -91,7 +91,7 @@ const Profiles = (props) => {
                   <input
                     type="email"
                     class="form-control"
-                    placeholder="Email"
+                    placeholder="Example: bartsimpson@gmail.com"
                     name="email"
                     defaultValue={formState.email}
                     onChange={formik.handleChange}
@@ -105,7 +105,7 @@ const Profiles = (props) => {
                   <input
                     type="phone"
                     class="form-control"
-                    placeholder="Phone"
+                    placeholder="Example: 0xx-xxx-xxxx"
                     name="phone"
                     defaultValue={formState.phone}
                     onChange={formik.handleChange}
@@ -133,7 +133,7 @@ const Profiles = (props) => {
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Address"
+                    placeholder="Example: ward - district - city"
                     name="address"
                     defaultValue={formState.address}
                     onChange={formik.handleChange}
@@ -162,8 +162,7 @@ const Profiles = (props) => {
                     Previous
                   </button>
                 </div>
-              </div>
-              <div class="col-md-12 col-sm-12">
+
                 <div class="detail-pannel-footer-btn pull-right">
                   <button
                     class="footer-btn choose-cover"

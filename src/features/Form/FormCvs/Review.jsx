@@ -1,22 +1,24 @@
 import React from 'react';
+import { useCV } from '../../../components/Store/CV';
 import { useProfile } from '../../../components/Store/Profile';
 import { useEducation } from '../../../components/Store/Education';
 import { useProject } from '../../../components/Store/Project';
 import { useExperience } from '../../../components/Store/Experience';
 import { useExtra } from '../../../components/Store/Extra';
 import { useHistory } from 'react-router';
+import HTMLReactParser from 'html-react-parser';
 
 const Review = (props) => {
+  const [cvState] = useCV();
   const [profileState] = useProfile();
   const [eduState] = useEducation();
   const [projectState] = useProject();
   const [expState] = useExperience();
   const [extraState] = useExtra();
-
   const history = useHistory();
 
   const finish = () => {
-    history.push('/managecv');
+    history.push('/managecv')
   };
 
   const previous = () => {
@@ -27,6 +29,20 @@ const Review = (props) => {
     <>
       <section class="full-detail">
         <div class="container">
+          <div class="row bottom-mrg extra-mrg">
+            <h2 class="detail-title">Overview</h2>
+            <div class="col-md-12 col-sm-12">
+              <label>Position</label>
+              <p>{cvState.position}</p>
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+              <label>Bio</label>
+              <p>{cvState.bio}</p>
+            </div>
+
+          </div>
+
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Personal Details</h2>
             <div class="col-md-4 col-sm-12">
@@ -62,64 +78,60 @@ const Review = (props) => {
 
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Education Details</h2>
-            <div class="col-md-4 col-sm-12">
-              <label>College</label>
-              <p>{eduState.collegeName}</p>
-            </div>
+            {eduState.education.map((item) => {
+              return (
+                <>
+                  <div class="col-md-4 col-sm-12">
+                    <label>College</label>
+                    <p>{item.collegeName}</p>
+                  </div>
 
-            <div class="col-md-4 col-sm-12">
-              <label>Major</label>
-              <p>{eduState.collegeMajor}</p>
-            </div>
+                  <div class="col-md-4 col-sm-12">
+                    <label>Major</label>
+                    <p>{item.collegeMajor}</p>
+                  </div>
 
-            <div class="col-md-4 col-sm-12">
-              <label>Certification</label>
-              <p>{eduState.collegeQualification}</p>
-            </div>
+                  <div class="col-md-4 col-sm-12">
+                    <label>Certification</label>
+                    <p>{item.collegeQualification}</p>
+                  </div>
+                </>
+              )
+            })}
           </div>
 
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Project Details</h2>
-            <div class="col-md-4 col-sm-12">
-              <label>Project Name</label>
-              <p>{projectState.projectName}</p>
-            </div>
+            {projectState.project.map((item) => {
+              return (
+                <>
+                  <div class="col-md-4 col-sm-12">
+                    <label>Project Name</label>
+                    <p>{item.projectName}</p>
+                  </div>
 
-            <div class="col-md-4 col-sm-12">
-              <label>Project Description</label>
-              <p>{projectState.projectDescription}</p>
-              <p>{projectState.project.projectName}</p>
-            </div>
+                  <div class="col-md-4 col-sm-12">
+                    <label>Project Description</label>
+                    <p>{item.projectDescription}</p>
+                  </div>
+                </>
+              )
+            })}
           </div>
 
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Experience Details</h2>
-            <div class="col-md-4 col-sm-12">
-              <label>Company Name</label>
-              <p>{expState.companyName}</p>
-            </div>
-
-            <div class="col-md-4 col-sm-12">
-              <label>Duration</label>
-              <p>{expState.duration}</p>
-            </div>
-
-            <div class="col-md-4 col-sm-12">
-              <label>Position</label>
-              <p>{expState.position}</p>
-            </div>
-
             <div class="col-md-12 col-sm-12">
               <label>Experience Description</label>
-              <p>{expState.expDescription}</p>
+              <p>{HTMLReactParser(expState.expDescription)}</p>
             </div>
           </div>
 
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Extra Details</h2>
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-12 col-sm-12">
               <label>Additional Information</label>
-              <p>{extraState.addInfor}</p>
+              <p>{HTMLReactParser(extraState.addInfor)}</p>
             </div>
           </div>
           <div class="detail pannel-footer">
@@ -160,7 +172,7 @@ const Review = (props) => {
                   }}
                 >
                   Finish
-                </button>
+                  </button>
               </div>
             </div>
           </div>

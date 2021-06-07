@@ -22,7 +22,6 @@ const Store = createStore({
         address: data.address,
       })
       await axios.patch(`http://localhost:5000/api/cvs/updateProfile/${data.profileId}`, getState());
-      console.log(getState());
     },
   },
 });

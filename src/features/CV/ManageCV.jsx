@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../components/Context/AuthContext';
-import { useHttpClient } from '../../components/Hooks/Http-hook';
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../components/Context/AuthContext";
+import { useHttpClient } from "../../components/Hooks/Http-hook";
 // import {GlobalState} from "../../GlobalState"
 
 const ManageCV = (props) => {
@@ -8,14 +9,30 @@ const ManageCV = (props) => {
   const { sendRequest } = useHttpClient();
   const [loadedCvs, setLoadedCvs] = useState([]);
 
-  useEffect(() => {
-    const fetchCvs = async () => {
-      try {
-        const responseData = await sendRequest(`http://localhost:5000/api/cvs/user/${auth.userId}`);
-        const data = responseData.cvs;
-        setLoadedCvs(data);
-        console.log(data);
-      } catch (error) {}
+    useEffect(() => {
+        const fetchCvs = async () => {
+            try {
+                const responseData = await sendRequest(`http://localhost:5000/api/cvs/user/${auth.userId}`);
+                const data = responseData.cvs
+                setLoadedCvs(data);
+                console.log(data);
+            } catch (error) { }
+        };
+        fetchCvs();
+    }, [sendRequest]);
+
+    const onView = async (cv) => {
+        try {
+            await sendRequest(`http://localhost:5000/api/cvs/${cv}`);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const onDelete = async (cv) => {
+        try {
+            await sendRequest(`http://localhost:5000/api/cvs/${cv}`, "DELETE");
+        } catch { }
     };
     fetchCvs();
   }, [sendRequest]);

@@ -11,8 +11,7 @@ const Store = createStore({
       setState({
         addInfor: data.addInfor,
       })
-      const response = await axios.patch(`http://localhost:5000/api/cvs/updateExtra/${data.extraId}`, data);
-      console.log(response)
+      await axios.patch(`http://localhost:5000/api/cvs/updateExtra/${data.extraId}`, data);
     },
   },
 });

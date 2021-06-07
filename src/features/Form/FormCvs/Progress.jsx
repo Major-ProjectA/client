@@ -17,7 +17,7 @@ const Progress = ({ location: { pathname } }) => {
           <div>1</div>
           <div>
             {isSecondStep || isThirdStep || isFourthStep || isFifthStep || isSixthStep || isSeventhStep? 
-              <Link to="/createcv">Cv</Link> : 'Cv'
+              <Link to="/createcv">Overview</Link> : 'Overview'
             }
           </div>
         </div>
