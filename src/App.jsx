@@ -15,7 +15,8 @@ import DetailPage from './features/Job/JobDetails';
 import ManageCategory from './pages/ManageCategory';
 import AddJob from './pages/Job/AddJob';
 import CvRouter from './pages/CV/CvRouter';
-import CvList from './pages/CV/CvList';
+import CVList from './pages/CV/CVList';
+import FavoritesJob from './pages/Job/FavoritesJob';
 import CvsDetails from './pages/CV/CvsDetails';
 import CvUpdate from './pages/CV/CvUpdate';
 
@@ -85,6 +86,7 @@ const App = () => {
         <Route path="/cvs/details/:cvId" component={CvsDetails} exact />
         <Route path="/detail/:id" component={DetailPage} exact />
         <Route path="/jobs/detail/:id" component={DetailPage} exact />
+        <Route path="/favorite" component={FavoritesJob} exact />
         <Redirect to="/" />
       </Switch>
     );

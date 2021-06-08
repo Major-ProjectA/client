@@ -16,6 +16,7 @@ function DetailPage() {
   const [jobhot] = state.jobAPI.jobhot;
   const [detailJob, setDetailJob] = useState([]);
   // const [loading, setLoading] = useState(false);
+  const addfavoritejob = state.userAPI.addfavoritejob;
 
   useEffect(() => {
     if (params) {
@@ -28,10 +29,8 @@ function DetailPage() {
       });
     }
   }, [jobs, jobhot, params]);
-
-  // console.log(detailJob);
-
   if (detailJob.length === 0) return null;
+
   return (
     <div>
       <Navbars />
@@ -195,9 +194,6 @@ function DetailPage() {
                 <div class="detail-pannel-footer-btn pull-right">
                   <a href="#" class="footer-btn grn-btn" title="">
                     Quick Apply
-                  </a>
-                  <a href="#" class="footer-btn blu-btn" title="">
-                    Save Favorites
                   </a>
                 </div>
               </div>

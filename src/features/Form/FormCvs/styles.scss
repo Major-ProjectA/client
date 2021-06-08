@@ -13,7 +13,7 @@ $blue-color: #22ac11;
     color: #ccc;
 
     a {
-      color: $base-color;
+      color: #5bbd2b;
     }
 
     div:first-of-type {
@@ -34,13 +34,13 @@ $blue-color: #22ac11;
 
     &.active {
       div:first-of-type {
-        background-color: $base-color;
+        background-color: #5bbd2b;
         border: 2px solid transparent;
         color: #fff;
       }
 
       div:last-of-type {
-        color: $base-color;
+        color: #5bbd2b;
       }
     }
   }
@@ -56,7 +56,7 @@ $blue-color: #22ac11;
 }
 
 .successMsg {
-  color: $blue-color;
+  color: #5bbd2b;
 }
 
 @media screen and (max-width: 1200px) {
