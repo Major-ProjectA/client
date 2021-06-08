@@ -15,10 +15,10 @@ import DetailPage from './features/Job/JobDetails';
 import ManageCategory from './pages/ManageCategory';
 import AddJob from './pages/Job/AddJob';
 import CvRouter from './pages/CV/CvRouter';
-import CVList from './pages/CV/CVList';
 import FavoritesJob from './pages/Job/FavoritesJob';
 import CvsDetails from './pages/CV/CvsDetails';
 import CvUpdate from './pages/CV/CvUpdate';
+import CvList from './pages/CV/CvList';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
