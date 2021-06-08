@@ -148,6 +148,7 @@ const CvName = (props) => {
                     <input
                       type="text"
                       class="form-control"
+                      required
                       placeholder="Example: CV1."
                       name="cvName"
                       defaultValue={cvState.cvName}
@@ -162,6 +163,7 @@ const CvName = (props) => {
                     <input
                       type="text"
                       class="form-control"
+                      required
                       placeholder="Example: App Developer."
                       name="position"
                       defaultValue={cvState.position}
@@ -175,7 +177,7 @@ const CvName = (props) => {
                     <label>Bio</label>
                     <textarea
                       type="text"
-                      class="form-control"
+                      class="form-control"                    
                       placeholder="Describe yourself."
                       required
                       name="bio"

@@ -64,6 +64,7 @@ const Profiles = (props) => {
                     type="text"
                     class="form-control"
                     placeholder="Example: Bart"
+                    required
                     name="firstname"
                     defaultValue={formState.firstname}
                     onChange={formik.handleChange}
@@ -78,6 +79,7 @@ const Profiles = (props) => {
                     type="text"
                     class="form-control"
                     placeholder="Example: Simpson"
+                    required
                     name="lastname"
                     defaultValue={formState.lastname}
                     onChange={formik.handleChange}
@@ -92,6 +94,7 @@ const Profiles = (props) => {
                     type="email"
                     class="form-control"
                     placeholder="Example: bartsimpson@gmail.com"
+                    required
                     name="email"
                     defaultValue={formState.email}
                     onChange={formik.handleChange}
@@ -106,6 +109,7 @@ const Profiles = (props) => {
                     type="phone"
                     class="form-control"
                     placeholder="Example: 0xx-xxx-xxxx"
+                    required
                     name="phone"
                     defaultValue={formState.phone}
                     onChange={formik.handleChange}
@@ -120,6 +124,7 @@ const Profiles = (props) => {
                     type="date"
                     class="form-control"
                     placeholder="Birthday"
+                    required
                     name="dob"
                     defaultValue={formState.dob}
                     onChange={formik.handleChange}
@@ -133,6 +138,7 @@ const Profiles = (props) => {
                   <input
                     type="text"
                     class="form-control"
+                    required
                     placeholder="Example: ward - district - city"
                     name="address"
                     defaultValue={formState.address}

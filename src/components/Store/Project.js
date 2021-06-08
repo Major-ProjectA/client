@@ -3,32 +3,16 @@ import axios from 'axios';
 
 const Store = createStore({
   initialState: {
-    project: [],
+    project: '',
   },
 
   actions: {
     stepProject: (data) => async ({ setState, getState }) => {
-      await axios.patch(`http://localhost:5000/api/cvs/updateProject/${data.projectId}`, getState());
-    },
-    addProject: (data) => ({ setState, getState }) => {
       setState({
-        project: [...getState().project, data]
+        project: data.project,
       })
+      await axios.patch(`http://localhost:5000/api/cvs/updateProject/${data.projectId}`, data);
     },
-    updateProject: (index, data) => ({ setState, getState }) => {
-      let newArr = [...getState().project];
-      newArr[index] = data;
-      setState({
-        project: newArr,
-      })
-    },
-    deleteProject: (index) => ({ setState, getState }) => {
-      let newArr = [...getState().project];
-      newArr.splice(index, 1)
-      setState({
-        project: newArr
-      })
-    }
   },
 });
 

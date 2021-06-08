@@ -1,56 +1,27 @@
 import axios from 'axios';
-import { useFormik } from 'formik';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCV } from '../../../components/Store/CV';
 import { useEducation } from '../../../components/Store/Education';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import HTMLReactParser from 'html-react-parser';
 
 const Educations = (props) => {
   const [cvState, cvActions] = useCV();
   const [formState, formActions] = useEducation();
+  const [edu, setEdu] = useState({
+    education: '',
+  })
 
-  const formik = useFormik({
-    initialValues: {
-      collegeName: '',
-      collegeMajor: '',
-      collegeQualification: ''
-    },
-
-    onSubmit: async (values) => {
-      const data = {
-        cvId: cvState.cvId,
-        educationId: cvState.educationId,
-      };
-      await formActions.stepEducation(data)
-      props.history.push('/createcv-project');
-    },
-  });
-
-  const addEdu = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const data = {
-      collegeName: formik.values.collegeName,
-      collegeMajor: formik.values.collegeMajor,
-      collegeQualification: formik.values.collegeQualification
-    }
-    console.log(data)
-    formActions.addEdu(data)
-  };
-
-  const updateEdu = (index) => {
-    const data = {
-      collegeName: formik.values.collegeName,
-      collegeMajor: formik.values.collegeMajor,
-      collegeQualification: formik.values.collegeQualification
-    }
-    formActions.updateEdu(index, data)
-  }
-
-  const deleteEdu = (index) => {
-    const data = {
-      collegeName: formik.values.collegeName,
-      collegeMajor: formik.values.collegeMajor,
-      collegeQualification: formik.values.collegeQualification
-    }
-    formActions.deleteEdu(index, data);
+      education: edu.education,
+      cvId: cvState.cvId,
+      educationId: cvState.educationId,
+    };
+    await formActions.stepEducation(data);
+    props.history.push('/createcv-project');
   }
 
   useEffect(() => {
@@ -61,7 +32,7 @@ const Educations = (props) => {
       }
       fetch();
     } else {
-      return () => formik.handleSubmit;
+      return () => handleSubmit;
     }
   }, [cvState.cvId])
 
@@ -72,159 +43,23 @@ const Educations = (props) => {
   return (
     <>
       <section class="full-detail">
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Education Details</h2>
-              <form onSubmit={formik.handleSubmit}>
-                <div class="col-md-3 col-sm-6">
-                  <label>College</label>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Example: ABC University"
-                      name="collegeName"
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                  <label>Major</label>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Example: Marketing"
-                      name="collegeMajor"
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                  <label>Qualification</label>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Diploma - Bachelor’s degree - Master’s degree"
-                      name="collegeQualification"
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                  <label>Features</label>
-                  <div class="input-group">
-                    <button
-                      style={{
-                        backgroundColor: '#3DB810',
-                        border: 'none',
-                        color: 'white',
-                        padding: '13px 18px',
-                        textAlign: 'center',
-                        textDecoration: 'none',
-                        display: 'inline-block',
-                        fontSize: '16px',
-                      }}
-                      type="button"
-                      onClick={addEdu}
-                    >
-                      Add
-                    </button>
-                  </div>
-                </div>
-              </form>
-              {formState.education.map((item, index) => {
-                return (
-                  <>
-                    <div class="col-md-3 col-sm-6">
-                      <label>{item.collegeName}</label>
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="College name"
-                          name="collegeName"
-                          Value={item.collegeName}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                      <label>Major</label>
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="College Major"
-                          name="collegeMajor"
-                          Value={item.collegeMajor}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                      <label>Qualification</label>
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="College Qualification"
-                          name="collegeQualification"
-                          Value={item.collegeQualification}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                      <label>Features</label>
-                      <div class="input-group">
-                        <button
-                          style={{
-                            backgroundColor: '#FFBF00',
-                            border: 'none',
-                            color: 'white',
-                            padding: '13px 18px',
-                            textAlign: 'center',
-                            textDecoration: 'none',
-                            display: 'inline-block',
-                            fontSize: '16px',
-                          }}
-                          type="button"
-                          onClick={() => updateEdu(index)}
-                        >
-                          Update
-                        </button>
-                        &nbsp;&nbsp;&nbsp;
-                        <button
-                          style={{
-                            backgroundColor: '#FF0000',
-                            border: 'none',
-                            color: 'white',
-                            padding: '13px 18px',
-                            textAlign: 'center',
-                            textDecoration: 'none',
-                            display: 'inline-block',
-                            fontSize: '16px',
-                          }}
-                          type="button"
-                          onClick={() => deleteEdu(index)}
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-
-                  </>
-                );
-              })}
+              <div class="col-md-12 col-sm-12">
+                <label>Education Information</label>
+                {HTMLReactParser(formState.education)}
+                <CKEditor
+                  required
+                  id="education"
+                  editor={ClassicEditor}
+                  onChange={(event, editor) => {
+                    const data = editor.getData();
+                    setEdu({ ...edu, education: data });
+                  }}
+                />
+              </div>
             </div>
             <div class="detail pannel-footer">
               <div class="col-md-12 col-sm-12">

@@ -99,7 +99,10 @@ const CvDetails = () => {
                                         <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
                                             Education
                                         </h2>
-                                        {loadedCvs.education.map((item) => {
+                                        <div class="apply-job-detail">
+                                            <p>{HtmlReactParse(loadedCvs.education[0].education)}</p>
+                                        </div>
+                                        {/* {loadedCvs.education.map((item) => {
                                             return (
                                                 <>
                                                     <div class="col-md-4 col-sm-12">
@@ -116,15 +119,17 @@ const CvDetails = () => {
                                                     </div>
                                                 </>
                                             )
-                                        })}
+                                        })} */}
                                     </div>
-                                    <br /><br />
 
                                     <div class="apply-job-detail">
                                         <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
                                             Project
                                         </h2>
-                                        {loadedCvs.project.map((item) => {
+                                        <div class="apply-job-detail">
+                                            <p>{HtmlReactParse(loadedCvs.project[0].project)}</p>
+                                        </div>
+                                        {/* {loadedCvs.project.map((item) => {
                                             return (
                                                 <>
                                                     <div class="col-md-6 col-sm-12">
@@ -137,9 +142,8 @@ const CvDetails = () => {
                                                     </div>
                                                 </>
                                             )
-                                        })}
+                                        })} */}
                                     </div>
-                                    <br /><br />
 
                                     <div class="apply-job-detail">
                                         <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>

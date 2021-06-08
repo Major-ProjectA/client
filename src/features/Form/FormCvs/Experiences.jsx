@@ -24,7 +24,7 @@ const Experiences = (props) => {
       return () => handleSubmit;
     }
   }, [cvState.cvId])
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
@@ -37,7 +37,7 @@ const Experiences = (props) => {
   }
 
   const previous = () => {
-    props.history.push('/createcv-project'); 
+    props.history.push('/createcv-project');
   };
 
   return (
@@ -47,16 +47,19 @@ const Experiences = (props) => {
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Experience Details</h2>
-              <label>Experience Description</label>
-              {HTMLReactParser(formState.expDescription)}
-              <CKEditor
-                id="expDescription"
-                editor={ClassicEditor}
-                onChange={(event, editor) => {
-                  const data = editor.getData();
-                  setExp({ ...exp, expDescription: data });
-                }}
-              />
+              <div class="col-md-12 col-sm-12">
+                <label>Experience Description</label>
+                {HTMLReactParser(formState.expDescription)}
+                <CKEditor
+                  required
+                  id="expDescription"
+                  editor={ClassicEditor}
+                  onChange={(event, editor) => {
+                    const data = editor.getData();
+                    setExp({ ...exp, expDescription: data });
+                  }}
+                />
+              </div>
             </div>
 
             <div class="detail pannel-footer">
