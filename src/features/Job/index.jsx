@@ -15,7 +15,7 @@ function ListPage() {
   const [loading, setLoading] = useState(false);
   const [callback, setCallBack] = state.jobAPI.callback;
 
-  const deleteJob = async (id, public_id) => {
+  const deleteJob = async (id) => {
     try {
       setLoading(true);
       await axios.delete(`/api/jobs/${id}`).then((res) => {

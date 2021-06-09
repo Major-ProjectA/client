@@ -10,7 +10,7 @@ const Navbars = () => {
   const auth = useContext(AuthContext);
 
   const state1 = useContext(GlobalState);
-  const [favorite] = state1.userAPI.favorite;
+  // const [favorite] = state1.userAPI.favorite;
 
   const createCV = async () => {
     const cv = await axios.post(`http://localhost:5000/api/cvs/createCV/${auth.userId}`); //create empty CV
@@ -51,9 +51,7 @@ const Navbars = () => {
                     <NavLink to="/managecv">Manage CV</NavLink>
                   </li>
                   <li class="btn-group">
-                    <NavLink to="/favorite">
-                      <i class="far fa-heart">&nbsp;{favorite.length}</i>
-                    </NavLink>
+                    <NavLink to="/favorite">Favorite</NavLink>
                   </li>
                 </>
               )}

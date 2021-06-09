@@ -268,16 +268,6 @@ function CreateJob() {
               <div class="row bottom-mrg">
                 <div class="col-md-4 col-sm-6">
                   <div class="input-group">
-                    {/* <label>Job ID</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Please input an ID"
-                      required
-                      value={job.jobId}
-                      onChange={(e) => setJob({ ...job, jobId: e.target.value })}
-                      disabled={onEdit}
-                    /> */}
                     <label>Position</label>
                     <input
                       type="text"

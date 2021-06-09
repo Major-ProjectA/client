@@ -1,9 +1,9 @@
-import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../components/Context/AuthContext";
-import { useHttpClient } from "../../components/Hooks/Http-hook";
-import Swal from "sweetalert2"
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../components/Context/AuthContext';
+import { useHttpClient } from '../../components/Hooks/Http-hook';
+import Swal from 'sweetalert2';
 
 const ManageCV = (props) => {
   const auth = useContext(AuthContext);
@@ -15,10 +15,10 @@ const ManageCV = (props) => {
     const fetchCvs = async () => {
       try {
         const responseData = await sendRequest(`http://localhost:5000/api/cvs/user/${auth.userId}`);
-        const data = responseData.cvs
+        const data = responseData.cvs;
         setLoadedCvs(data);
-        setCallBack(!callback)
-      } catch (error) { }
+        setCallBack(!callback);
+      } catch (error) {}
     };
     fetchCvs();
   }, [callback]);
@@ -41,8 +41,8 @@ const ManageCV = (props) => {
 
   const onDelete = async (cv) => {
     try {
-      await axios.delete(`http://localhost:5000/api/cvs/${cv}`)
-      setCallBack(!callback)
+      await axios.delete(`http://localhost:5000/api/cvs/${cv}`);
+      setCallBack(!callback);
     } catch {
       Swal.fire({
         icon: 'error',
@@ -65,9 +65,21 @@ const ManageCV = (props) => {
         </div>
       </section>
       <div className="main-heading">
-        <br /><br /><br /><br /><br /><br /><br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <h4>You do not have any cvs!</h4>
-        <br /><br /><br /><br /><br /><br /><br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </>
   ) : (
@@ -94,14 +106,26 @@ const ManageCV = (props) => {
                       <div class="paid-candidate-box">
                         <div class="dropdown">
                           <div class="btn-group fl-right">
-                            <button type="button" class="btn-trans" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button
+                              type="button"
+                              class="btn-trans"
+                              data-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
                               <i class="fa fa-gear"></i>
                             </button>
                             <div class="dropdown-menu pull-right animated flipInX">
                               <Link to={`/cvs/updatecv/${cv.id}`}>
                                 <a onClick={onUpdate}>Edit</a>
                               </Link>
-                              <a onClick={() => { onDelete(cv.id) }}>Delete</a>
+                              <a
+                                onClick={() => {
+                                  onDelete(cv.id);
+                                }}
+                              >
+                                Delete
+                              </a>
                             </div>
                           </div>
                         </div>
@@ -115,12 +139,14 @@ const ManageCV = (props) => {
                         </div>
                       </div>
                       <Link to={`/cvs/details/${cv.id}`}>
-                        <a class="btn btn-paid-candidate bt-1" onClick={onView}>View Detail</a>
+                        <a class="btn btn-paid-candidate bt-1" onClick={onView}>
+                          View Detail
+                        </a>
                       </Link>
                     </div>
                   </div>
                 </>
-              )
+              );
             })}
           </div>
         </div>

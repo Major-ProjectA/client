@@ -11,7 +11,7 @@ const Educations = (props) => {
   const [formState, formActions] = useEducation();
   const [edu, setEdu] = useState({
     education: '',
-  })
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,19 +22,19 @@ const Educations = (props) => {
     };
     await formActions.stepEducation(data);
     props.history.push('/createcv-project');
-  }
+  };
 
   useEffect(() => {
     if (!cvState.educationId) {
       const fetch = async () => {
         const education = await axios.post(`http://localhost:5000/api/cvs/createEducation/${cvState.cvId}`); //create empty CV
         cvActions.saveEducationId(education.data.cv._id);
-      }
+      };
       fetch();
     } else {
       return () => handleSubmit;
     }
-  }, [cvState.cvId])
+  }, [cvState.cvId]);
 
   const previous = () => {
     props.history.push('/createcv-profile');

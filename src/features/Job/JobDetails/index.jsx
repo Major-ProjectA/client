@@ -16,7 +16,6 @@ function DetailPage() {
   const [jobhot] = state.jobAPI.jobhot;
   const [detailJob, setDetailJob] = useState([]);
   // const [loading, setLoading] = useState(false);
-  const addfavoritejob = state.userAPI.addfavoritejob;
 
   useEffect(() => {
     if (params) {
@@ -236,7 +235,7 @@ function DetailPage() {
             </h2>
 
             <div style={{ marginTop: '20px', width: '100%' }}>
-              <Box color="white" bgcolor="#DDC488" p={1} fontSize="120%" color="text.secondary">
+              <Box color="white" p={1} fontSize="120%" color="text.secondary">
                 {HtmlReactParse(detailJob.otherInfo)}
               </Box>
             </div>
