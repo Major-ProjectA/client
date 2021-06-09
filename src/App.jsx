@@ -80,7 +80,7 @@ const App = () => {
         <Route path="/createcv-experience" component={CvRouter} exact />
         <Route path="/createcv-extras" component={CvRouter} exact />
         <Route path="/createcv-review" component={CvRouter} exact />
-        <Route path="/managecv" component={CvList} exact />
+        <Route path="/managecv" component={CVList} exact />
         <Route path="/cvs/details/:cvId" component={CvsDetails} exact />
         <Route path="/detail/:id" component={DetailPage} exact />
         <Route path="/jobs/detail/:id" component={DetailPage} exact />

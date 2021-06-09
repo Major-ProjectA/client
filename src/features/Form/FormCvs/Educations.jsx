@@ -12,7 +12,7 @@ const Educations = (props) => {
     initialValues: {
       collegeName: '',
       collegeMajor: '',
-      collegeQualification: ''
+      collegeQualification: '',
     },
 
     onSubmit: async (values) => {
@@ -20,7 +20,7 @@ const Educations = (props) => {
         cvId: cvState.cvId,
         educationId: cvState.educationId,
       };
-      await formActions.stepEducation(data)
+      await formActions.stepEducation(data);
       props.history.push('/createcv-project');
     },
   });
@@ -29,41 +29,41 @@ const Educations = (props) => {
     const data = {
       collegeName: formik.values.collegeName,
       collegeMajor: formik.values.collegeMajor,
-      collegeQualification: formik.values.collegeQualification
-    }
-    console.log(data)
-    formActions.addEdu(data)
+      collegeQualification: formik.values.collegeQualification,
+    };
+    console.log(data);
+    formActions.addEdu(data);
   };
 
   const updateEdu = (index) => {
     const data = {
       collegeName: formik.values.collegeName,
       collegeMajor: formik.values.collegeMajor,
-      collegeQualification: formik.values.collegeQualification
-    }
-    formActions.updateEdu(index, data)
-  }
+      collegeQualification: formik.values.collegeQualification,
+    };
+    formActions.updateEdu(index, data);
+  };
 
   const deleteEdu = (index) => {
     const data = {
       collegeName: formik.values.collegeName,
       collegeMajor: formik.values.collegeMajor,
-      collegeQualification: formik.values.collegeQualification
-    }
+      collegeQualification: formik.values.collegeQualification,
+    };
     formActions.deleteEdu(index, data);
-  }
+  };
 
   useEffect(() => {
     if (!cvState.educationId) {
       const fetch = async () => {
         const education = await axios.post(`http://localhost:5000/api/cvs/createEducation/${cvState.cvId}`); //create empty CV
         cvActions.saveEducationId(education.data.cv._id);
-      }
+      };
       fetch();
     } else {
       return () => formik.handleSubmit;
     }
-  }, [cvState.cvId])
+  }, [cvState.cvId]);
 
   const previous = () => {
     props.history.push('/createcv-profile');
@@ -138,6 +138,7 @@ const Educations = (props) => {
                   </div>
                 </div>
               </form>
+              <hr />
               {formState.education.map((item, index) => {
                 return (
                   <>
@@ -221,7 +222,6 @@ const Educations = (props) => {
                         </button>
                       </div>
                     </div>
-
                   </>
                 );
               })}
