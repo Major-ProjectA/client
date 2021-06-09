@@ -1,13 +1,15 @@
+import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../components/Context/AuthContext';
 import { useHttpClient } from '../../components/Hooks/Http-hook';
-// import {GlobalState} from "../../GlobalState"
+import Swal from 'sweetalert2';
 
 const ManageCV = (props) => {
   const auth = useContext(AuthContext);
   const { sendRequest } = useHttpClient();
   const [loadedCvs, setLoadedCvs] = useState([]);
+  const [callback, setCallBack] = useState(false);
 
   useEffect(() => {
     const fetchCvs = async () => {
@@ -15,10 +17,11 @@ const ManageCV = (props) => {
         const responseData = await sendRequest(`http://localhost:5000/api/cvs/user/${auth.userId}`);
         const data = responseData.cvs;
         setLoadedCvs(data);
+        setCallBack(!callback);
       } catch (error) {}
     };
     fetchCvs();
-  }, [sendRequest]);
+  }, [callback]);
 
   const onView = async (cv) => {
     try {
@@ -28,10 +31,25 @@ const ManageCV = (props) => {
     }
   };
 
+  const onUpdate = async (cv) => {
+    try {
+      await sendRequest(`http://localhost:5000/api/cvs/${cv}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const onDelete = async (cv) => {
     try {
-      await sendRequest(`http://localhost:5000/api/cvs/${cv}, "DELETE"`);
-    } catch {}
+      await axios.delete(`http://localhost:5000/api/cvs/${cv}`);
+      setCallBack(!callback);
+    } catch {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Deleted.',
+      });
+    }
   };
 
   return !loadedCvs.length ? (
@@ -39,7 +57,7 @@ const ManageCV = (props) => {
       <section
         class="inner-header-title blank"
         style={{
-          backgroundImage: `URL('https://www.mediafire.com/convkey/94a5/ld2xj8f54j7colg6g.jpg')`,
+          backgroundImage: `URL("https://www.mediafire.com/convkey/94a5/ld2xj8f54j7colg6g.jpg")`,
         }}
       >
         <div class="container">
@@ -47,15 +65,14 @@ const ManageCV = (props) => {
         </div>
       </section>
       <div className="main-heading">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <h4>You do not have any cvs!</h4>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <br />
         <br />
         <br />
@@ -70,9 +87,7 @@ const ManageCV = (props) => {
       <section
         class="inner-header-title blank"
         style={{
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundImage: `URL('https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80')`,
+          backgroundImage: `URL("https://www.mediafire.com/convkey/94a5/ld2xj8f54j7colg6g.jpg")`,
         }}
       >
         <div class="container">
@@ -101,6 +116,9 @@ const ManageCV = (props) => {
                               <i class="fa fa-gear"></i>
                             </button>
                             <div class="dropdown-menu pull-right animated flipInX">
+                              <Link to={`/cvs/updatecv/${cv.id}`}>
+                                <a onClick={onUpdate}>Edit</a>
+                              </Link>
                               <a
                                 onClick={() => {
                                   onDelete(cv.id);

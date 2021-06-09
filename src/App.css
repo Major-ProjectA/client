@@ -48,3 +48,12 @@ button {
   margin-top: 5%;
   height: 4rem;
 } */
+.error-message {
+  width: 100%;
+  display: inline-block;
+  padding: 5px;
+  background: red;
+  color: #fff;
+  text-align: center;
+  margin: 0.5rem 0;
+}

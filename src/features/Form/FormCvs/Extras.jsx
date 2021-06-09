@@ -48,16 +48,19 @@ const Extras = (props) => {
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Extras Details</h2>
-              <label>Additional Information</label>
-              {HTMLReactParser(formState.addInfor)}
-              <CKEditor
-                id="addInfor"
-                editor={ClassicEditor}
-                onChange={(event, editor) => {
-                  const data = editor.getData();
-                  setExtra({ ...extra, addInfor: data });
-                }}
-              />
+              <div class="col-md-12 col-sm-12">
+                <label>Additional Information</label>
+                {HTMLReactParser(formState.addInfor)}
+                <CKEditor
+                  required
+                  id="addInfor"
+                  editor={ClassicEditor}
+                  onChange={(event, editor) => {
+                    const data = editor.getData();
+                    setExtra({ ...extra, addInfor: data });
+                  }}
+                />
+              </div>
             </div>
 
             <div class="detail pannel-footer">

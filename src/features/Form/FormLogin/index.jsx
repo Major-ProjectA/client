@@ -31,7 +31,6 @@ const FormLogin = () => {
       auth.authorization(responseData.user.userName);
       auth.authorization(responseData.user.role);
     } catch (err) {
-      console.error(err);
       setError("Your email or password is not correct.");
       setTimeout(() => {
         setError("");

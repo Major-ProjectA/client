@@ -1,51 +1,28 @@
 import axios from 'axios';
-import { useFormik } from 'formik';
-import React, { useEffect } from 'react';
+//import { useFormik } from 'formik';
+import React, { useEffect, useState } from 'react';
 import { useCV } from '../../../components/Store/CV';
 import { useProject } from '../../../components/Store/Project';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import HTMLReactParser from 'html-react-parser';
 
 const Projects = (props) => {
   const [cvState, cvActions] = useCV();
   const [formState, formActions] = useProject();
+  const [project, setProject] = useState({
+    project: '',
+  })
 
-  const formik = useFormik({
-    initialValues: {
-      projectName: '',
-      projectDescription: ''
-    },
-
-    onSubmit: async (values) => {
-      const data = {
-        cvId: cvState.cvId,
-        projectId: cvState.projectId,
-      };
-      await formActions.stepProject(data)
-      props.history.push('/createcv-experience');
-    },
-  });
-
-  const addProject = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const data = {
-      projectName: formik.values.projectName,
-      projectDescription: formik.values.projectDescription,
-    }
-    formActions.addProject(data)
-  };
-
-  const updateProject = (index) => {
-    const data = {
-      projectName: formik.values.projectName,
-      projectDescription: formik.values.projectDescription,
-    }
-    formActions.updateProject(index, data)
-  }
-
-  const deleteProject = (index) => {
-    const data = {
-      projectName: formik.values.projectName,
-      projectDescription: formik.values.projectDescription,
-    }
-    formActions.deleteProject(index, data);
+      project: project.project,
+      cvId: cvState.cvId,
+      projectId: cvState.projectId,
+    };
+    await formActions.stepProject(data);
+    props.history.push('/createcv-experience');
   }
 
   useEffect(() => {
@@ -56,7 +33,7 @@ const Projects = (props) => {
       }
       fetch();
     } else {
-      return () => formik.handleSubmit;
+      return () => handleSubmit;
     }
   }, [cvState.cvId])
 
@@ -67,129 +44,23 @@ const Projects = (props) => {
   return (
     <>
       <section class="full-detail">
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div class="container">
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Project Details</h2>
-              <>
-                <div class="col-md-4 col-sm-6">
-                  <label>Project Name</label>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Example: Phone Management"
-                      name="projectName"
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                  <label>Description</label>
-                  <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Example: Using some technology, ..."
-                      name="projectDescription"
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                  <label>Features</label>
-                  <div class="input-group">
-                    <button
-                      style={{
-                        backgroundColor: '#3DB810',
-                        border: 'none',
-                        color: 'white',
-                        padding: '13px 18px',
-                        textAlign: 'center',
-                        textDecoration: 'none',
-                        display: 'inline-block',
-                        fontSize: '16px',
-                      }}
-                      type="button"
-                      onClick={addProject}
-                    >
-                      Add
-                    </button>
-                  </div>
-                </div>
-              </>
-              {formState.project.map((item, index) => {
-                return (
-                  <>
-                    <div class="col-md-4 col-sm-6">
-                      <label>Project Name</label>
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="projectName"
-                          Value={item.projectName}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                      <label>Description</label>
-                      <div class="input-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="projectDescription"
-                          Value={item.projectDescription}
-                          onChange={formik.handleChange}
-                        />
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                      <label>Features</label>
-                      <div class="input-group">
-                        <button
-                          style={{
-                            backgroundColor: '#FFBF00',
-                            border: 'none',
-                            color: 'white',
-                            padding: '13px 18px',
-                            textAlign: 'center',
-                            textDecoration: 'none',
-                            display: 'inline-block',
-                            fontSize: '16px',
-                          }}
-                          type="button"
-                          onClick={() => updateProject(index)}
-                        >
-                          Update
-                        </button>
-                        &nbsp;&nbsp;&nbsp;
-                        <button
-                          style={{
-                            backgroundColor: '#FF0000',
-                            border: 'none',
-                            color: 'white',
-                            padding: '13px 18px',
-                            textAlign: 'center',
-                            textDecoration: 'none',
-                            display: 'inline-block',
-                            fontSize: '16px',
-                          }}
-                          type="button"
-                          onClick={() => deleteProject(index)}
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-                  </>
-                );
-              })}
+              <div class="col-md-12 col-sm-12">
+                <label>Project Information</label>
+                {HTMLReactParser(formState.project)}
+                <CKEditor
+                  required
+                  id="project"
+                  editor={ClassicEditor}
+                  onChange={(event, editor) => {
+                    const data = editor.getData();
+                    setProject({ ...project, project: data });
+                  }}
+                />
+              </div>
             </div>
             <div class="detail pannel-footer">
               <div class="col-md-12 col-sm-12">

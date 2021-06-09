@@ -7,6 +7,7 @@ import { useExperience } from '../../../components/Store/Experience';
 import { useExtra } from '../../../components/Store/Extra';
 import { useHistory } from 'react-router';
 import HTMLReactParser from 'html-react-parser';
+import Swal from "sweetalert2";
 
 const Review = (props) => {
   const [cvState] = useCV();
@@ -19,6 +20,7 @@ const Review = (props) => {
 
   const finish = () => {
     history.push('/managecv')
+    Swal.fire('Awesome!', "You're successfully created cv!", 'success')
   };
 
   const previous = () => {
@@ -78,45 +80,18 @@ const Review = (props) => {
 
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Education Details</h2>
-            {eduState.education.map((item) => {
-              return (
-                <>
-                  <div class="col-md-4 col-sm-12">
-                    <label>College</label>
-                    <p>{item.collegeName}</p>
-                  </div>
-
-                  <div class="col-md-4 col-sm-12">
-                    <label>Major</label>
-                    <p>{item.collegeMajor}</p>
-                  </div>
-
-                  <div class="col-md-4 col-sm-12">
-                    <label>Certification</label>
-                    <p>{item.collegeQualification}</p>
-                  </div>
-                </>
-              )
-            })}
+            <div class="col-md-12 col-sm-12">
+              <label>Education Description</label>
+              <p>{HTMLReactParser(eduState.education)}</p>
+            </div>
           </div>
 
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Project Details</h2>
-            {projectState.project.map((item) => {
-              return (
-                <>
-                  <div class="col-md-4 col-sm-12">
-                    <label>Project Name</label>
-                    <p>{item.projectName}</p>
-                  </div>
-
-                  <div class="col-md-4 col-sm-12">
-                    <label>Project Description</label>
-                    <p>{item.projectDescription}</p>
-                  </div>
-                </>
-              )
-            })}
+            <div class="col-md-12 col-sm-12">
+              <label>Project Description</label>
+              <p>{HTMLReactParser(projectState.project)}</p>
+            </div>
           </div>
 
           <div class="row bottom-mrg extra-mrg">
@@ -172,7 +147,7 @@ const Review = (props) => {
                   }}
                 >
                   Finish
-                  </button>
+                </button>
               </div>
             </div>
           </div>
