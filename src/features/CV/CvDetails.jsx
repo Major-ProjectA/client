@@ -38,6 +38,7 @@ const CvDetails = () => {
                                             <li><span class="detail-info">Phone number: </span>{loadedCvs.profile[0].phone}</li><br />
                                             <li><span class="detail-info">Address: </span>{loadedCvs.profile[0].address}</li>
                                         </ul>
+                                        <br/>
                                         <ul class="detail-footer-social">
                                             <li>
                                                 <a href={'# '} style={{ color: 'white' }}>
