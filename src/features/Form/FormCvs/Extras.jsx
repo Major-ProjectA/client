@@ -4,7 +4,6 @@ import { useExtra } from '../../../components/Store/Extra';
 import axios from 'axios';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import HTMLReactParser from 'html-react-parser';
 
 const Extras = (props) => {
   const [cvState, cvActions] = useCV();
@@ -49,11 +48,10 @@ const Extras = (props) => {
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Extras Details</h2>
               <div class="col-md-12 col-sm-12">
-                <label>Additional Information</label>
-                {HTMLReactParser(formState.addInfor)}
                 <CKEditor
                   required
                   id="addInfor"
+                  data={formState.addInfor}
                   editor={ClassicEditor}
                   onChange={(event, editor) => {
                     const data = editor.getData();

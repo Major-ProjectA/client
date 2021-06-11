@@ -6,13 +6,13 @@ import axios from "axios";
 import { useFormik } from "formik";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import HTMLReactParser from 'html-react-parser';
 import Swal from "sweetalert2";
 
 const UpdateCV = (props) => {
   const { sendRequest } = useHttpClient();
   const [loadedCvs, setLoadedCvs] = useState();
   const cvId = useParams().cvId;
+  const [callback, setCallBack] = useState(false);
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -21,14 +21,14 @@ const UpdateCV = (props) => {
           `http://localhost:5000/api/cvs/${cvId}`
         );
         setLoadedCvs(responseData.cv);
+        setCallBack(!callback);
       } catch (error) { }
     };
     fetchDetails();
-  }, [sendRequest, cvId]);
+  }, [sendRequest, cvId, callback]);
 
   const cvState = useFormik({
     initialValues: {
-
       position: '',
       bio: '',
     },
@@ -66,6 +66,7 @@ const UpdateCV = (props) => {
       };
       await axios.patch(`http://localhost:5000/api/cvs/updateProfile/${loadedCvs.profile[0]._id}`, data)
       Swal.fire('Awesome!', "You're successfully updated!", 'success')
+      setCallBack(!callback);
     },
   });
 
@@ -283,7 +284,7 @@ const UpdateCV = (props) => {
                         class="form-control"
                         required
                         name="firstname"
-                        placeholder={loadedCvs.profile[0].firstname}
+                        data={loadedCvs.profile[0].firstname}
                         defaultValue={profileState.firstname}
                         onChange={profileState.handleChange}
                       />
@@ -394,14 +395,13 @@ const UpdateCV = (props) => {
                 <h2 class="detail-title">Education Details</h2>
                 <form onSubmit={updateEdu}>
                   <div class="col-md-12 col-sm-12">
-                    <label>Education Description</label>
-                    <p>{HTMLReactParser(loadedCvs.education[0].education)}</p>
                     <CKEditor
                       required
                       id="education"
+                      data={loadedCvs.education[0].education}
                       editor={ClassicEditor}
                       onChange={(event, editor) => {
-                        const data = editor.getData();
+                        const data = editor.getData();                        
                         setEdu({ ...edu, education: data });
                       }}
                     />
@@ -436,11 +436,10 @@ const UpdateCV = (props) => {
                 <h2 class="detail-title">Project Details</h2>
                 <form onSubmit={updateProject}>
                   <div class="col-md-12 col-sm-12">
-                    <label>Project Description</label>
-                    <p>{HTMLReactParser(loadedCvs.project[0].project)}</p>
                     <CKEditor
                       required
                       id="project"
+                      data={loadedCvs.project[0].project}
                       editor={ClassicEditor}
                       onChange={(event, editor) => {
                         const data = editor.getData();
@@ -478,11 +477,10 @@ const UpdateCV = (props) => {
                 <h2 class="detail-title">Experience Details</h2>
                 <form onSubmit={updateExp}>
                   <div class="col-md-12 col-sm-12">
-                    <label>Experience Description</label>
-                    <p>{HTMLReactParser(loadedCvs.experience[0].expDescription)}</p>
                     <CKEditor
                       required
                       id="expDescription"
+                      data={loadedCvs.experience[0].expDescription}
                       editor={ClassicEditor}
                       onChange={(event, editor) => {
                         const data = editor.getData();
@@ -519,11 +517,10 @@ const UpdateCV = (props) => {
                 <h2 class="detail-title">Extra Details</h2>
                 <form onSubmit={updateExtra}>
                   <div class="col-md-12 col-sm-12">
-                    <label>Additional Information</label>
-                    <p>{HTMLReactParser(loadedCvs.extra[0].addInfor)}</p>
                     <CKEditor
                       required
                       id="addInfor"
+                      data={loadedCvs.extra[0].addInfor}
                       editor={ClassicEditor}
                       onChange={(event, editor) => {
                         const data = editor.getData();
