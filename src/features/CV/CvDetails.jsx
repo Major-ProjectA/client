@@ -90,9 +90,7 @@ const CvDetails = () => {
               </div>
             </div>
           </section>
-
           <div class="clearfix"></div>
-
           <section>
             <div class="container">
               <div class="col-md-12 col-sm-12">

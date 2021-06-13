@@ -5,8 +5,6 @@ import { AuthContext } from '../../../components/Context/AuthContext';
 import { GlobalState } from '../../../GlobalState';
 import axios from 'axios';
 
-import FavoriteJob from '../FavoriteJob';
-
 function JobList({ job, deleteJob }) {
   const auth = useContext(AuthContext);
   // const state = useContext(GlobalState);

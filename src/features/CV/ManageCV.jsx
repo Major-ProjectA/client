@@ -55,12 +55,12 @@ const ManageCV = (props) => {
   return !loadedCvs.length ? (
     <>
       <section
-        class="inner-header-title blank"
+        className="inner-header-title blank"
         style={{
           backgroundImage: `URL("https://www.mediafire.com/convkey/94a5/ld2xj8f54j7colg6g.jpg")`,
         }}
       >
-        <div class="container">
+        <div className="container">
           <h1>MANAGE CV</h1>
         </div>
       </section>
@@ -83,75 +83,99 @@ const ManageCV = (props) => {
       </div>
     </>
   ) : (
-    <h4>
+    <>
       <section
-        class="inner-header-title blank"
+        className="inner-header-title blank"
         style={{
-          backgroundImage: `URL("https://www.mediafire.com/convkey/94a5/ld2xj8f54j7colg6g.jpg")`,
+          backgroundImage: `URL("https://images.unsplash.com/photo-1621610086679-535f8bb2ee01?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80")`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
         }}
       >
-        <div class="container">
+        <div className="container">
           <h1>MANAGE CV</h1>
         </div>
       </section>
 
-      <section>
-        <div class="container">
-          <div class="row">
+      <section className="member-card gray">
+        <div className="container">
+          <div className="row">
             {loadedCvs.map((cv) => {
               return (
                 <>
-                  <div class="col-md-4 col-sm-6">
-                    <div class="paid-candidate-container">
-                      <div class="paid-candidate-box">
-                        <div class="dropdown">
-                          <div class="btn-group fl-right">
+                  <div className="col-md-3 col-sm-4">
+                    <div className="manage-cndt">
+                      {/* <div className="cndt-status pending">{cv.isStatus}</div> */}
+                      {<p>{cv.isStatus}</p> === <p>Available</p> ? (
+                        <div className="cndt-status available">Available</div>
+                      ) : (
+                        <div className="cndt-status pending">Pending</div>
+                      )}
+                      <div style={{ float: 'right', paddingTop: '5%', paddingRight: '5%' }}>
+                        <div className="dropdown">
+                          <div className="btn-group fl-right">
                             <button
                               type="button"
-                              class="btn-trans"
+                              className="btn-trans"
                               data-toggle="dropdown"
                               aria-haspopup="true"
                               aria-expanded="false"
                             >
-                              <i class="fa fa-gear"></i>
+                              <i className="fa fa-gear"></i>
                             </button>
-                            <div class="dropdown-menu pull-right animated flipInX">
+                            <div className="dropdown-menu pull-right animated flipInX">
                               <Link to={`/cvs/updatecv/${cv.id}`}>
-                                <a onClick={onUpdate}>Edit</a>
+                                <a onClick={onUpdate}>
+                                  <i className="fa fa-edit" style={{ fontSize: '110%' }}></i>&nbsp; Edit
+                                </a>
                               </Link>
                               <a
                                 onClick={() => {
                                   onDelete(cv.id);
                                 }}
                               >
-                                Delete
+                                <i className="fa fa-trash-o" style={{ fontSize: '110%' }}></i>&nbsp; Delete
                               </a>
                             </div>
                           </div>
                         </div>
-                        <div class="paid-candidate-inner--box">
-                          <div class="paid-candidate-box-thumb">
-                            <img src={cv.cvImage} class="img-responsive img-circle" alt="" />
-                          </div>
-                          <div class="paid-candidate-box-detail">
-                            <h4>{cv.cvName}</h4>
-                          </div>
-                        </div>
                       </div>
-                      <Link to={`/cvs/details/${cv.id}`}>
-                        <a class="btn btn-paid-candidate bt-1" onClick={onView}>
-                          View Detail
-                        </a>
+                      <br />
+                      <br />
+                      <div className="cndt-caption">
+                        <div className="cndt-pic">
+                          <img src={cv.cvImage} className="img-responsive img-circle" alt="" />
+                        </div>
+                        <h4>{cv.cvName}</h4>
+                        <span>{cv.position}</span>
+                      </div>
+                      <Link to={`/cvs/details/${cv.id}`} onClick={onView} className="cndt-profile-btn">
+                        View Detail
                       </Link>
                     </div>
                   </div>
+
+                  {/* <div className="col-md-3 col-sm-4">
+                    <div className="manage-cndt">
+                      <div className="cndt-status available">Available</div>
+                      <br /> <br />
+                      <div className="cndt-caption">
+                        <div className="cndt-pic">
+                          <img src="assets/img/client-2.jpg" className="img-responsive" alt="" />
+                        </div>
+                        <h4>Ethan Marion</h4>
+                        <span>IOS designer</span>
+                      </div>
+                      <Link className="cndt-profile-btn">View Detail</Link>
+                    </div>
+                  </div> */}
                 </>
               );
             })}
           </div>
         </div>
       </section>
-    </h4>
+    </>
   );
 };
 

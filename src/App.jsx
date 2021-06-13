@@ -18,7 +18,7 @@ import CvRouter from './pages/CV/CvRouter';
 import FavoritesJob from './pages/Job/FavoritesJob';
 import CvsDetails from './pages/CV/CvsDetails';
 import CvUpdate from './pages/CV/CvUpdate';
-import CvList from './pages/CV/CvList';
+import CvList from './pages/CV/CVList';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
