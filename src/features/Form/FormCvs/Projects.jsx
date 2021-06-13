@@ -5,7 +5,6 @@ import { useCV } from '../../../components/Store/CV';
 import { useProject } from '../../../components/Store/Project';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import HTMLReactParser from 'html-react-parser';
 
 const Projects = (props) => {
   const [cvState, cvActions] = useCV();
@@ -49,11 +48,10 @@ const Projects = (props) => {
             <div class="row bottom-mrg extra-mrg">
               <h2 class="detail-title">Project Details</h2>
               <div class="col-md-12 col-sm-12">
-                <label>Project Information</label>
-                {HTMLReactParser(formState.project)}
                 <CKEditor
                   required
                   id="project"
+                  data={formState.project}
                   editor={ClassicEditor}
                   onChange={(event, editor) => {
                     const data = editor.getData();

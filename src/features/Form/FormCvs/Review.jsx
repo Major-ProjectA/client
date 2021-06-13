@@ -81,7 +81,6 @@ const Review = (props) => {
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Education Details</h2>
             <div class="col-md-12 col-sm-12">
-              <label>Education Description</label>
               <p>{HTMLReactParser(eduState.education)}</p>
             </div>
           </div>
@@ -89,7 +88,6 @@ const Review = (props) => {
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Project Details</h2>
             <div class="col-md-12 col-sm-12">
-              <label>Project Description</label>
               <p>{HTMLReactParser(projectState.project)}</p>
             </div>
           </div>
@@ -97,7 +95,6 @@ const Review = (props) => {
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Experience Details</h2>
             <div class="col-md-12 col-sm-12">
-              <label>Experience Description</label>
               <p>{HTMLReactParser(expState.expDescription)}</p>
             </div>
           </div>
@@ -105,7 +102,6 @@ const Review = (props) => {
           <div class="row bottom-mrg extra-mrg">
             <h2 class="detail-title">Extra Details</h2>
             <div class="col-md-12 col-sm-12">
-              <label>Additional Information</label>
               <p>{HTMLReactParser(extraState.addInfor)}</p>
             </div>
           </div>

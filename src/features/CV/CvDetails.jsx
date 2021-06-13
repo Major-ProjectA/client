@@ -112,59 +112,15 @@ const CvDetails = () => {
 
                   <div class="apply-job-detail">
                     <p>{loadedCvs.bio}</p>
-                  </div>
+                  </div>                 
 
                   <div class="apply-job-detail">
                     <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
                       Education
-                    </h2>
-                    {loadedCvs.education.map((item) => {
-                      return (
-                        <>
-                          <div class="col-md-4 col-sm-12">
-                            <label>College</label>
-                            <p>{item.education[0].collegeName}</p>
-                          </div>
-                          <div class="col-md-4 col-sm-12">
-                            <label>Major</label>
-                            <p>{item.education[0].collegeMajor}</p>
-                          </div>
-                          <div class="col-md-4 col-sm-12">
-                            <label>Qualification</label>
-                            <p>{item.education[0].collegeQualification}</p>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </div>
-                  <br />
-                  <br />
-
-                  <div class="apply-job-detail">
-                    <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
-                      Education
-                    </h2>
+                    </h2>               
                     <div class="apply-job-detail">
                       <p>{HtmlReactParse(loadedCvs.education[0].education)}</p>
                     </div>
-                    {/* {loadedCvs.education.map((item) => {
-                                            return (
-                                                <>
-                                                    <div class="col-md-4 col-sm-12">
-                                                        <label>College</label>
-                                                        <p>{item.education[0].collegeName}</p>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-12">
-                                                        <label>Major</label>
-                                                        <p>{item.education[0].collegeMajor}</p>
-                                                    </div>
-                                                    <div class="col-md-4 col-sm-12">
-                                                        <label>Qualification</label>
-                                                        <p>{item.education[0].collegeQualification}</p>
-                                                    </div>
-                                                </>
-                                            )
-                                        })} */}
                   </div>
 
                   <div class="apply-job-detail">
@@ -174,20 +130,15 @@ const CvDetails = () => {
                     <div class="apply-job-detail">
                       <p>{HtmlReactParse(loadedCvs.project[0].project)}</p>
                     </div>
-                    {/* {loadedCvs.project.map((item) => {
-                                            return (
-                                                <>
-                                                    <div class="col-md-6 col-sm-12">
-                                                        <label>Project Name</label>
-                                                        <p>{item.project[0].projectName}</p>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-12">
-                                                        <label>Project Description</label>
-                                                        <p>{item.project[0].projectDescription}</p>
-                                                    </div>
-                                                </>
-                                            )
-                                        })} */}
+                  </div>
+
+                  <div class="apply-job-detail">
+                    <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
+                      Experience
+                    </h2>
+                    <div class="apply-job-detail">
+                      <p>{HtmlReactParse(loadedCvs.experience[0].expDescription)}</p>
+                    </div>
                   </div>
 
                   <div class="apply-job-detail">
